@@ -14,43 +14,13 @@ interface Sample {
 
 angular.module('Demos', [])
     .controller('MainController', ($scope, $http, $timeout) => {
-        var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
+        var components = ['GanttChartView'];
         var samples = <Sample[]>[
             {
                 component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'CSharp': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js'],
-                    'VisualBasic': ['index.html', 'app.css', 'app.ts', 'templates.js', 'themes.js']
-                }
-            },
-            {
-                component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
-                sourceCodeFiles: {
-                    'CSharp': ['index.html', 'app.css', 'app.js', 'templates.js', 'themes.js']
-                }
-            },
-            {
-                component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
-                sourceCodeFiles: {
-                    'CSharp': ['index.html', 'app.css', 'app.js', 'themes.js']
-                }
-            },
-            {
-                component: 'LoadChartView', feature: 'SingleItem', title: 'Single item', description: 'Sample application showing how to display a single item with multiple allocations',
-                sourceCodeFiles: {
-                    'CSharp': ['index.html', 'app.css', 'app.js']
-                }
-            },
-            {
-                component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
-                sourceCodeFiles: {
-                    'CSharp': ['index.html', 'app.css', 'app.js', 'themes.js']
-                }
-            },
-            {
-                component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
-                sourceCodeFiles: {
-                    'CSharp': ['index.html', 'app.css', 'app.js', 'themes.js']
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js'],
+                    'VisualBasic': ['Index.aspx', 'Index.aspx.vb', 'app.css', 'templates.js', 'themes.js']
                 }
             }
         ];
@@ -68,7 +38,7 @@ angular.module('Demos', [])
                 $scope.run();
             });
         };
-        var technologies = [{ name: 'CSharp', title: 'C# ASPX + JS + HTML' }, { name: 'VisualBasic', title: 'Visual Basic® ASPX' }];
+        var technologies = [{ name: 'CSharp', title: 'C# + Forms' }, { name: 'VisualBasic', title: 'Visual Basic®' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
         var getSamples = (component, selectedTechnology) => {
@@ -151,7 +121,7 @@ angular.module('Demos', [])
         $scope.selectSourceCodeFile = (selectedSample, selectedTechnology, sourceCodeFile) => {
             $scope.selectedSourceCodeFile = sourceCodeFile;
             $scope.selectedSourceCodeFileContents = '…';
-            var sourceCodeFileUrl = 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '/' + sourceCodeFile.replace('.aspx', '.aspx.txt').replace('.aspx.txt.cs', '.aspx.cs.txt');
+            var sourceCodeFileUrl = 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '/' + sourceCodeFile.replace('.aspx', '.aspx.txt').replace('.aspx.txt.cs', '.aspx.cs.txt').replace('.aspx.txt.vb', '.aspx.vb.txt');
             $http.get(sourceCodeFileUrl).then((response) => {
                 $scope.selectedSourceCodeFileContents = response.data;
             });
@@ -169,7 +139,7 @@ angular.module('Demos', [])
             $scope.selectedSourceCodeFileContents = null;
         };
         $scope.getSampleUrl = (selectedSample, selectedTechnology, selectedTheme) => {
-            return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.html?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
+            return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.aspx?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
         };
         if (initialSelection)
             selectComponent(initialSelection);

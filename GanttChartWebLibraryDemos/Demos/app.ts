@@ -38,7 +38,7 @@ angular.module('Demos', [])
                 $scope.run();
             });
         };
-        var technologies = [{ name: 'CSharp', title: 'C# + Forms' }, { name: 'VisualBasic', title: 'Visual Basic®' }];
+        var technologies = [{ name: 'CSharp', title: 'C#' }, { name: 'VisualBasic', title: 'Visual Basic®' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
         var getSamples = (component, selectedTechnology) => {

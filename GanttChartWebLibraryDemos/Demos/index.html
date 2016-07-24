@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="Demos" ng-controller="MainController">
+<head id="head">
+    <title>Demos - Gantt Chart Web Library - DlhSoft</title>
+    <link href="http://DlhSoft.com/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/theme-red.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://DlhSoft.com/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
+    <link href="app.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://DlhSoft.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://DlhSoft.com/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.Data.HTML.Controls.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js"></script>
+    <script type="text/javascript" src="Scripts/DlhSoft.ProjectData.GanttChart.Angular.Directives.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="DlhSoft" />
+    <meta name="keywords" content="Demos, samples" />
+    <meta name="description" content="Sample applications for DlhSoft Gantt Chart Web Library." />
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="bg-dark">
+            <div class="nav-bar">
+                <div class="module left">
+                    <a href="http://DlhSoft.com/index.html" target="_blank">
+                        <img class="logo logo-light" alt="logo" src="http://DlhSoft.com/Images/Logo-light.png">
+                    </a>
+                </div>
+                <div class="module-group right">
+                    <div class="module left">
+                        <ul class="menu">
+                            <li>
+                                <a href="index.html">Demos</a>&nbsp;
+                                –&nbsp;
+                                <a href="http://DlhSoft.com/GanttChartWebLibrary" target="_blank">Gantt Chart Web Library</a>
+                            </li>
+                            <li>
+                                <a href="http://DlhSoft.com/GoTo.aspx?Url=GanttChartWebLibrary/Documentation/index.html" target="_blank">Documentation</a>
+                            </li>
+                            <li>
+                                <a href="http://DlhSoft.com/GanttChartWebLibrary/Download.aspx" target="_blank">Downloads</a>
+                            </li>
+                            <li>
+                                <a href="http://DlhSoft.com/GanttChartWebLibrary/Purchase.aspx" target="_blank">Order licenses</a>
+                            </li>
+                            <li>
+                                <a href="http://DlhSoft.com/GanttChartWebLibrary/Support.aspx" target="_blank">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="main-container">
+        <div class="row hidden-sm hidden-xs">
+            <div class="col-sm-12">
+                <div class="nav-container">
+                    <nav class="bg-secondary">
+                        <div class="nav-bar nav-secondary">
+                            <div class="module-group right">
+                                <div class="module left">
+                                    <ul class="menu">
+                                        <li>
+                                            <a class="{{ selectedSourceCodeFile == null ? 'color-primary' : '' }}" href="javascript:" ng-click="run(true)">Run</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="module widget-handle left">
+                                    <ul class="menu">
+                                        <li ng-repeat="sourceCodeFile in getSourceCodeFiles(selectedSample, selectedTechnology)">
+                                            <a class="{{ selectedSourceCodeFile == sourceCodeFile ? 'color-primary' : '' }}" href="javascript:" ng-click="selectSourceCodeFile(selectedSample, selectedTechnology, sourceCodeFile)">{{ sourceCodeFile }}</a>
+                                        </li>
+                                        <li>
+                                            <a ng-href="{{ 'Samples/' + selectedTechnology.name + '/' + selectedSample.component + '/' + selectedSample.feature + '.zip' }}" title="Download">.zip</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="module widget-handle left">
+                                    <ul class="menu">
+                                        <li>
+                                            <a class="theme-menu-item color-primary" href="javascript:">{{ selectedTheme != null ? selectedTheme : "Applying" }} theme</a>
+                                            <ul>
+                                                <li ng-repeat="theme in themes">
+                                                    <a class="{{ selectedTheme == theme ? 'selected-menu-item' : '' }}" href="javascript:" ng-click="selectTheme(theme)">{{ theme }}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="technology-menu-item text-right" href="javascript:">{{ selectedTechnology != null ? selectedTechnology.title : "Refreshing" }}</a>
+                                            <ul>
+                                                <li ng-repeat="technology in technologies">
+                                                    <a class="{{ selectedTechnology == technology ? 'selected-menu-item' : '' }}" href="javascript:" ng-click="selectTechnology(technology)">{{ technology.title }}</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <nav>
+                    <ul class="accordion accordion-1 one-open">
+                        <li ng-repeat="component in getComponents(selectedTechnology)" class="{{ selectedSample.component == component ? 'active' : '' }}">
+                            <div class="title" ng-click="selectComponent(component)">
+                                <span>{{ component }}</span>
+                            </div>
+                            <div class="content bg-secondary">
+                                <p>
+                                    <span ng-repeat="sample in getSamples(component, selectedTechnology)" class="{{ selectedSample == sample ? '' : 'fade-on-hover' }}">
+                                        <a ng-show="sample.sourceCodeFiles" href="javascript:" ng-click="selectSample(sample)" title="{{ sample.description }}">{{ sample.title }}</a>
+                                        <a ng-show="sample.sourceCodeUrls" class="download-link" href="javascript:" ng-href="{{ sample.sourceCodeUrls[selectedTechnology.name] }}" title="{{ sample.description + ' – download (.zip)' }}">{{ sample.title }}</a>
+                                        <br/>
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div ng-show="selectedSourceCodeFile == null">
+                            <ds:sample ng-if="selectedTechnology != null" html="getSampleUrl(selectedSample, selectedTechnology, selectedTheme)"></ds:sample>
+                        </div>
+                        <div ng-show="selectedSourceCodeFile != null">
+                            <ds:source-code contents="selectedSourceCodeFileContents"></ds:source-code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

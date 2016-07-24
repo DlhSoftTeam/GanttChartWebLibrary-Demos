@@ -1,0 +1,5 @@
+DlhSoft.Web.UI.WebControls.GanttChartView, DlhSoft.ProjectData.GanttChart.ASP.Controls
+DlhSoft.Web.UI.WebControls.ScheduleChartView, DlhSoft.ProjectData.GanttChart.ASP.Controls
+DlhSoft.Web.UI.WebControls.LoadChartView, DlhSoft.ProjectData.GanttChart.ASP.Controls
+DlhSoft.Web.UI.WebControls.Pert.PertChartView, DlhSoft.ProjectData.PertChart.ASP.Controls
+DlhSoft.Web.UI.WebControls.Pert.NetworkDiagramView, DlhSoft.ProjectData.PertChart.ASP.Controls

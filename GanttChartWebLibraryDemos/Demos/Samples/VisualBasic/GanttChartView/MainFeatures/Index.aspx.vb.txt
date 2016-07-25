@@ -19,25 +19,28 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
 
                 ' Prepare data items.
                 Dim items = New List(Of GanttChartItem) From {
-                New GanttChartItem With {.Content = "Task 1", .IsExpanded = False},
-                New GanttChartItem With {.Content = "Task 1.1", .Indentation = 1, .Start = New Date(year, month, 2, 8, 0, 0), .Finish = New Date(year, month, 4, 16, 0, 0)},
-                New GanttChartItem With {.Content = "Task 1.2", .Indentation = 1, .Start = New Date(year, month, 3, 8, 0, 0), .Finish = New Date(year, month, 5, 12, 0, 0)},
-                New GanttChartItem With {.Content = "Task 2", .IsExpanded = True},
-                New GanttChartItem With {.Content = "Task 2.1", .Indentation = 1, .Start = New Date(year, month, 2, 8, 0, 0), .Finish = New Date(year, month, 8, 16, 0, 0), .CompletedFinish = New Date(year, month, 5, 16, 0, 0), .AssignmentsContent = "Resource 1, Resource 2 [50%]"},
-                New GanttChartItem With {.Content = "Task 2.2", .Indentation = 1},
-                New GanttChartItem With {.Content = "Task 2.2.1", .Indentation = 2, .Start = New Date(year, month, 11, 8, 0, 0), .Finish = New Date(year, month, 12, 16, 0, 0), .CompletedFinish = New Date(year, month, 12, 16, 0, 0), .AssignmentsContent = "Resource 2"},
-                New GanttChartItem With {.Content = "Task 2.2.2", .Indentation = 2, .Start = New Date(year, month, 12, 12, 0, 0), .Finish = New Date(year, month, 14, 16, 0, 0), .AssignmentsContent = "Resource 2"},
-                New GanttChartItem With {.Content = "Task 3", .Indentation = 1, .Start = New Date(year, month, 15, 16, 0, 0), .IsMilestone = True}
-            }
+                    New GanttChartItem With {.Content = "Task 1", .IsExpanded = False},
+                    New GanttChartItem With {.Content = "Task 1.1", .Indentation = 1, .Start = New Date(year, month, 2, 8, 0, 0), .Finish = New Date(year, month, 4, 16, 0, 0)},
+                    New GanttChartItem With {.Content = "Task 1.2", .Indentation = 1, .Start = New Date(year, month, 3, 8, 0, 0), .Finish = New Date(year, month, 5, 12, 0, 0)},
+                    New GanttChartItem With {.Content = "Task 2", .IsExpanded = True},
+                    New GanttChartItem With {.Content = "Task 2.1", .Indentation = 1, .Start = New Date(year, month, 2, 8, 0, 0), .Finish = New Date(year, month, 8, 16, 0, 0), .CompletedFinish = New Date(year, month, 5, 16, 0, 0), .AssignmentsContent = "Resource 1, Resource 2 [50%]"},
+                    New GanttChartItem With {.Content = "Task 2.2", .Indentation = 1},
+                    New GanttChartItem With {.Content = "Task 2.2.1", .Indentation = 2, .Start = New Date(year, month, 11, 8, 0, 0), .Finish = New Date(year, month, 14, 16, 0, 0), .CompletedFinish = New Date(year, month, 14, 16, 0, 0), .AssignmentsContent = "Resource 2"},
+                    New GanttChartItem With {.Content = "Task 2.2.2", .Indentation = 2, .Start = New Date(year, month, 12, 12, 0, 0), .Finish = New Date(year, month, 14, 16, 0, 0), .AssignmentsContent = "Resource 2"},
+                    New GanttChartItem With {.Content = "Task 3", .Indentation = 1, .Start = New Date(year, month, 15, 16, 0, 0), .IsMilestone = True}
+                }
                 items(3).Predecessors = New List(Of PredecessorItem) From {New PredecessorItem With {.Item = items(0), .DependencyType = DependencyType.StartStart}}
                 items(7).Predecessors = New List(Of PredecessorItem) From {New PredecessorItem With {.Item = items(6), .Lag = TimeSpan.FromHours(2)}}
                 items(8).Predecessors = New List(Of PredecessorItem) From {
-                New PredecessorItem With {.Item = items(4)},
-                New PredecessorItem With {.Item = items(5)}
-            }
-                For i As Integer = 4 To 32
-                    items.Add(New GanttChartItem With {.Content = "Task " & i, .Start = New Date(year, month, 2, 8, 0, 0), .Finish = New Date(year, month, 4, 16, 0, 0)})
+                    New PredecessorItem With {.Item = items(4)},
+                    New PredecessorItem With {.Item = items(5)}
+                }
+                For i As Integer = 4 To 16
+                    items.Add(New GanttChartItem With {.Content = "Task " & i, .Indentation = IIf(i >= 8 And i Mod 3 = 2, 0, 1), .Start = New Date(year, month, 2 + IIf(i <= 8, (i - 4) * 3, i - 8), 8, 0, 0), .Finish = New Date(year, month, 2 + IIf(i <= 8, (i - 4) * 3 + IIf(i > 8, 6, 1), i - 2), 16, 0, 0)})
                 Next i
+                items(9).Finish = items(9).Finish + TimeSpan.FromDays(2)
+                items(9).AssignmentsContent = "Resource 1"
+                items(10).Predecessors = New List(Of PredecessorItem) From {New PredecessorItem With {.Item = items(9)}}
                 GanttChartView.Items = items
 
                 ' Optionally, set baseline properties.
@@ -199,10 +202,24 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
                 ' GanttChartView.InitializedClientCode = "if (typeof console !== 'undefined') console.log('The component has been successfully initialized.');"
                 ' GanttChartView.ItemPropertyChangeHandlerClientCode = "if (isDirect && isFinal && typeof console !== 'undefined') console.log(item.content + '.' + propertyName + ' has changed.');"
                 ' GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');"
+
+                ' Optionally, initialize custom theme And templates (themes.js, templates.js).
+                Dim initializingClientCodeGetter As Func(Of String, String) =
+                    Function(Type As String)
+                        Return "if (initialize" + Type + "Theme)
+                                    initialize" + Type + "Theme(control.settings, Theme);" + IIf(Type = "GanttChart", "
+                                if (initialize" + Type + "Templates)
+                                    initialize" + Type + "Templates(control.settings, Theme);", String.Empty)
+                    End Function
+                GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
+                ScheduleChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
+                LoadChartView.InitializingClientCode += initializingClientCodeGetter("LoadChart")
+                PertChartView.InitializingClientCode += initializingClientCodeGetter("PertChart")
+                NetworkDiagramView.InitializingClientCode += initializingClientCodeGetter("PertChart")
             End If
 
             ' Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.
-            ' AddHandler GanttChartView.SelectionChanged, Sub() Console.WriteLine("Selected item index: {0}.", GanttChartView.SelectedIndex)
+            ' AddHandler GanttChartView.SelectionChanged, Sub() Console.WriteLine("Selected item index {0}.", GanttChartView.SelectedIndex)
 
             ' Receive server side notifications for the item property changes that have occured on the client side by handling the ItemPropertyChanged event.
             AddHandler GanttChartView.ItemPropertyChanged, AddressOf GanttChartView_ItemPropertyChanged
@@ -308,8 +325,8 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
             GanttChartView.VisibleWeekFinish = DayOfWeek.Friday
             GanttChartView.WorkingWeekStart = DayOfWeek.Monday
             GanttChartView.WorkingWeekFinish = DayOfWeek.Thursday
-            GanttChartView.VisibleDayStart = TimeOfDay.Parse("10:00:00") ' 10 AM
-            GanttChartView.VisibleDayFinish = TimeOfDay.Parse("20:00:00") ' 8 PM
+            GanttChartView.VisibleDayStart = TimeOfDay.Parse("1000:00") ' 10 AM
+            GanttChartView.VisibleDayFinish = TimeOfDay.Parse("2000:00") ' 8 PM
             GanttChartView.SpecialNonworkingDays = New List(Of DlhSoft.Windows.Data.Date) From {
             New DlhSoft.Windows.Data.Date(year, month, 24),
             New DlhSoft.Windows.Data.Date(year, month, 25)
@@ -339,7 +356,7 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
             If GanttChartView.SelectedItem Is Nothing Then Return
             Dim remainingWorkItem = GanttChartView.SplitRemainingWork(GanttChartView.SelectedItem, " (rem. work)", " (compl. work)")
             If remainingWorkItem Is Nothing Then Return
-            GanttChartView.ScrollTo(remainingWorkItem)
+                                                                                          GanttChartView.ScrollTo(remainingWorkItem)
         End Sub
         Public Sub ToggleDependencyConstraintsButton_Click(ByVal sender As Object, ByVal e As EventArgs)
             GanttChartView.AreTaskDependencyConstraintsEnabled = Not GanttChartView.AreTaskDependencyConstraintsEnabled

@@ -31,15 +31,18 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
                     new GanttChartItem { Content = "Task 2", IsExpanded = true },
                     new GanttChartItem { Content = "Task 2.1", Indentation = 1, Start = new DateTime(year, month, 2, 8, 0, 0), Finish = new DateTime(year, month, 8, 16, 0, 0), CompletedFinish = new DateTime(year, month, 5, 16, 0, 0), AssignmentsContent = "Resource 1, Resource 2 [50%]" },
                     new GanttChartItem { Content = "Task 2.2", Indentation = 1 },
-                    new GanttChartItem { Content = "Task 2.2.1", Indentation = 2, Start = new DateTime(year, month, 11, 8, 0, 0), Finish = new DateTime(year, month, 12, 16, 0, 0), CompletedFinish = new DateTime(year, month, 12, 16, 0, 0), AssignmentsContent = "Resource 2" },
+                    new GanttChartItem { Content = "Task 2.2.1", Indentation = 2, Start = new DateTime(year, month, 11, 8, 0, 0), Finish = new DateTime(year, month, 14, 16, 0, 0), CompletedFinish = new DateTime(year, month, 14, 16, 0, 0), AssignmentsContent = "Resource 2" },
                     new GanttChartItem { Content = "Task 2.2.2", Indentation = 2, Start = new DateTime(year, month, 12, 12, 0, 0), Finish = new DateTime(year, month, 14, 16, 0, 0), AssignmentsContent = "Resource 2" },
                     new GanttChartItem { Content = "Task 3", Indentation = 1, Start = new DateTime(year, month, 15, 16, 0, 0), IsMilestone = true },
                 };
                 items[3].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[0], DependencyType = DependencyType.StartStart } };
                 items[7].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[6], Lag = TimeSpan.FromHours(2) } };
                 items[8].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[4] }, new PredecessorItem { Item = items[5] } };
-                for (int i = 4; i <= 32; i++)
-                    items.Add(new GanttChartItem { Content = "Task " + i, Start = new DateTime(year, month, 2, 8, 0, 0), Finish = new DateTime(year, month, 4, 16, 0, 0) });
+                for (int i = 4; i <= 16; i++)
+                    items.Add(new GanttChartItem { Content = "Task " + i, Indentation = i >= 8 && i % 3 == 2 ? 0 : 1, Start = new DateTime(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), Finish = new DateTime(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
+                items[9].Finish = items[9].Finish + TimeSpan.FromDays(2);
+                items[9].AssignmentsContent = "Resource 1";
+                items[10].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[9] } };
                 GanttChartView.Items = items;
 
                 // Optionally, set baseline properties.
@@ -201,6 +204,18 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
                 // GanttChartView.ItemPropertyChangeHandlerClientCode = "if (isDirect && isFinal && typeof console !== 'undefined') console.log(item.content + '.' + propertyName + ' has changed.');";
                 // GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');";
             }
+
+            // Optionally, initialize custom theme and templates (themes.js, templates.js).
+            Func<string, string> initializingClientCodeGetter = (string type) => @";
+                if (initialize" + type + @"Theme)
+                    initialize" + type + @"Theme(control.settings, theme);" + (type == "GanttChart" ? @"
+                if (initialize" + type + @"Templates)
+                    initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
+            GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
+            ScheduleChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
+            LoadChartView.InitializingClientCode += initializingClientCodeGetter("LoadChart");
+            PertChartView.InitializingClientCode += initializingClientCodeGetter("PertChart");
+            NetworkDiagramView.InitializingClientCode += initializingClientCodeGetter("PertChart");
 
             // Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.
             // GanttChartView.SelectionChanged += delegate { Console.WriteLine("Selected item index: {0}.", GanttChartView.SelectedIndex); };

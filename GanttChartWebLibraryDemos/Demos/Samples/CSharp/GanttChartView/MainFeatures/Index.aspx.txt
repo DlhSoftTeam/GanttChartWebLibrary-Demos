@@ -6,9 +6,17 @@
 <head runat="server">
     <title>GanttChartView Sample</title>
     <link rel="Stylesheet" href="app.css" type="text/css" />
+    <script src="templates.js" type="text/javascript"></script>
+    <script src="themes.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        // Query string syntax: ?theme
+        // Supported themes: Generic-blue, Default.
+        var queryString = window.location.search;
+        var theme = queryString ? queryString.substr(1) : null;
+    </script>
 </head>
-<body style="margin: 0">
-    <form id="form1" runat="server">
+<body>
+    <form id="form" runat="server">
     <asp:ScriptManager ID="ScriptManager" runat="server"/>
     <asp:UpdatePanel ID="MainPanel" runat="server">
     <ContentTemplate>
@@ -68,7 +76,7 @@
         </div>
         <!-- Items and settings are set in code behind. -->
         <!-- Optionally, in order to improve performance by leveraging browser caching features on the client side, you may add DlhSoft.ProjectData.GanttChart.HTML.Controls.js file (from the DlhSoft product installation folder) as an item within your Web application, and set JavaScriptLibraryUrl property of the component to a value indicating its relative path. -->
-        <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="480px"/>
+        <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
     </ContentTemplate>
     <Triggers>
         <asp:PostBackTrigger ControlID="AddNewItemButton"/>
@@ -122,7 +130,7 @@
                 </div>
                 <div class="extraPanelHeader">Schedule Chart</div>
             </div>
-            <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" IsReadOnly="true" SelectionMode="None" IsMouseWheelZoomEnabled="false" Height="124px"/>
+            <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" IsReadOnly="true" SelectionMode="None" IsMouseWheelZoomEnabled="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
     <Triggers>
@@ -145,7 +153,7 @@
                     </select>
                 </div>
             </div>
-            <pdgcc:LoadChartView ID="LoadChartView" runat="server" SelectionMode="None" IsMouseWheelZoomEnabled="false" Height="124px"/>
+            <pdgcc:LoadChartView ID="LoadChartView" runat="server" SelectionMode="None" IsMouseWheelZoomEnabled="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
     <Triggers>
@@ -162,7 +170,7 @@
                 </div>
                 <div class="extraPanelHeader">PERT Chart</div>
             </div>
-            <pdpcc:PertChartView ID="PertChartView" runat="server" ChartMargin="2" SnapRearrangedItemsToGuidelines="false" Height="196px"/>
+            <pdpcc:PertChartView ID="PertChartView" runat="server" ChartMargin="2" SnapRearrangedItemsToGuidelines="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
     <Triggers>
@@ -179,7 +187,7 @@
                 </div>
                 <div class="extraPanelHeader">Network Diagram</div>
             </div>
-            <pdpcc:NetworkDiagramView ID="NetworkDiagramView" runat="server" DiagramMargin="2" SnapRearrangedItemsToGuidelines="false" Height="196px"/>
+            <pdpcc:NetworkDiagramView ID="NetworkDiagramView" runat="server" DiagramMargin="2" SnapRearrangedItemsToGuidelines="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
     <Triggers>

@@ -210,10 +210,10 @@ function initializeGanttChartTemplates(settings, theme) {
         var group = getChartItemArea(item);
         var itemLeft = ganttChartView.getChartPosition(item.start);
         var itemRight = ganttChartView.getChartPosition(item.finish);
-        var height = barHeight / 2;
+        var height = settings.barHeight * 2.15 / 2.65;
         var bar = document.createElementNS(svgns, 'rect');
         bar.setAttribute('x', itemLeft);
-        bar.setAttribute('y', barMargin + 2);
+        bar.setAttribute('y', settings.barMargin);
         bar.setAttribute('width', Math.max(0, itemRight - itemLeft - 1));
         bar.setAttribute('height', height);
         var barClass = settings.summaryBarClass;
@@ -236,9 +236,9 @@ function initializeGanttChartTemplates(settings, theme) {
         if (!item.isExpanded) {
             var line = document.createElementNS(svgns, 'line');
             line.setAttribute('x1', itemLeft);
-            line.setAttribute('y1', barMargin + 2 + height + 2.5);
+            line.setAttribute('y1', settings.barMargin + height + 2.5);
             line.setAttribute('x2', itemRight - 1);
-            line.setAttribute('y2', barMargin + 2 + height + 2.5);
+            line.setAttribute('y2', settings.barMargin + height + 2.5);
             var lineClass = settings.collapsedSummaryLineClass;
             if (typeof item.collapsedSummaryLineClass !== undefinedType)
                 lineClass = item.collapsedSummaryLineClass;
@@ -254,8 +254,8 @@ function initializeGanttChartTemplates(settings, theme) {
             group.appendChild(line);
         }
         var startTriangle = document.createElementNS(svgns, 'polygon'), x;
-        var y = barMargin + 2 - 0.25, h = height + 1.5, tw = barHeight * 3 / 4, teh = barHeight / 4;
-        x = itemLeft - 1 - barHeight / 3;
+        var y = settings.barMargin - 0.25, h = height + 1.5, tw = settings.barHeight * 3 / 4, teh = settings.barHeight / 4;
+        x = itemLeft - 1 - settings.barHeight / 3;
         startTriangle.setAttribute('points', x + ',' + y + ' ' + x + ',' + (y + h) + ' ' + (x + tw / 2) + ',' + (y + h + teh) + ' ' + (x + tw) + ',' + (y + h) + ' ' + (x + tw) + ',' + y);
         if (typeof barClass !== undefinedType)
             startTriangle.setAttribute('class', barClass);
@@ -263,7 +263,7 @@ function initializeGanttChartTemplates(settings, theme) {
             startTriangle.setAttribute('style', barStyle);
         group.appendChild(startTriangle);
         var endTriangle = document.createElementNS(svgns, 'polygon');
-        x = itemRight + barHeight / 3;
+        x = itemRight + settings.barHeight / 3;
         endTriangle.setAttribute('points', x + ',' + y + ' ' + x + ',' + (y + h) + ' ' + (x - tw / 2) + ',' + (y + h + teh) + ' ' + (x - tw) + ',' + (y + h) + ' ' + (x - tw) + ',' + y);
         if (typeof barClass !== undefinedType)
             endTriangle.setAttribute('class', barClass);
@@ -276,18 +276,18 @@ function initializeGanttChartTemplates(settings, theme) {
                 if (typeof settings.allowCreatingStartDependencies === undefinedType || settings.allowCreatingStartDependencies) {
                     startDependencyThumb = document.createElementNS(svgns, 'circle');
                     startDependencyThumb.setAttribute('cx', itemLeft - 0.5);
-                    startDependencyThumb.setAttribute('cy', barMargin + barHeight / 2);
-                    startDependencyThumb.setAttribute('r', barHeight / 4);
+                    startDependencyThumb.setAttribute('cy', settings.barMargin + settings.barHeight / 2);
+                    startDependencyThumb.setAttribute('r', settings.barHeight / 4);
                     startDependencyThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: pointer');
                     group.appendChild(startDependencyThumb);
                 }
                 var dependencyThumb = document.createElementNS(svgns, 'circle');
                 dependencyThumb.setAttribute('cx', itemRight - 0.5);
-                dependencyThumb.setAttribute('cy', barMargin + barHeight / 2);
+                dependencyThumb.setAttribute('cy', settings.barMargin + settings.barHeight / 2);
                 dependencyThumb.setAttribute('r', 2.5);
                 dependencyThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: pointer');
                 group.appendChild(dependencyThumb);
-                ganttChartView.initializeDependencyDraggingThumbs(dependencyThumb, startDependencyThumb, group, item, barMargin + barHeight / 2, itemRight - 1.5, itemLeft);
+                ganttChartView.initializeDependencyDraggingThumbs(dependencyThumb, startDependencyThumb, group, item, settings.barMargin + settings.barHeight / 2, itemRight - 1.5, itemLeft);
             }
         }
         return group;
@@ -301,7 +301,7 @@ function initializeGanttChartTemplates(settings, theme) {
         if (settings.isBaselineVisible && typeof item.baselineStart !== undefinedType) {
             var itemBaselineLeft = ganttChartView.getChartPosition(item.baselineStart);
             var baselineStartDiamond = document.createElementNS(svgns, 'polygon');
-            var xb = itemBaselineLeft, yb = barMargin - 1, hb = barHeight + 1;
+            var xb = itemBaselineLeft, yb = settings.barMargin - 1, hb = settings.barHeight + 1;
             baselineStartDiamond.setAttribute('points', xb + ',' + yb + ' ' + (xb - hb / 2) + ',' + (yb + hb / 2) + ' ' + xb + ',' + (yb + hb) + ' ' + (xb + hb / 2) + ',' + (yb + hb / 2));
             var baselineBarClass = settings.baselineBarClass;
             if (typeof item.baselineBarClass !== undefinedType)
@@ -318,7 +318,7 @@ function initializeGanttChartTemplates(settings, theme) {
         }
         var itemLeft = ganttChartView.getChartPosition(item.start);
         var startDiamond = document.createElementNS(svgns, 'polygon');
-        var x = itemLeft - 1, y = barMargin + 2, h = barHeight * 2 / 3 + 2;
+        var x = itemLeft - 1, y = settings.barMargin, h = settings.barHeight + 1;
         startDiamond.setAttribute('points', x + ',' + y + ' ' + (x - h / 2) + ',' + (y + h / 2) + ' ' + x + ',' + (y + h) + ' ' + (x + h / 2) + ',' + (y + h / 2));
         var barClass = settings.milestoneBarClass;
         if (typeof item.milestoneBarClass !== undefinedType)
@@ -340,7 +340,7 @@ function initializeGanttChartTemplates(settings, theme) {
         if (!settings.isReadOnly && !settings.isChartReadOnly && (typeof item.isReadOnly === undefinedType || !item.isReadOnly) && (typeof item.isBarReadOnly === undefinedType || !item.isBarReadOnly)) {
             var thumb = document.createElementNS(svgns, 'rect');
             thumb.setAttribute('x', x - h / 2);
-            thumb.setAttribute('y', barMargin);
+            thumb.setAttribute('y', settings.barMargin);
             thumb.setAttribute('width', h);
             thumb.setAttribute('height', h);
             thumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: move');
@@ -349,11 +349,11 @@ function initializeGanttChartTemplates(settings, theme) {
             if (settings.areTaskDependenciesVisible && !settings.areTaskPredecessorsReadOnly && !item.isPart) {
                 var dependencyThumb = document.createElementNS(svgns, 'circle');
                 dependencyThumb.setAttribute('cx', x);
-                dependencyThumb.setAttribute('cy', barMargin + barHeight / 2);
-                dependencyThumb.setAttribute('r', barHeight / 4);
+                dependencyThumb.setAttribute('cy', settings.barMargin + settings.barHeight / 2);
+                dependencyThumb.setAttribute('r', settings.barHeight / 4);
                 dependencyThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: pointer');
                 group.appendChild(dependencyThumb);
-                ganttChartView.initializeDependencyDraggingThumbs(dependencyThumb, null, group, item, barMargin + barHeight / 2, x, x);
+                ganttChartView.initializeDependencyDraggingThumbs(dependencyThumb, null, group, item, settings.barMargin + settings.barHeight / 2, x, x);
             }
         }
         return group;
@@ -522,9 +522,9 @@ function initializeGanttChartTemplates(settings, theme) {
         var text = document.createElementNS(svgns, 'text');
         var itemRight = ganttChartView.getChartPosition(item.finish);
         if (item.isMilestone || (item.hasChildren && (typeof item.isSummaryEnabled === undefinedType || item.isSummaryEnabled)))
-            itemRight += barHeight / 2;
+            itemRight += settings.barHeight / 2;
         text.setAttribute('x', itemRight + 7);
-        text.setAttribute('y', barMargin + barHeight - 1);
+        text.setAttribute('y', settings.barMargin + settings.barHeight - 1);
         var isPhone = settings.target == 'Phone';
         var content = !isPhone ? item.assignmentsContent : item.content;
         if (typeof content === undefinedType)
@@ -544,9 +544,13 @@ function initializeGanttChartTemplates(settings, theme) {
         if (typeof settings.areToolTipsSimplified === undefinedType || !settings.areToolTipsSimplified) {
             toolTip.appendChild(document.createTextNode('  '));
             if (typeof item.loadChartView === undefinedType) {
-                if (item.parent) {
+                if (typeof item.scheduleChartView === undefinedType && item.parent) {
                     toolTip.appendChild(document.createElement('br'));
                     toolTip.appendChild(document.createTextNode('Parent: ' + item.parent.content + '  '));
+                }
+                if (typeof item.scheduleChartView !== undefinedType && item.scheduleChartItem) {
+                    toolTip.appendChild(document.createElement('br'));
+                    toolTip.appendChild(document.createTextNode('Row: ' + item.scheduleChartItem.content + '  '));
                 }
                 if (item.hasChildren) {
                     toolTip.appendChild(document.createElement('br'));
@@ -612,5 +616,30 @@ function initializeGanttChartTemplates(settings, theme) {
             }
         }
         return toolTip;
+    };
+}
+function initializePertChartTemplates(settings, theme) {
+    if (theme == 'Default')
+        return;
+    // Common helpers.
+    var svgns = 'http://www.w3.org/2000/svg';
+    // Template definitions.
+    settings.styleDefinitionTemplate = function () {
+        var defs = document.createElementNS(svgns, 'defs');
+        var arrowMarker = document.createElementNS(svgns, 'marker');
+        arrowMarker.setAttribute('id', 'PertArrowMarker');
+        arrowMarker.setAttribute("viewBox", "0 0 10 10");
+        arrowMarker.setAttribute("refX", "0");
+        arrowMarker.setAttribute("refY", "5");
+        arrowMarker.setAttribute("markerUnits", "strokeWidth");
+        arrowMarker.setAttribute("markerWidth", "5");
+        arrowMarker.setAttribute("markerHeight", "4");
+        arrowMarker.setAttribute("orient", "auto");
+        var arrowPath = document.createElementNS(svgns, "path");
+        arrowPath.setAttribute("fill", settings.arrowFill ? settings.arrowFill : '#3b87d9');
+        arrowPath.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+        arrowMarker.appendChild(arrowPath);
+        defs.appendChild(arrowMarker);
+        return defs;
     };
 }

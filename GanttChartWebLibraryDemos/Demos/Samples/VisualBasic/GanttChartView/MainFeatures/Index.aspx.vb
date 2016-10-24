@@ -208,9 +208,9 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
             Dim initializingClientCodeGetter As Func(Of String, String) =
                 Function(Type As String)
                     Return "if (initialize" + Type + "Theme)
-                                initialize" + Type + "Theme(control.settings, Theme);" + IIf(Type = "GanttChart", "
+                                initialize" + Type + "Theme(control.settings, theme);" + IIf(Type = "GanttChart", "
                             if (initialize" + Type + "Templates)
-                                initialize" + Type + "Templates(control.settings, Theme);", String.Empty)
+                                initialize" + Type + "Templates(control.settings, theme);", String.Empty)
                 End Function
             GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
             ScheduleChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")

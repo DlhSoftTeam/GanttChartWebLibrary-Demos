@@ -202,21 +202,21 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
                 ' GanttChartView.InitializedClientCode = "if (typeof console !== 'undefined') console.log('The component has been successfully initialized.');"
                 ' GanttChartView.ItemPropertyChangeHandlerClientCode = "if (isDirect && isFinal && typeof console !== 'undefined') console.log(item.content + '.' + propertyName + ' has changed.');"
                 ' GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');"
-            End If
 
-            ' Optionally, initialize custom theme And templates (themes.js, templates.js).
-            Dim initializingClientCodeGetter As Func(Of String, String) =
-                Function(Type As String)
-                    Return "if (initialize" + Type + "Theme)
-                                initialize" + Type + "Theme(control.settings, theme);" + IIf(Type = "GanttChart", "
-                            if (initialize" + Type + "Templates)
-                                initialize" + Type + "Templates(control.settings, theme);", String.Empty)
-                End Function
-            GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
-            ScheduleChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
-            LoadChartView.InitializingClientCode += initializingClientCodeGetter("LoadChart")
-            PertChartView.InitializingClientCode += initializingClientCodeGetter("PertChart")
-            NetworkDiagramView.InitializingClientCode += initializingClientCodeGetter("PertChart")
+                ' Optionally, initialize custom theme And templates (themes.js, templates.js).
+                Dim initializingClientCodeGetter As Func(Of String, String) =
+                    Function(Type As String)
+                        Return "if (initialize" + Type + "Theme)
+                                    initialize" + Type + "Theme(control.settings, theme);" + IIf(Type = "GanttChart", "
+                                if (initialize" + Type + "Templates)
+                                    initialize" + Type + "Templates(control.settings, theme);", String.Empty)
+                    End Function
+                GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
+                ScheduleChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
+                LoadChartView.InitializingClientCode += initializingClientCodeGetter("LoadChart")
+                PertChartView.InitializingClientCode += initializingClientCodeGetter("PertChart")
+                NetworkDiagramView.InitializingClientCode += initializingClientCodeGetter("PertChart")
+            End If
 
             ' Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.
             ' AddHandler GanttChartView.SelectionChanged, Sub() Console.WriteLine("Selected item index {0}.", GanttChartView.SelectedIndex)

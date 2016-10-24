@@ -203,19 +203,19 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
                 // GanttChartView.InitializedClientCode = "if (typeof console !== 'undefined') console.log('The component has been successfully initialized.');";
                 // GanttChartView.ItemPropertyChangeHandlerClientCode = "if (isDirect && isFinal && typeof console !== 'undefined') console.log(item.content + '.' + propertyName + ' has changed.');";
                 // GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');";
-            }
 
-            // Optionally, initialize custom theme and templates (themes.js, templates.js).
-            Func<string, string> initializingClientCodeGetter = (string type) => @";
+                // Optionally, initialize custom theme and templates (themes.js, templates.js).
+                Func<string, string> initializingClientCodeGetter = (string type) => @";
                 if (initialize" + type + @"Theme)
                     initialize" + type + @"Theme(control.settings, theme);" + (type == "GanttChart" ? @"
                 if (initialize" + type + @"Templates)
                     initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
-            GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
-            ScheduleChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
-            LoadChartView.InitializingClientCode += initializingClientCodeGetter("LoadChart");
-            PertChartView.InitializingClientCode += initializingClientCodeGetter("PertChart");
-            NetworkDiagramView.InitializingClientCode += initializingClientCodeGetter("PertChart");
+                GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
+                ScheduleChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
+                LoadChartView.InitializingClientCode += initializingClientCodeGetter("LoadChart");
+                PertChartView.InitializingClientCode += initializingClientCodeGetter("PertChart");
+                NetworkDiagramView.InitializingClientCode += initializingClientCodeGetter("PertChart");
+            }
 
             // Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.
             // GanttChartView.SelectionChanged += delegate { Console.WriteLine("Selected item index: {0}.", GanttChartView.SelectedIndex); };

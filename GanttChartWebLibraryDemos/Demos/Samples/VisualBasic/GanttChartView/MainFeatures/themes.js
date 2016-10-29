@@ -163,6 +163,7 @@ function initializeGanttChartTheme(settings, theme) {
                            { scaleType: 'CurrentTime', isHeaderVisible: false, isSeparatorVisible: true, separatorStyle: 'stroke: ' + (settings.currentTimeStroke ? settings.currentTimeStroke : '#e31d3b') + '; stroke-width: 0.5px' }];
     }
     else {
+        var separatorInitialized = false;
         for (var i = 0; i < settings.scales.length; i++) {
             var scale = settings.scales[i];
             if (scale.headerHeight)
@@ -177,6 +178,10 @@ function initializeGanttChartTheme(settings, theme) {
                 default:
                     scale.headerStyle = 'padding: 7px 5px; border-right: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + '; border-bottom: 1px solid ' + (settings.headerBorder ? settings.headerBorder : '#e8e8e8') + (settings.headerForeground ? '; color: ' + settings.headerForeground : '');
                     scale.separatorStyle = 'stroke: ' + (settings.scaleSeparatorBorder ? settings.scaleSeparatorBorder : '#c8bfe7') + '; stroke-width: 0.5px';
+                    if (!separatorInitialized) {
+                        scale.isSeparatorVisible = true;
+                        separatorInitialized = true;
+                    }
                     break;
             }
         }

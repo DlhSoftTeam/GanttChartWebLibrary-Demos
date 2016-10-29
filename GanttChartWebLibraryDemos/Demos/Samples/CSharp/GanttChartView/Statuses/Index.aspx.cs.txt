@@ -8,8 +8,8 @@ using DlhSoft.Web.UI.WebControls;
 using System.Drawing;
 using DlhSoft.Windows.Data;
 
-namespace Demos.Samples.CSharp.GanttChartView.AssignmentsTemplate
-{ 
+namespace Demos.Samples.CSharp.GanttChartView.Statuses
+{
     public partial class Index : System.Web.UI.Page
     {
         private static readonly DateTime date = DateTime.Today;
@@ -49,42 +49,18 @@ namespace Demos.Samples.CSharp.GanttChartView.AssignmentsTemplate
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                GanttChartView.AssignmentsTemplateClientCode = @"
-                    var undefinedType = 'undefined', svgns = 'http://www.w3.org/2000/svg', hourDuration = 60 * 60 * 1000;
-                    var ganttChartView = item.ganttChartView;
-                    var settings = ganttChartView.settings;
-                    var document = ganttChartView.ownerDocument;
-                    var group = document.createElementNS(svgns, 'g');
-                    var icon = document.createElementNS(svgns, 'image');
-                    var text = document.createElementNS(svgns, 'text');
-                    var itemRight = ganttChartView.getChartPosition(item.finish);
-                    if (item.isMilestone || (item.hasChildren && (typeof item.isSummaryEnabled === undefinedType || item.isSummaryEnabled)))
-                        itemRight += settings.barHeight / 2;
-                    icon.setAttribute('x', itemRight + 7);
-                    icon.setAttribute('y', settings.barMargin * 1.38);
-                    icon.setAttribute('width', '16px');
-                    icon.setAttribute('height', '16px');
-                    text.setAttribute('x', itemRight + 7 + 16 + 2);
-                    text.setAttribute('y', settings.barMargin * 1.38 + settings.barHeight * 1.38 - 1);
-                    var content = item.assignmentsContent;
-                    if (typeof content === undefinedType)
-                        content = '';
-                    var resource = content;
-                    var resourceCommaIndex = resource.indexOf(',');
-                    if (resourceCommaIndex >= 0)
-                        resource = resource.substr(0, resourceCommaIndex);
-                    if (resource && resource != 'Resource 1' && resource != 'Resource 2')
-                        resource = 'Other';
-                    icon.setAttribute('href', 'Images/' + resource + '.png');
-                    text.appendChild(document.createTextNode(content));
-                    if (typeof settings.assignmentsClass !== undefinedType)
-                        text.setAttribute('class', settings.assignmentsClass);
-                    else if (typeof settings.assignmentsStyle !== undefinedType)
-                        text.setAttribute('style', settings.assignmentsStyle);
-                    if (resource)
-                        group.appendChild(icon);
-                    group.appendChild(text);
-                    return group;";
+                // Set up item statuses and bar colors.
+                InitializeItemStatuses();
+
+                // Display status values using a custom grid column.
+                Column statusColumn = new Column
+                {
+                    ColumnType = ColumnType.Custom,
+                    Header = "Status",
+                    Width = 120,
+                    PropertyName = "Status" // Use values from item.CustomValues["Status"]
+                };
+                GanttChartView.Columns.Insert(3, statusColumn);
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode += @";
@@ -92,6 +68,67 @@ namespace Demos.Samples.CSharp.GanttChartView.AssignmentsTemplate
                     initializeGanttChartTheme(control.settings, theme);
                 if (initializeGanttChartTemplates)
                     initializeGanttChartTemplates(control.settings, theme);";
+            }
+        }
+
+        private void InitializeItemStatuses()
+        {
+            foreach (GanttChartItem item in GanttChartView.Items)
+            {
+                var status = GetStatus(item);
+                item.CustomValues["Status"] = status;
+                if (!string.IsNullOrEmpty(status))
+                    item.BarFill = GetStatusColor(status);
+            }
+        }
+
+        protected void RefreshStatusesButton_Click(object sender, EventArgs e)
+        {
+            // Update item statuses and bar colors upon request.
+            InitializeItemStatuses();
+        }
+
+        protected void IncreaseCurrentTimeButton_Click(object sender, EventArgs e)
+        {
+            GanttChartView.CurrentTime += TimeSpan.FromDays(7); // 1 week
+            // Also update item statuses and bar colors.
+            InitializeItemStatuses();
+        }
+
+        private string GetStatus(GanttChartItem item)
+        {
+            if (GanttChartView.HasChildren(item) || item.IsMilestone)
+                return string.Empty;
+            var itemStart = GanttChartView.GetNextWorkingTime(item.Start);
+            var itemFinish = GanttChartView.GetPreviousNonworkingTime(item.Finish);
+            if (itemFinish < itemStart)
+                return string.Empty;
+            var itemCompletedFinish = item.CompletedFinish;
+            if (itemCompletedFinish < itemStart)
+                itemCompletedFinish = itemStart;
+            if (itemCompletedFinish >= itemFinish)
+                return "Completed";
+            DateTime now = GanttChartView.CurrentTime;
+            if (itemCompletedFinish < now)
+                return "Behind schedule";
+            if (itemCompletedFinish > itemStart)
+                return "In progress";
+            return "To do";
+        }
+
+        private static Color GetStatusColor(string status)
+        {
+            switch (status) {
+                case "Completed":
+                    return Color.Green;
+                case "To do":
+                    return Color.Gray;
+                case "Behind schedule":
+                    return Color.Red;
+                case "In progress":
+                    return Color.Orange;
+                default:
+                    return Color.Transparent;
             }
         }
     }

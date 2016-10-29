@@ -61,11 +61,11 @@ namespace Demos.Samples.CSharp.GanttChartView.AssignmentsTemplate
                     if (item.isMilestone || (item.hasChildren && (typeof item.isSummaryEnabled === undefinedType || item.isSummaryEnabled)))
                         itemRight += settings.barHeight / 2;
                     icon.setAttribute('x', itemRight + 7);
-                    icon.setAttribute('y', settings.barMargin);
+                    icon.setAttribute('y', settings.barMargin * 1.38);
                     icon.setAttribute('width', '16px');
                     icon.setAttribute('height', '16px');
                     text.setAttribute('x', itemRight + 7 + 16 + 2);
-                    text.setAttribute('y', settings.barMargin + settings.barHeight - 1);
+                    text.setAttribute('y', settings.barMargin * 1.38 + settings.barHeight * 1.38 - 1);
                     var content = item.assignmentsContent;
                     if (typeof content === undefinedType)
                         content = '';

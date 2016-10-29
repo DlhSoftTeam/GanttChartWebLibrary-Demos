@@ -30,6 +30,12 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'Statuses', title: 'Status column (and associated bar colors)', description: 'Shows how to add a supplemental custom column for showing task statuses, such as To do, In progress, Behind schedule, and Completed and how to setup bar colors accordingly',
+            sourceCodeFiles: {
+                'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'AssignmentsTemplate', title: 'Assignments template (resource icons)', description: 'Shows how you can customize assignments template and show resource icons in the chart area',
             sourceCodeFiles: {
                 'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']

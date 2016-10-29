@@ -24,6 +24,37 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="index.html" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\Images\AddNew.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\Images\DecreaseIndentation.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\Images\Delete.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\Images\IncreaseIndentation.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\Images\InsertNew.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\Images\LoadChart.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\AssigningResources\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\Images\Other.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\Images\Resource 1.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\Images\Resource 2.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\AutomaticScheduling\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\AutomaticScheduling\Images\DependencyConstraints.png" />
+    <Content Include="Samples\CSharp\GanttChartView\AutomaticScheduling\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\AutomaticScheduling\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\AutomaticScheduling\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\Images\AddNew.png" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\Images\DecreaseIndentation.png" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\Images\Delete.png" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\Images\IncreaseIndentation.png" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\Images\InsertNew.png" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\Columns\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Download.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\templates.js" />
@@ -126,6 +157,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Samples\CSharp\GanttChartView\AssigningResources\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\AutomaticScheduling\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\Columns\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\VisualBasic\GanttChartView\MainFeatures\Scripts\" />
   </ItemGroup>
@@ -152,6 +187,34 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Samples\CSharp\GanttChartView\AssigningResources\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\AssigningResources\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\AssignmentsTemplate\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\AutomaticScheduling\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\AutomaticScheduling\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\Columns\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\Columns\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\MainFeatures\Download.aspx.cs">
       <DependentUpon>Download.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,6 +284,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <PropertyGroup>
     <PreBuildEvent>for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do xcopy /y "$(ProjectDir)\Scripts\*.*" "%25%25f\Scripts\"
+for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do del "%25%25f\Scripts\angular*.*"
 for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do xcopy /y "$(ProjectDir)\Samples\*.*" "%25%25f\"
 for /d %25%25t in ("$(ProjectDir)\Samples\*") do for /d %25%25c in ("%25%25t\*") do for /d %25%25f in ("%25%25c\*") do cd "%25%25f" &amp; for %25%25i in (*.aspx.cs  *.aspx.vb *.aspx) do del "%25%25i.txt"
 cd "$(ProjectDir)\Samples\VisualBasic\*"

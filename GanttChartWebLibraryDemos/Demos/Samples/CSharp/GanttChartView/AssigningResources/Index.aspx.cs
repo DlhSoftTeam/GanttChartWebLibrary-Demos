@@ -49,7 +49,7 @@ namespace Demos.Samples.CSharp.GanttChartView.AssigningResources
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                //Optionally, set some columns invisible.
+                // Hide all default columns except Task and Assignments.
                 GanttChartView.Columns[3].IsVisible = false; // Start column
                 GanttChartView.Columns[4].IsVisible = false; // Finish column
                 GanttChartView.Columns[5].IsVisible = false; // Milestone column

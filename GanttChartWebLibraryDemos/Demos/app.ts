@@ -42,7 +42,7 @@ angular.module('Demos', [])
                 }
             },
             {
-                component: 'GanttChartView', feature: 'Statuses', title: 'Status column (and associated bar colors)', description: 'Shows how to add a supplemental custom column for showing task statuses, such as To do, In progress, Behind schedule, and Completed and how to setup bar colors accordingly',
+                component: 'GanttChartView', feature: 'Statuses', title: 'Status columns (including color indicator)', description: 'Shows how to add supplemental custom columns for showing task statuses, such as To do, In progress, Behind schedule, and Completed',
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
                 }

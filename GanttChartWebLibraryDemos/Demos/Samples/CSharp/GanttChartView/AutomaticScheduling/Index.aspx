@@ -21,16 +21,16 @@
     <asp:UpdatePanel ID="MainPanel" runat="server">
         <ContentTemplate>
             <div class="ribbonContainer">
-            <div class="ribbonPanel">
-                <div class="ribbonHeader">Command</div>
-                <div class="ribbonCommandsArea">
-                    <div class="ribbonCommand"><asp:ImageButton ID="ToggleDependencyConstraintsButton" runat="server" CssClass="toggle pressed" ImageUrl="Images/DependencyConstraints.png" ToolTip="Disable/enable automatic scheduling" AlternateText="Dependency constraints" OnClick="ToggleDependencyConstraintsButton_Click"/></div>
+                <div class="ribbonPanel">
+                    <div class="ribbonHeader">Command</div>
+                    <div class="ribbonCommandsArea">
+                        <div class="ribbonCommand"><asp:ImageButton ID="ToggleDependencyConstraintsButton" runat="server" CssClass="toggle pressed" ImageUrl="Images/DependencyConstraints.png" ToolTip="Disable/enable automatic scheduling" AlternateText="Dependency constraints" OnClick="ToggleDependencyConstraintsButton_Click"/></div>
+                    </div>
+                </div>
+                <div class="content">
+                     Click the command button to toggle automatic schedule mode on and off. Task dependency constraints are enabled when auto-scheduling mode is on.
                 </div>
             </div>
-            <div class="content">
-                 Click the command button to toggle automatic schedule mode on and off. Task dependency constraints are enabled when auto-scheduling mode is on.
-            </div>
-        </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
     </asp:UpdatePanel>

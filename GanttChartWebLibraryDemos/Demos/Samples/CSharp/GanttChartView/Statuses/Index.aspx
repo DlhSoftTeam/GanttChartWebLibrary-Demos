@@ -21,7 +21,7 @@
     <asp:UpdatePanel ID="MainPanel" runat="server">
         <ContentTemplate>
             <div class="command-area">
-                <asp:Button ID="RefreshStatusesButton" runat="server" Text="Refresh statuses" OnClick="RefreshStatusesButton_Click" ToolTip="Click Refresh statuses if you rescheduled tasks and would like to update status information according to their updated start and finish values" />
+                <asp:Button ID="RefreshStatusesButton" runat="server" Text="Refresh status values" OnClick="RefreshStatusesButton_Click" ToolTip="Click Refresh statuses if you rescheduled tasks and would like to update status information according to their updated start and finish values" />
                 <asp:Button ID="IncreaseCurrentTimeButton" runat="server" Text="Simulate that time has passed" OnClick="IncreaseCurrentTimeButton_Click" />
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>

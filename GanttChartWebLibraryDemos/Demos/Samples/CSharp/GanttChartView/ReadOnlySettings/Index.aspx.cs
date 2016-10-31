@@ -111,7 +111,7 @@ namespace Demos.Samples.CSharp.GanttChartView.ReadOnlySettings
         }
         public void DisableStartEndDraggingCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            //... GanttChartView.IsDraggingTaskStartEndsEnabled = !DisableStartEndDraggingCheckBox.Checked;
+            GanttChartView.IsDraggingTaskStartEndsEnabled = !DisableStartEndDraggingCheckBox.Checked;
         }
         public void HideDependenciesCheckBox_CheckedChanged(object sender, EventArgs e)
         {

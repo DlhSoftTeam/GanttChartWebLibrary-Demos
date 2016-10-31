@@ -47,6 +47,7 @@ namespace Demos.Samples.CSharp.GanttChartView.ReadOnlySettings
                 // Do not allow creating to finish dependencies.
                 GanttChartView.AllowCreatingToFinishDependencies = false;
 
+                // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode = @"
                     if (initializeGanttChartTheme)
                         initializeGanttChartTheme(control.settings, theme);

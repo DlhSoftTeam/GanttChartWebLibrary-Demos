@@ -42,6 +42,18 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
+            sourceCodeFiles: {
+                'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+            }
+        },
+        {
+            component: 'GanttChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes are post back on the data presented by the component',
+            sourceCodeFiles: {
+                'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'AssignmentsTemplate', title: 'Assignments template (resource icons)', description: 'Shows how you can customize assignments template and show resource icons in the chart area',
             sourceCodeFiles: {
                 'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']

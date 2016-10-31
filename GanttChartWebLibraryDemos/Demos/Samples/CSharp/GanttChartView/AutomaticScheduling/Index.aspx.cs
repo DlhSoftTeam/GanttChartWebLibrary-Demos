@@ -19,10 +19,6 @@ namespace Demos.Samples.CSharp.GanttChartView.AutomaticScheduling
         {
             if (!IsPostBack)
             {
-                // Optionally, set up client side HTML content to be displayed while initializing the component.
-                GanttChartView.InitializingContent = "...";
-
-                // Prepare data items.
                 var items = new List<GanttChartItem>
                 {
                     new GanttChartItem { Content = "Task 1", IsExpanded = false },
@@ -42,16 +38,13 @@ namespace Demos.Samples.CSharp.GanttChartView.AutomaticScheduling
                     items.Add(new GanttChartItem { Content = "Task " + i, Indentation = i >= 8 && i % 3 == 2 ? 0 : 1, Start = new DateTime(year, month, 2 + (i <= 8 ? (i - 4) * 3 : i - 8), 8, 0, 0), Finish = new DateTime(year, month, 2 + (i <= 8 ? (i - 4) * 3 + (i > 8 ? 6 : 1) : i - 2), 16, 0, 0) });
                 GanttChartView.Items = items;
 
-                // Set the displayed and current time values to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Optionally, define assignable resources.
                 GanttChartView.AssignableResources = new List<string> { "Resource 1", "Resource 2", "Resource 3",
                                                                         "Material 1", "Material 2" };
                 GanttChartView.AutoAppendAssignableResources = true;
 
-                // Optionally, define the quantity values to consider when leveling resources, indicating maximum material amounts available for use at the same time.
                 GanttChartView.ResourceQuantities = new Dictionary<string, double> { { "Material 1", 4 }, { "Material 2", double.PositiveInfinity } };
                 items[10].AssignmentsContent = "Material 1 [300%], Material 2";
                 items[11].AssignmentsContent = "Material 1 [50%], Material 2 [200%]";
@@ -68,7 +61,7 @@ namespace Demos.Samples.CSharp.GanttChartView.AutomaticScheduling
 
         public void ToggleDependencyConstraintsButton_Click(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('alert');", true);
+            // Set AreTaskDependencyConstraintsEnabled to true to enable automatic scheduling.
             GanttChartView.AreTaskDependencyConstraintsEnabled = !GanttChartView.AreTaskDependencyConstraintsEnabled;
             ToggleDependencyConstraintsButton.CssClass = GanttChartView.AreTaskDependencyConstraintsEnabled ? "toggle pressed" : "toggle";
         }

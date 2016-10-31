@@ -19,10 +19,6 @@ namespace Demos.Samples.CSharp.GanttChartView.AssignmentsTemplate
         {
             if (!IsPostBack)
             {
-                // Optionally, set up client side HTML content to be displayed while initializing the component.
-                GanttChartView.InitializingContent = "...";
-
-                // Prepare data items.
                 var items = new List<GanttChartItem>
                 {
                     new GanttChartItem { Content = "Task 1", IsExpanded = false },
@@ -45,10 +41,10 @@ namespace Demos.Samples.CSharp.GanttChartView.AssignmentsTemplate
                 items[10].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[9] } };
                 GanttChartView.Items = items;
 
-                // Set the displayed and current time values to automatically scroll to a specific chart coordinate, and display a vertical bar highlighter at the specified point.
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
+                // Set assignments template as JavaScript function statements returning SVG content.
                 GanttChartView.AssignmentsTemplateClientCode = @"
                     var undefinedType = 'undefined', svgns = 'http://www.w3.org/2000/svg', hourDuration = 60 * 60 * 1000;
                     var ganttChartView = item.ganttChartView;

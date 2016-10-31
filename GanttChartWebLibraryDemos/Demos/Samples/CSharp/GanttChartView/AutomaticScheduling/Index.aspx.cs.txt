@@ -51,7 +51,7 @@ namespace Demos.Samples.CSharp.GanttChartView.AutomaticScheduling
                 items[12].AssignmentsContent = "Material 1 [250%]";
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode += @";
+                GanttChartView.InitializingClientCode = @"
                     if (initializeGanttChartTheme)
                         initializeGanttChartTheme(control.settings, theme);
                     if (initializeGanttChartTemplates)

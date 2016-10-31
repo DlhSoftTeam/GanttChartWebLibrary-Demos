@@ -95,6 +95,12 @@
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Images\SplitRemainingWork.png" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Images\ZoomIn.png" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\MoveUpDown\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\MoveUpDown\Images\MoveDown.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MoveUpDown\Images\MoveUp.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MoveUpDown\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\MoveUpDown\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\MoveUpDown\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\ReadOnlySettings\app.css" />
     <Content Include="Samples\CSharp\GanttChartView\ReadOnlySettings\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\ReadOnlySettings\templates.js" />
@@ -184,6 +190,7 @@
     <Folder Include="Samples\CSharp\GanttChartView\Columns\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Filtering\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\MoveUpDown\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\ReadOnlySettings\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\SelectionModes\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Statuses\Scripts\" />
@@ -266,6 +273,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\MainFeatures\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MoveUpDown\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MoveUpDown\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\ReadOnlySettings\Index.aspx.cs">

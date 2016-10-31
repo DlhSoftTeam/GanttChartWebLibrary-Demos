@@ -58,7 +58,7 @@ namespace Demos.Samples.CSharp.GanttChartView.SelectionModes
 
         public void SelectionModeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Set up selection mode based on user drop down selection.
+            // Set up selection mode to one of the supported values: None, Focus, Single, Extended, and ExtendedFocus.
             GanttChartView.SelectionMode = (SelectionMode)Enum.Parse(typeof(SelectionMode), SelectionModeDropDownList.SelectedValue);
         }
     }

@@ -45,7 +45,7 @@ namespace Demos.Samples.CSharp.GanttChartView.Filtering
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode += @";
+                GanttChartView.InitializingClientCode = @"
                     if (initializeGanttChartTheme)
                         initializeGanttChartTheme(control.settings, theme);
                     if (initializeGanttChartTemplates)

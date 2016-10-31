@@ -8,8 +8,8 @@ using DlhSoft.Web.UI.WebControls;
 using System.Drawing;
 using DlhSoft.Windows.Data;
 
-namespace Demos.Samples.CSharp.GanttChartView.Statuses
-{
+namespace Demos.Samples.CSharp.GanttChartView.MoveUpDown
+{ 
     public partial class Index : System.Web.UI.Page
     {
         private static readonly DateTime date = DateTime.Today;
@@ -44,27 +44,6 @@ namespace Demos.Samples.CSharp.GanttChartView.Statuses
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Prepare the custom Status columns.
-                GanttChartView.Columns.Insert(3, new Column
-                {
-                    ColumnType = ColumnType.Custom,
-                    PropertyName = "Status", // Use values from item.CustomValues["Status"]
-                    Header = "Status", Width = 120
-                });
-                GanttChartView.Columns.Insert(3, new Column
-                {
-                    ColumnType = ColumnType.Custom,
-                    Header = string.Empty, Width = 30,
-                    CellTemplateClientCode = @"
-                        var rectangle = document.createElement('div');
-                        rectangle.innerHTML = '&nbsp;';
-                        rectangle.setAttribute('style', 'background-color: ' + item.customStatusColorValue);
-                        return rectangle;"
-                });
-
-                // Set up item status values.
-                InitializeItemStatuses();
-                
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode = @"
                     if (initializeGanttChartTheme)
@@ -74,63 +53,19 @@ namespace Demos.Samples.CSharp.GanttChartView.Statuses
             }
         }
 
-        private void InitializeItemStatuses()
+        public void MoveItemUpImageButon_Click(object sender, ImageClickEventArgs e)
         {
-            foreach (GanttChartItem item in GanttChartView.Items)
-            {
-                var status = GetStatus(item);
-                item.CustomValues["Status"] = status;
-                item.CustomValues["StatusColor"] = GetStatusColor(status);
-            }
+            var item = GanttChartView.SelectedItem;
+            if (item == null)
+                return;
+            GanttChartView.MoveItemUp(item, true, true);
         }
-
-        // Status logic.
-        private string GetStatus(GanttChartItem item)
+        public void MoveItemDownImageButon_Click(object sender, ImageClickEventArgs e)
         {
-            if (GanttChartView.HasChildren(item) || item.IsMilestone)
-                return string.Empty;
-            var itemStart = GanttChartView.GetNextWorkingTime(item.Start);
-            var itemFinish = GanttChartView.GetPreviousNonworkingTime(item.Finish);
-            if (itemFinish < itemStart)
-                return string.Empty;
-            var itemCompletedFinish = item.CompletedFinish;
-            if (itemCompletedFinish < itemStart)
-                itemCompletedFinish = itemStart;
-            if (itemCompletedFinish >= itemFinish)
-                return "Completed";
-            DateTime now = GanttChartView.CurrentTime;
-            if (itemCompletedFinish < now)
-                return "Behind schedule";
-            if (itemCompletedFinish > itemStart)
-                return "In progress";
-            return "To do";
-        }
-        private static string GetStatusColor(string status)
-        {
-            switch (status) {
-                case "Completed":
-                    return "Green";
-                case "To do":
-                    return "Gray";
-                case "Behind schedule":
-                    return "Red";
-                case "In progress":
-                    return "Orange";
-                default:
-                    return "Transparent";
-            }
-        }
-
-        public void RefreshStatusesButton_Click(object sender, EventArgs e)
-        {
-            // Update item status values upon request.
-            InitializeItemStatuses();
-        }
-        public void IncreaseCurrentTimeButton_Click(object sender, EventArgs e)
-        {
-            GanttChartView.CurrentTime += TimeSpan.FromDays(7); // 1 week
-            // Also update item status values as time changed.
-            InitializeItemStatuses();
+            var item = GanttChartView.SelectedItem;
+            if (item == null)
+                return;
+            GanttChartView.MoveItemDown(item, true, true);
         }
     }
 }

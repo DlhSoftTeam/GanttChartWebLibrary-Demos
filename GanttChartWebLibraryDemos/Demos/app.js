@@ -60,6 +60,12 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'MoveUpDown', title: 'Move up-down (hierarchical moving)', description: 'Shows how you can allow the end user to move items up and down without breaking the hierarchy',
+            sourceCodeFiles: {
+                'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'AssignmentsTemplate', title: 'Assignments template (resource icons)', description: 'Shows how you can customize assignments template and show resource icons in the chart area',
             sourceCodeFiles: {
                 'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']

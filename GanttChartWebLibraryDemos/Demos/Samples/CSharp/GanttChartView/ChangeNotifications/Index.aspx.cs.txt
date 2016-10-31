@@ -49,7 +49,7 @@ namespace Demos.Samples.CSharp.GanttChartView.ChangeNotifications
                 GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');";
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode += @";
+                GanttChartView.InitializingClientCode = @"
                     if (initializeGanttChartTheme)
                         initializeGanttChartTheme(control.settings, theme);
                     if (initializeGanttChartTemplates)

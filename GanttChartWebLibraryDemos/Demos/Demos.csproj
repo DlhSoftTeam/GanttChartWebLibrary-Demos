@@ -99,6 +99,10 @@
     <Content Include="Samples\CSharp\GanttChartView\ReadOnlySettings\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\ReadOnlySettings\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\ReadOnlySettings\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\SelectionModes\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\SelectionModes\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\SelectionModes\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\SelectionModes\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\Statuses\app.css" />
     <Content Include="Samples\CSharp\GanttChartView\Statuses\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\Statuses\templates.js" />
@@ -181,6 +185,7 @@
     <Folder Include="Samples\CSharp\GanttChartView\Filtering\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\ReadOnlySettings\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\SelectionModes\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Statuses\Scripts\" />
     <Folder Include="Samples\VisualBasic\GanttChartView\MainFeatures\Scripts\" />
   </ItemGroup>
@@ -268,6 +273,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\ReadOnlySettings\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\SelectionModes\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\SelectionModes\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\Statuses\Index.aspx.cs">

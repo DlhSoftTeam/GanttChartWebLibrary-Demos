@@ -54,6 +54,12 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'SelectionModes', title: 'Selection mode (single, extended, by clicking)', description: 'Shows how you can set up selection mode and handle item selection changes in the component',
+            sourceCodeFiles: {
+                'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'AssignmentsTemplate', title: 'Assignments template (resource icons)', description: 'Shows how you can customize assignments template and show resource icons in the chart area',
             sourceCodeFiles: {
                 'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']

@@ -66,6 +66,12 @@ angular.module('Demos', [])
             }
         },
         {
+            component: 'GanttChartView', feature: 'BuiltinScales', title: 'Built-in scales (from years to hours)', description: 'Shows how you can combine and use built-in scale types, text header formats, and related settings',
+            sourceCodeFiles: {
+                'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+            }
+        },
+        {
             component: 'GanttChartView', feature: 'AssignmentsTemplate', title: 'Assignments template (resource icons)', description: 'Shows how you can customize assignments template and show resource icons in the chart area',
             sourceCodeFiles: {
                 'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']

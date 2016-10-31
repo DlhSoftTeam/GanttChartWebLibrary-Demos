@@ -1,0 +1,47 @@
+.command-area {
+    overflow: auto; 
+    border-bottom: 1px solid White; 
+    background-color: #a0a0a0; 
+    font-family: Tahoma, Arial; font-size: 12px;
+    color: white; 
+    padding: 2px 3px;
+}
+.hourQuarterScale {
+    padding: 7px 5px;
+    border-right: 1px solid White;
+    border-bottom: 1px solid White;
+    color: gray;
+}
+.hourQuarterSeparatorScale {
+    color: #c8bfe7;
+}
+.minuteScale {
+    padding: 7px 5px;
+    border-right: 1px solid White;
+    color: gray;
+}
+.currentTimeSeparatorScale {
+    stroke: Red;
+    stroke-width: 0.5px;
+}
+
+/* Overrides */
+body {
+    margin: 0;
+}
+input {
+    font-size: 12px;
+}
+
+/* Dark theme */
+.dark input {
+    color: white;
+    background-color: black;
+}
+.dark input:disabled {
+    color: gray;
+}
+.dark input:focus {
+    color: black;
+    background-color: white;
+}

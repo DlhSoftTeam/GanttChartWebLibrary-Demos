@@ -27,6 +27,7 @@
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
         <Triggers>
+            <asp:PostBackTrigger ControlID="RefreshStatusesButton" />
             <asp:PostBackTrigger ControlID="IncreaseCurrentTimeButton" />
         </Triggers>
     </asp:UpdatePanel>

@@ -54,7 +54,6 @@ namespace Demos.Samples.CSharp.GanttChartView.MinuteScale
                 GanttChartView.CurrentTime = new DateTime(year, month, day, 7, 59, 0);
                 GanttChartView.HourWidth = 750;
                 GanttChartView.IsMouseWheelZoomEnabled = false;
-
                 // Set up scales to hours and minutes.
                 GanttChartView.Scales = new List<Scale>
                 {

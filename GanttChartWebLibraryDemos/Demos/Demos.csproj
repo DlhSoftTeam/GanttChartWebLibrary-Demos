@@ -92,6 +92,13 @@
     <Content Include="Samples\CSharp\GanttChartView\DateTimeFormats\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\DateTimeFormats\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\DateTimeFormats\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\GetPng.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\Images\ExportPngImage.png" />
+    <Content Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\app.js" />
+    <Content Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\app.css" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\templates.js" />
@@ -128,6 +135,10 @@
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Images\SplitRemainingWork.png" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Images\ZoomIn.png" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\MaterialResources\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\MaterialResources\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\MaterialResources\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\MaterialResources\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\MinuteScale\app.css" />
     <Content Include="Samples\CSharp\GanttChartView\MinuteScale\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\MinuteScale\templates.js" />
@@ -277,10 +288,10 @@
     <Folder Include="Samples\CSharp\GanttChartView\CustomSchedules\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\CustomTemplate\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\DateTimeFormats\Scripts\" />
-    <Folder Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\" />
+    <Folder Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Filtering\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MainFeatures\Scripts\" />
-    <Folder Include="Samples\CSharp\GanttChartView\MaterialResources\" />
+    <Folder Include="Samples\CSharp\GanttChartView\MaterialResources\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MinuteScale\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MoveUpDown\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MultipleBarsPerItem\Scripts\" />
@@ -299,13 +310,38 @@
     <Folder Include="Samples\VisualBasic\GanttChartView\MainFeatures\Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="DlhSoft.HierarchicalData.LightWPF.Controls, Version=4.0.8.5, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.HierarchicalDataLightLibrary.4.0.8.13\lib\net45\DlhSoft.HierarchicalData.LightWPF.Controls.dll</HintPath>
+      <Private>True</Private>
+      <Aliases>hdl</Aliases>
+    </Reference>
+    <Reference Include="DlhSoft.ProjectData.Core, Version=5.0.5.3, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.5.9\lib\net40-client\DlhSoft.ProjectData.Core.dll</HintPath>
+      <Private>True</Private>
+      <Aliases>pd</Aliases>
+    </Reference>
+    <Reference Include="DlhSoft.ProjectData.Core.Imaging, Version=5.0.5.2, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.5.9\lib\net40-client\DlhSoft.ProjectData.Core.Imaging.dll</HintPath>
+      <Private>True</Private>
+      <Aliases>pd</Aliases>
+    </Reference>
     <Reference Include="DlhSoft.ProjectData.GanttChart.ASP.Controls, Version=5.2.7.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
       <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.7.1\lib\net40\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.35.2, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.35.3\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
+      <Private>True</Private>
+      <Aliases>pdl</Aliases>
+    </Reference>
     <Reference Include="DlhSoft.ProjectData.PertChart.ASP.Controls, Version=5.2.6.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
       <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.7.1\lib\net40\DlhSoft.ProjectData.PertChart.ASP.Controls.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="DlhSoft.ProjectData.PertChart.LightWPF.Controls, Version=4.3.34.3, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.35.3\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>
+      <Private>True</Private>
+      <Aliases>pdl</Aliases>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -415,6 +451,20 @@
     <Compile Include="Samples\CSharp\GanttChartView\DateTimeFormats\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\GetPng.aspx.cs">
+      <DependentUpon>GetPng.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\GetPng.aspx.designer.cs">
+      <DependentUpon>GetPng.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\Filtering\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -434,6 +484,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\MainFeatures\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MaterialResources\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MaterialResources\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\MinuteScale\Index.aspx.cs">

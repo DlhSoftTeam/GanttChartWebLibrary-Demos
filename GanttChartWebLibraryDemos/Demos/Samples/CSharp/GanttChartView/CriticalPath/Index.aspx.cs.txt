@@ -42,8 +42,7 @@ namespace Demos.Samples.CSharp.GanttChartView.CriticalPath
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Initialize critical path highlighting.
-                InitializeCriticalPath();
+                GanttChartView.AreTaskDependencyConstraintsEnabled = true;
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode = @"
@@ -54,23 +53,7 @@ namespace Demos.Samples.CSharp.GanttChartView.CriticalPath
             }
         }
 
-        public void RefreshCritialPathButton_Click(object sender, EventArgs e)
-        {
-            UpdateCriticalPath();
-        }
-
-        // Critical path highlighting logic.
-        private void InitializeCriticalPath()
-        {
-            // Set up red as bar stroke and fill properties for the critical items.
-            foreach (var item in GanttChartView.GetCriticalItems())
-            {
-                item.BarStroke = Color.Red;
-                item.BarFill = Color.Red;
-                item.CompletedBarFill = Color.DarkRed;
-            }
-        }
-        private void UpdateCriticalPath()
+        public void InitializeCritialPathButton_Click(object sender, EventArgs e)
         {
             // Reset the view.
             foreach (GanttChartItem item in GanttChartView.Items)
@@ -79,8 +62,13 @@ namespace Demos.Samples.CSharp.GanttChartView.CriticalPath
                 item.BarFill = null;
                 item.CompletedBarFill = null;
             }
-            // Reinitialize critical path highlighting.
-            InitializeCriticalPath();
+            // Set up red as bar stroke and fill properties for the critical items.
+            foreach (var item in GanttChartView.GetCriticalItems())
+            {
+                item.BarStroke = Color.Red;
+                item.BarFill = Color.Red;
+                item.CompletedBarFill = Color.DarkRed;
+            }
         }
     }
 }

@@ -21,12 +21,12 @@
     <asp:UpdatePanel ID="MainPanel" runat="server">
         <ContentTemplate>
             <div class="command-area">
-                <asp:Button ID="RefreshCriticalPathButton" runat="server" Text="Refresh critical path" OnClick="RefreshCritialPathButton_Click" ToolTip="Click Refresh critical path if you rescheduled tasks and would like to update critical path highlighting according to their updated start and finish values" />
+                <asp:Button ID="InitializeCriticalPathButton" runat="server" Text="Initialize or refresh critical path" OnClick="InitializeCritialPathButton_Click" ToolTip="Click Initialize or refresh critical path to initialize and highlight critical path in the chart or if you rescheduled tasks and would like to update critical path highlighting according to their updated start and finish values" />
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
         <Triggers>
-            <asp:PostBackTrigger ControlID="RefreshCriticalPathButton" />
+            <asp:PostBackTrigger ControlID="InitializeCriticalPathButton" />
         </Triggers>
     </asp:UpdatePanel>
     </form>

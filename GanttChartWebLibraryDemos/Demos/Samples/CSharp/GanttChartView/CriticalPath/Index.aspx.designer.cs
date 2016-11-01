@@ -40,13 +40,13 @@ namespace Demos.Samples.CSharp.GanttChartView.CriticalPath {
         protected global::System.Web.UI.UpdatePanel MainPanel;
         
         /// <summary>
-        /// RefreshCriticalPathButton control.
+        /// InitializeCriticalPathButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RefreshCriticalPathButton;
+        protected global::System.Web.UI.WebControls.Button InitializeCriticalPathButton;
         
         /// <summary>
         /// GanttChartView control.

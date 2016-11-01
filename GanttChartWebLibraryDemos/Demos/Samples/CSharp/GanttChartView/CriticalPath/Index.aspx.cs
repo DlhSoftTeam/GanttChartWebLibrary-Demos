@@ -42,8 +42,8 @@ namespace Demos.Samples.CSharp.GanttChartView.CriticalPath
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Initialize critical path highlighting.
-                InitializeCriticalPath();
+                // When computing critical path dependency constraints should be enabled in order to ensure dependency chain respect start and finish time values.
+                GanttChartView.AreTaskDependencyConstraintsEnabled = true;
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode = @"
@@ -54,33 +54,21 @@ namespace Demos.Samples.CSharp.GanttChartView.CriticalPath
             }
         }
 
-        public void RefreshCritialPathButton_Click(object sender, EventArgs e)
+        // Clear items in case they were previously critical, and set up red as bar stroke and fill properties for current critical items in the project.
+        public void InitializeCritialPathButton_Click(object sender, EventArgs e)
         {
-            UpdateCriticalPath();
-        }
-
-        // Critical path highlighting logic.
-        private void InitializeCriticalPath()
-        {
-            // Set up red as bar stroke and fill properties for the critical items.
-            foreach (var item in GanttChartView.GetCriticalItems())
-            {
-                item.BarStroke = Color.Red;
-                item.BarFill = Color.Red;
-                item.CompletedBarFill = Color.DarkRed;
-            }
-        }
-        private void UpdateCriticalPath()
-        {
-            // Reset the view.
             foreach (GanttChartItem item in GanttChartView.Items)
             {
                 item.BarStroke = null;
                 item.BarFill = null;
                 item.CompletedBarFill = null;
             }
-            // Reinitialize critical path highlighting.
-            InitializeCriticalPath();
+            foreach (var item in GanttChartView.GetCriticalItems())
+            {
+                item.BarStroke = Color.Red;
+                item.BarFill = Color.Red;
+                item.CompletedBarFill = Color.DarkRed;
+            }
         }
     }
 }

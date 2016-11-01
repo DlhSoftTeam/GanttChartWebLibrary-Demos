@@ -9,7 +9,7 @@ using System.Drawing;
 using DlhSoft.Windows.Data;
 using System.Threading;
 
-namespace Demos.Samples.CSharp.GanttChartView.MinuteScale
+namespace Demos.Samples.CSharp.GanttChartView.MaterialResources
 { 
     public partial class Index : System.Web.UI.Page
     {
@@ -20,26 +20,11 @@ namespace Demos.Samples.CSharp.GanttChartView.MinuteScale
         {
             if (!IsPostBack)
             {
-                var items = new List<GanttChartItem>
-                {
-                    new GanttChartItem { Content = "Task 1", IsExpanded = false },
-                    new GanttChartItem { Content = "Task 1.1", Indentation = 1, Start = new DateTime(year, month, day, 8, 0, 0), Finish = new DateTime(year, month, day, 8, 5, 0) },
-                    new GanttChartItem { Content = "Task 1.2", Indentation = 1, Start = new DateTime(year, month, day, 8, 5, 0), Finish = new DateTime(year, month, day, 8, 15, 0) },
-                    new GanttChartItem { Content = "Task 2", IsExpanded = true },
-                    new GanttChartItem { Content = "Task 2.1", Indentation = 1, Start = new DateTime(year, month, day, 8, 0, 0), Finish = new DateTime(year, month, day, 8, 5, 0), CompletedFinish = new DateTime(year, month, day, 8, 3, 0), AssignmentsContent = "Resource 1, Resource 2 [50%]" },
-                    new GanttChartItem { Content = "Task 2.2", Indentation = 1 },
-                    new GanttChartItem { Content = "Task 2.2.1", Indentation = 2, Start = new DateTime(year, month, day, 8, 0, 0), Finish = new DateTime(year, month, day, 8, 10, 0), CompletedFinish = new DateTime(year, month, day, 8, 20, 0), AssignmentsContent = "Resource 2" },
-                    new GanttChartItem { Content = "Task 2.2.2", Indentation = 2, Start = new DateTime(year, month, day, 8, 10, 0), Finish = new DateTime(year, month, day, 8, 20, 0), AssignmentsContent = "Resource 2" },
-                    new GanttChartItem { Content = "Task 3", Indentation = 1, Start = new DateTime(year, month, day, 8, 22, 0), IsMilestone = true },
-                };
-                items[3].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[0], DependencyType = DependencyType.StartStart } };
-                items[7].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[6], Lag = TimeSpan.FromHours(2) } };
-                items[8].Predecessors = new List<PredecessorItem> { new PredecessorItem { Item = items[4] }, new PredecessorItem { Item = items[5] } };
-                for (int i = 4; i <= 16; i++)
-                    items.Add(new GanttChartItem { Content = "Task " + i, Start = new DateTime(year, month, day, 8, 0, 0), Finish = new DateTime(year, month, day, 8, 5, 0) });
+                var items = new List<GanttChartItem>();
+                for (var i = 1; i <= 16; i++)
+                    items.Add( new GanttChartItem { Content = "Print job #" + i, Start = new DateTime(year, month, day, 8, 0, 0) });
                 GanttChartView.Items = items;
 
-                // Set up timeline related settings to support the minute level scale.
                 GanttChartView.Schedule = new Schedule
                 {
                     WorkingWeekStart = DayOfWeek.Sunday,
@@ -54,7 +39,6 @@ namespace Demos.Samples.CSharp.GanttChartView.MinuteScale
                 GanttChartView.CurrentTime = new DateTime(year, month, day, 7, 59, 0);
                 GanttChartView.HourWidth = 750;
                 GanttChartView.IsMouseWheelZoomEnabled = false;
-                // Set up scales to hours and minutes.
                 GanttChartView.Scales = new List<Scale>
                 {
                     new Scale
@@ -68,16 +52,43 @@ namespace Demos.Samples.CSharp.GanttChartView.MinuteScale
                         Intervals = GetIntervals(new TimeSpan(0, 3, 0), GanttChartView.TimelineStart, GanttChartView.TimelineFinish, (d) => d.Minute.ToString("00") + "'")
                     }
                 };
-                // Set up minute update scale as well.
                 GanttChartView.UpdateScaleInterval = TimeSpan.FromMinutes(1);
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
+                // Define material and quantifiable assignable resource types, such as printers, sheets of paper, and printing supervisors.
+                // Specify quantities of each resource type. We assume we have infinite sheets of paper, but limited printers and supervisors.
+                GanttChartView.AssignableResources = new List<string> { "Printer", "Paper", "Supervisor"};
+                GanttChartView.ResourceQuantities = new Dictionary<string, double> { { "Printer", 5 }, { "Paper", double.PositiveInfinity }, { "Supervisor", 2 } };
+
+                // Define printing cost for 100 sheets of paper (default quantity used for cost by design).
+                // Add a Cost column to the grid (hide unneeded columns as well).
+                GanttChartView.SpecificResourceUsageCosts = new Dictionary<string, double> { { "Paper", 5 } };
+                GanttChartView.Columns.Add(new Column { Header = "Cost ($)", Width = 100, CellTemplateClientCode = "return DlhSoft.Controls.GanttChartView.getCostColumnTemplate(84)(item);" });
+
+                // Hide all default columns except Task, Start, Finish, and Assignments.
+                GanttChartView.Columns[5].IsVisible = false; // Milestone column
+                GanttChartView.Columns[6].IsVisible = false; // Completed column
+
+                // Assign a printer, the number of pages to pront on each print job, and part of the time of a supervisor needed to overview the printing jobs.
+                // Update finish times of the task to based on their estimated durations, considering this ratio: 15 sheets of paper per minute.
+                int[] sheetsOfPaperRequiredForPrintJobs = new int[] { 50, 20, 30, 60, 25, 10, 30, 50, 60, 80, 100, 25, 30, 30, 120, 80, 40 };
+                for (var i = 0; i < items.Count; i++)
+                {
+                    int requiredSheetsOfPaper = sheetsOfPaperRequiredForPrintJobs[i];
+                    items[i].AssignmentsContent = "Printer, Paper " + requiredSheetsOfPaper + "], Supervisor [50%]";
+                    items[i].Finish = new DateTime(year, month, day, 8, (int)Math.Ceiling(requiredSheetsOfPaper / (double)15), 0);
+
+                    GanttChartView.InitializingClientCode = @"
                     if (initializeGanttChartTheme)
                         initializeGanttChartTheme(control.settings, theme);
                     if (initializeGanttChartTemplates)
                         initializeGanttChartTemplates(control.settings, theme);";
+                }
             }
+        }
+
+        public void LevelResourcesButton_Click(object sender, EventArgs e)
+        {
+            GanttChartView.LevelResources(true, GanttChartView.GetProjectStart());
         }
 
         // Helper method that generates intervals of a specified duration between timeline start and finish times, and using the specified formatter for header texts.

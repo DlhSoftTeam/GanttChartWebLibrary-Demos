@@ -72,6 +72,12 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'WBS', title: 'WBS path (work breakdown structure column)', description: 'Shows how you can easily insert a WBS column to the grid',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'MoveUpDown', title: 'Move up-down (hierarchical moving)', description: 'Shows how you can allow the end user to move items up and down without breaking the hierarchy',
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
@@ -115,6 +121,36 @@ angular.module('Demos', [])
             },
             {
                 component: 'GanttChartView', feature: 'CriticalPath', title: 'Critical path (tasks that affect project finish)', description: 'Shows how you can determine and highlight critical tasks in your project (i.e. those that would affect the project finish date if their duration would increase)',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'ContinuousSchedule', title: 'Continuous schedule (non-stop working time)', description: 'Shows how to define continuous working time for tasks (24/7)',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'CustomSchedules', title: 'Custom schedules (general and for individual tasks)', description: 'Shows how to define custom working time and special nonworking days for all tasks with individual exceptions',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'DateTimeFormats', title: 'Date and time formats (simple or fully customized)', description: 'Shows how to set up custom formatting for dates, times, and durations',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'Styling', title: 'Styling (with CSS classes)', description: 'Shows how to style up elements defined by the component using CSS classes',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'GanttChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing stanadard item bars in the chart area using SVG elements',
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
                 }

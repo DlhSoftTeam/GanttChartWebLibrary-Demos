@@ -52,6 +52,10 @@ namespace Demos.Samples.CSharp.GanttChartView.Baseline
                 GanttChartView.Items[7].BaselineFinish = new DateTime(year, month, 11, 16, 0, 0);
                 GanttChartView.Items[8].BaselineStart = new DateTime(year, month, 12, 8, 0, 0);
 
+                // Prepare the estimated start and finish columns to display baseline values in grid as well.
+                GanttChartView.Columns.Insert(5, new Column { Header = "Est. start", Width = 140, CellTemplateClientCode = "return DlhSoft.Controls.GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000)(item);" });
+                GanttChartView.Columns.Insert(6, new Column { Header = "Est. finish", Width = 140, CellTemplateClientCode = "return DlhSoft.Controls.GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000)(item);" });
+
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode = @"
                     if (initializeGanttChartTheme)

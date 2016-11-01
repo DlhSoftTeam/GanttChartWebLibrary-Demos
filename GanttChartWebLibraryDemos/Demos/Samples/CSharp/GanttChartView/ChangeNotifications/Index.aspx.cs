@@ -60,7 +60,7 @@ namespace Demos.Samples.CSharp.GanttChartView.ChangeNotifications
             GanttChartView.ItemPropertyChanged += GanttChartView_ItemPropertyChanged;
         }
 
-        protected void GanttChartView_ItemPropertyChanged(object sender, ItemPropertyChangedEventArgs e)
+        public void GanttChartView_ItemPropertyChanged(object sender, ItemPropertyChangedEventArgs e)
         {
             // Handle the individual item property change retreived as event argument.
             if (e.PropertyName == "IsSelected" || e.PropertyName == "IsExpanded")

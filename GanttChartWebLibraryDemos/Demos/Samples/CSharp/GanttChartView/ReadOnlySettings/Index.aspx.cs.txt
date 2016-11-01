@@ -71,8 +71,8 @@ namespace Demos.Samples.CSharp.GanttChartView.ReadOnlySettings
         public void HideGridCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             GanttChartView.IsGridVisible = !HideGridCheckBox.Checked;
-            GanttChartView.GridWidth = GanttChartView.IsGridVisible ? new Unit(35, UnitType.Percentage) : new Unit(0, UnitType.Percentage);
-            GanttChartView.ChartWidth = GanttChartView.IsGridVisible ? new Unit(65, UnitType.Percentage) : new Unit(100, UnitType.Percentage);
+            GanttChartView.GridWidth = GanttChartView.IsGridVisible ? new Unit("35%") : new Unit("0%");
+            GanttChartView.ChartWidth = GanttChartView.IsGridVisible ? new Unit("65%") : new Unit("100%");
         }
         public void IsContentReadOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
         {

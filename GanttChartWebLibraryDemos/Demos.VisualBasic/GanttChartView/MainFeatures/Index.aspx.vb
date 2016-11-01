@@ -226,7 +226,7 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
             NetworkDiagramView.InitializingClientCode = initializingClientCodeGetter("PertChart")
         End Sub
 
-        Protected Sub GanttChartView_ItemPropertyChanged(ByVal sender As Object, ByVal change As ItemPropertyChangedEventArgs)
+        Public Sub GanttChartView_ItemPropertyChanged(ByVal sender As Object, ByVal change As ItemPropertyChangedEventArgs)
             ' Handle the individual item property change retreived as the change event argument.
 
             ' Optionally or alternatively, record the item property change in a temporary storage collection easily accessible in the application code later.

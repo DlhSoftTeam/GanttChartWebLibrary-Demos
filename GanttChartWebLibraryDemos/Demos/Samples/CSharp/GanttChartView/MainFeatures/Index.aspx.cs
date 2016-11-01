@@ -226,7 +226,7 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
             NetworkDiagramView.InitializingClientCode = initializingClientCodeGetter("PertChart");
         }
 
-        protected void GanttChartView_ItemPropertyChanged(object sender, ItemPropertyChangedEventArgs change)
+        public void GanttChartView_ItemPropertyChanged(object sender, ItemPropertyChangedEventArgs change)
         {
             // Handle the individual item property change retreived as the change event argument.
 

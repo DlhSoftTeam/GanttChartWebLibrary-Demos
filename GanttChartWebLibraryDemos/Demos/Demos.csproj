@@ -67,6 +67,10 @@
     <Content Include="Samples\CSharp\GanttChartView\Columns\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\Columns\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\Columns\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\ContinuousSchedule\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\ContinuousSchedule\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\ContinuousSchedule\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\ContinuousSchedule\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\CriticalPath\app.css" />
     <Content Include="Samples\CSharp\GanttChartView\CriticalPath\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\CriticalPath\templates.js" />
@@ -75,6 +79,18 @@
     <Content Include="Samples\CSharp\GanttChartView\CustomScale\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\CustomScale\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\CustomScale\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomSchedules\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomSchedules\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomSchedules\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomSchedules\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomTemplate\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomTemplate\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomTemplate\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\CustomTemplate\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\DateTimeFormats\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\DateTimeFormats\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\DateTimeFormats\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\DateTimeFormats\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\app.css" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\templates.js" />
@@ -137,6 +153,14 @@
     <Content Include="Samples\CSharp\GanttChartView\Statuses\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\Statuses\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\Statuses\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\Styling\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\Styling\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\Styling\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\Styling\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\WBS\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\WBS\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\WBS\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\WBS\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\app.css" />
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\templates.js" />
@@ -218,8 +242,12 @@
     <Folder Include="Samples\CSharp\GanttChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\ChangeNotifications\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Columns\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\ContinuousSchedule\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\CriticalPath\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\CustomScale\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\CustomSchedules\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\CustomTemplate\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\DateTimeFormats\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Filtering\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MinuteScale\Scripts\" />
@@ -228,6 +256,8 @@
     <Folder Include="Samples\CSharp\GanttChartView\SelectionModes\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\SpecialDays\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Statuses\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\Styling\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\WBS\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\ZoomLevel\Scripts\" />
     <Folder Include="Samples\VisualBasic\GanttChartView\MainFeatures\Scripts\" />
   </ItemGroup>
@@ -303,6 +333,13 @@
     <Compile Include="Samples\CSharp\GanttChartView\Columns\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\ContinuousSchedule\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\ContinuousSchedule\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\CriticalPath\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -315,6 +352,27 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\CustomScale\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\CustomSchedules\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\CustomSchedules\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\CustomTemplate\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\CustomTemplate\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\DateTimeFormats\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\DateTimeFormats\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\Filtering\Index.aspx.cs">
@@ -378,6 +436,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\Statuses\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\Styling\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\Styling\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\WBS\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\WBS\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\ZoomLevel\Index.aspx.cs">

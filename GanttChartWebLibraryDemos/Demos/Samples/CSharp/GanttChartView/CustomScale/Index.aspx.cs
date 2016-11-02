@@ -63,10 +63,8 @@ namespace Demos.Samples.CSharp.GanttChartView.CustomScale
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode = @"
-                    if (initializeGanttChartTheme)
-                        initializeGanttChartTheme(control.settings, theme);
-                    if (initializeGanttChartTemplates)
-                        initializeGanttChartTemplates(control.settings, theme);";
+                    initializeGanttChartTheme(control.settings, theme);
+                    initializeGanttChartTemplates(control.settings, theme);";
             }
         }
     }

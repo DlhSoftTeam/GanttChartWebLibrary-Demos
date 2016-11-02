@@ -79,11 +79,9 @@ namespace Demos.Samples.CSharp.GanttChartView.AssigningResources
 
             // Optionally, initialize custom theme and templates (themes.js, templates.js).
             Func<string, string> initializingClientCodeGetter = (string type) => @";
-                if (initialize" + type + @"Theme)
-                    initialize" + type + @"Theme(control.settings, theme);" +
+                initialize" + type + @"Theme(control.settings, theme);" +
                 (type == "GanttChart" ? @"
-                if (initialize" + type + @"Templates)
-                    initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
+                initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
             if (!IsPostBack)
                 GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
             LoadChartView.InitializingClientCode = initializingClientCodeGetter("LoadChart");

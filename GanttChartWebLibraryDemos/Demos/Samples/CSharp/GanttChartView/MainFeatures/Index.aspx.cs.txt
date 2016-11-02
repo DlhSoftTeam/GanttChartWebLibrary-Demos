@@ -213,14 +213,12 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
 
             // Optionally, initialize custom theme and templates (themes.js, templates.js).
             Func<string, string> initializingClientCodeGetter = (string type) => @";
-                if (initialize" + type + @"Theme)
-                    initialize" + type + @"Theme(control.settings, theme);" + 
-                (type == "GanttChart" || type == "PertChart" ? @"
-                if (initialize" + type + @"Templates)
-                    initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
+                initialize" + type + @"Theme(control.settings, theme);" + 
+                (type == "GanttChart" || type == "ScheduleChart" || type == "PertChart" ? @"
+                initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
             if (!IsPostBack)
                 GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
-            ScheduleChartView.InitializingClientCode = initializingClientCodeGetter("GanttChart");
+            ScheduleChartView.InitializingClientCode = initializingClientCodeGetter("ScheduleChart");
             LoadChartView.InitializingClientCode = initializingClientCodeGetter("LoadChart");
             PertChartView.InitializingClientCode = initializingClientCodeGetter("PertChart");
             NetworkDiagramView.InitializingClientCode = initializingClientCodeGetter("PertChart");

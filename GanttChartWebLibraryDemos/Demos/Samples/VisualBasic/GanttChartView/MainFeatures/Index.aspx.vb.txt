@@ -213,14 +213,12 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
             ' Optionally, initialize custom theme And templates (themes.js, templates.js).
             Dim initializingClientCodeGetter As Func(Of String, String) =
                 Function(Type As String)
-                    Return "if (initialize" + Type + "Theme)
-                                initialize" + Type + "Theme(control.settings, theme);" +
-                            IIf(Type = "GanttChart" Or Type = "PertChart", "
-                            if (initialize" + Type + "Templates)
-                                initialize" + Type + "Templates(control.settings, theme);", String.Empty)
+                    Return "initialize" + Type + "Theme(control.settings, theme);" +
+                            IIf(Type = "GanttChart" Or Type = "ScheduleChart" Or Type = "PertChart", "
+                            initialize" + Type + "Templates(control.settings, theme);", String.Empty)
                 End Function
             If Not IsPostBack Then GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
-            ScheduleChartView.InitializingClientCode = initializingClientCodeGetter("GanttChart")
+            ScheduleChartView.InitializingClientCode = initializingClientCodeGetter("ScheduleChart")
             LoadChartView.InitializingClientCode = initializingClientCodeGetter("LoadChart")
             PertChartView.InitializingClientCode = initializingClientCodeGetter("PertChart")
             NetworkDiagramView.InitializingClientCode = initializingClientCodeGetter("PertChart")

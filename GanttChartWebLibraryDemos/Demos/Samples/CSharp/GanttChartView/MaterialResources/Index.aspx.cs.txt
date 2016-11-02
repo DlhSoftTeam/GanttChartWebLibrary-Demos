@@ -78,10 +78,8 @@ namespace Demos.Samples.CSharp.GanttChartView.MaterialResources
                     items[i].Finish = new DateTime(year, month, day, 8, (int)Math.Ceiling(requiredSheetsOfPaper / (double)15), 0);
 
                     GanttChartView.InitializingClientCode = @"
-                    if (initializeGanttChartTheme)
-                        initializeGanttChartTheme(control.settings, theme);
-                    if (initializeGanttChartTemplates)
-                        initializeGanttChartTemplates(control.settings, theme);";
+                    initializeGanttChartTheme(control.settings, theme);
+                    initializeGanttChartTemplates(control.settings, theme);";
                 }
             }
         }

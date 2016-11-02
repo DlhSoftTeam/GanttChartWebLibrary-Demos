@@ -68,24 +68,22 @@ namespace Demos.Samples.CSharp.GanttChartView.Columns
                 GanttChartView.Items[7].CustomValues["Property1"] = "A1";
                 GanttChartView.Items[8].CustomValues["Property1"] = "B1";
                 GanttChartView.Items[8].CustomValues["Property2"] = "B2";
-                GanttChartView.Columns.Add(
-                    new Column
-                    {
-                        Header = "My value 1", Width = 80,
-                        CellTemplateClientCode = @"
-                            var input = DlhSoft.Controls.GanttChartView.textInputColumnTemplateBase(document, 64, function () { return item.customProperty1Value; }, function (value) { item.customProperty1Value = value; });
-                            input.setAttribute('Name', 'Item' + item.index + 'Property1'); // Ensure posting the (possibly updated) value back as a Request.Form field.
-                            return input;"
-                    });
-                GanttChartView.Columns.Add(
-                    new Column
-                    {
-                        Header = "My value 2", Width = 80,
-                        CellTemplateClientCode = @"
-                            var input = DlhSoft.Controls.GanttChartView.textInputColumnTemplateBase(document, 64, function () { return item.customProperty2Value; }, function (value) { item.customProperty2Value = value; });
-                            input.setAttribute('Name', 'Item' + item.index + 'Property2'); // Ensure posting the (possibly updated) value back as a Request.Form field.
-                            return input;"
-                    });
+                GanttChartView.Columns.Add(new Column
+                {
+                    Header = "My value 1", Width = 80,
+                    CellTemplateClientCode = @"
+                        var input = DlhSoft.Controls.GanttChartView.textInputColumnTemplateBase(document, 64, function () { return item.customProperty1Value; }, function (value) { item.customProperty1Value = value; });
+                        input.setAttribute('Name', 'Item' + item.index + 'Property1'); // Ensure posting the (possibly updated) value back as a Request.Form field.
+                        return input;"
+                });
+                GanttChartView.Columns.Add(new Column
+                {
+                    Header = "My value 2", Width = 80,
+                    CellTemplateClientCode = @"
+                        var input = DlhSoft.Controls.GanttChartView.textInputColumnTemplateBase(document, 64, function () { return item.customProperty2Value; }, function (value) { item.customProperty2Value = value; });
+                        input.setAttribute('Name', 'Item' + item.index + 'Property2'); // Ensure posting the (possibly updated) value back as a Request.Form field.
+                        return input;"
+                });
 
                 // Set custom item tag objects, properties, append read only custom columns bound to their values, and/or set up custom cell template code statements to be executed on the client side.
                 GanttChartView.Items[7].Tag = 70;

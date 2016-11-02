@@ -38,7 +38,7 @@ namespace Demos.Samples.CSharp.ScheduleChartView.Hierarchy
                             new GanttChartItem { Content  = "Task C (Resource 2)", Start = new DateTime(year, month, 14, 8, 0, 0), Finish = new DateTime(year, month, 14, 16, 0, 0) }
                         }
                     },
-                    new ScheduleChartItem { Content = "Group 1" },
+                    new ScheduleChartItem { Content = "Group 2" },
                     new ScheduleChartItem
                     {
                         Content  = "Resource 3", Indentation = 1, GanttChartItems = new List<GanttChartItem>

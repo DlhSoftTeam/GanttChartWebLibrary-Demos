@@ -61,7 +61,7 @@ namespace Demos.Samples.CSharp.GanttChartView.Styling
                 // CSS classes may also be initialized on the client side when needed.
                 GanttChartView.InitializingClientCode = @"
                     control.settings.alternativeItemClass = theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem');
-                    control.settings.alternativeItemChartClass = theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem';";
+                    control.settings.alternativeChartItemClass = theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem';";
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 GanttChartView.InitializingClientCode += @";

@@ -270,6 +270,14 @@
     <Content Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\templates.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ResourceStatus\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ResourceStatus\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ResourceStatus\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ResourceStatus\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\themes.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\SpecialDays\app.css" />
     <Content Include="Samples\CSharp\ScheduleChartView\SpecialDays\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\SpecialDays\templates.js" />
@@ -396,8 +404,8 @@
     <Folder Include="Samples\CSharp\ScheduleChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\Printing\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\Scripts\" />
-    <Folder Include="Samples\CSharp\ScheduleChartView\ResourceStatus\" />
-    <Folder Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\ResourceStatus\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\SpecialDays\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\Styling\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\ZoomLevel\Scripts\" />
@@ -781,6 +789,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ResourceStatus\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ResourceStatus\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\SpecialDays\Index.aspx.cs">

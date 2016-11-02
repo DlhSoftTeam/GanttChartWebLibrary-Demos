@@ -238,6 +238,18 @@ angular.module('Demos', [])
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
                 }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'Columns', title: 'Grid columns (custom)', description: 'Shows how to add supplemental custom grid columns',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'ReadOnlySettings', title: 'Read only, visibility, and other behavioral settings', description: 'Shows how you can set up read only, visibility, and other settings on the component and on specific items',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
             }
         ];
         var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];

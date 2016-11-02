@@ -205,6 +205,10 @@
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\themes.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\ChangeNotifications\app.css" />
     <Content Include="Samples\CSharp\ScheduleChartView\ChangeNotifications\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\ChangeNotifications\templates.js" />
@@ -218,6 +222,14 @@
     <Content Include="Samples\CSharp\ScheduleChartView\Columns\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\Columns\templates.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\Columns\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ContinuousSchedule\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ContinuousSchedule\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ContinuousSchedule\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ContinuousSchedule\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\CustomScale\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\CustomScale\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\CustomScale\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\CustomScale\themes.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\CustomTemplate\app.css" />
     <Content Include="Samples\CSharp\ScheduleChartView\CustomTemplate\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\CustomTemplate\templates.js" />
@@ -249,10 +261,27 @@
     <Content Include="Samples\CSharp\ScheduleChartView\MainFeatures\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\MainFeatures\templates.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\MainFeatures\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Printing\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Printing\Images\Print.png" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Printing\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Printing\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Printing\themes.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\app.css" />
     <Content Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\templates.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\SpecialDays\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\SpecialDays\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\SpecialDays\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\SpecialDays\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Styling\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Styling\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Styling\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\Styling\themes.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ZoomLevel\app.css" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ZoomLevel\Index.aspx" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ZoomLevel\templates.js" />
+    <Content Include="Samples\CSharp\ScheduleChartView\ZoomLevel\themes.js" />
     <Content Include="Samples\templates.js" />
     <Content Include="Samples\themes.js" />
     <Content Include="Samples\VisualBasic\GanttChartView\MainFeatures\app.css" />
@@ -355,14 +384,23 @@
     <Folder Include="Samples\CSharp\GanttChartView\WBS\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\ZoomLevel\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\ChangeNotifications\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\Columns\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\ContinuousSchedule\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\CustomScale\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\CustomTemplate\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\Filtering\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\GanttChartIntegration\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\Hierarchy\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\Printing\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\ResourceStatus\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\ShiftScheduling\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\SpecialDays\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\Styling\Scripts\" />
+    <Folder Include="Samples\CSharp\ScheduleChartView\ZoomLevel\Scripts\" />
     <Folder Include="Samples\VisualBasic\GanttChartView\MainFeatures\Scripts\" />
   </ItemGroup>
   <ItemGroup>
@@ -661,6 +699,13 @@
     <Compile Include="Samples\CSharp\GanttChartView\ZoomLevel\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\ChangeNotifications\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -673,6 +718,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\Columns\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ContinuousSchedule\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ContinuousSchedule\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\CustomScale\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\CustomScale\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\CustomTemplate\Index.aspx.cs">
@@ -710,11 +769,39 @@
     <Compile Include="Samples\CSharp\ScheduleChartView\MainFeatures\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\Printing\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\Printing\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\ReadOnlySettings\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\SpecialDays\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\SpecialDays\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\Styling\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\Styling\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ZoomLevel\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\ScheduleChartView\ZoomLevel\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\VisualBasic\GanttChartView\MainFeatures\Download.aspx.cs">

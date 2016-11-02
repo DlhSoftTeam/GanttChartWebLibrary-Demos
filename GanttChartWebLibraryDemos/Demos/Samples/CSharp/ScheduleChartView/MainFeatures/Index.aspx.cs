@@ -234,7 +234,7 @@ namespace Demos.Samples.CSharp.ScheduleChartView.MainFeatures
         {
             // Print the task hierarchy column and a selected timeline page of 5 weeks (timeline end week extensions would be added automatically, if necessary).
             // Optionally, to rotate the print output and simulate Landscape printing mode (when the end user keeps Portrait selection in the Print dialog), append the rotate parameter set to true to the method call: rotate: true.
-            ScheduleChartView.Print(Title = "Schedule Chart (printable)", isGridVisible: true, columnIndexes: new[] { 0 }, timelineStart: new DateTime(year, month, 1), timelineFinish: new DateTime(year, month, 1).AddDays(5 * 7), preparingMessage: "...");
+            ScheduleChartView.Print(title: "Schedule Chart (printable)", isGridVisible: true, columnIndexes: new[] { 1 }, timelineStart: new DateTime(year, month, 1), timelineFinish: new DateTime(year, month, 1).AddDays(5 * 7), preparingMessage: "...");
         }
     }
 }

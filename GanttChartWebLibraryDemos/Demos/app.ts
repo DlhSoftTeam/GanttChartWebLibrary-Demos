@@ -214,6 +214,30 @@ angular.module('Demos', [])
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js']
                 }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'CustomTemplate', title: 'Custom template (drawing item bars using custom SVG)', description: 'Shows how you can write code to customize drawing stanadard item bars in the chart area using SVG elements',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Schedule Chart view from Gantt Chart data',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'Filtering', title: 'Filtering and hiding items', description: 'Shows how you can set up an item visibility filter function and hide individual items when needed',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'Hierarchy', title: 'Hierarchy (resource groups)', description: 'Sample application showing how to display expandable groups of resources in a hierarchical fashion',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
             }
         ];
         var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];

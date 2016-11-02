@@ -680,6 +680,18 @@ function initializeScheduleChartTemplates(settings, theme) {
     };
     if (!settings.assignmentThumbTemplate)
         settings.assignmentThumbTemplate = settings.assignmentThumbTemplateForTheme;
+    settings.temporaryAssignmentThumbTemplate = function (scheduleChartView, x, y, width, height) {
+        var document = scheduleChartView.ownerDocument;
+        var rectangle = document.createElementNS(svgns, "rect");
+        rectangle.setAttribute("x", x);
+        rectangle.setAttribute("y", y);
+        rectangle.setAttribute("width", width);
+        rectangle.setAttribute("height", height * 1.38);
+        if (typeof settings.temporaryAssignmentThumbClass !== undefinedType)
+            rectangle.setAttribute("class", settings.temporaryAssignmentThumbClass);
+        rectangle.setAttribute("style", settings.temporaryAssignmentThumbStyle);
+        return rectangle;
+    }
 }
 function initializePertChartTemplates(settings, theme) {
     if (theme == 'Default')

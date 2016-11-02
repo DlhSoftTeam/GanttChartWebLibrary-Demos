@@ -47,9 +47,9 @@ namespace Demos.Samples.CSharp.GanttChartView.SpecialDays
                 // Set up special time intervals with Header text values set to null as they will not be displayed.
                 SortedDictionary<TimeInterval, string> specialDayIntervals = new SortedDictionary<TimeInterval, string>
                 {
-                    { new TimeInterval (new Date(year, month, 4), new Date(year, month, 6)), null },
-                    { new TimeInterval (new Date(year, month, 8), new Date(year, month, 9)), null },
-                    { new TimeInterval (new Date(year, month, 11), new Date(year, month, 17)), null }
+                    { new TimeInterval (new DateTime(year, month, 4), new DateTime(year, month, 6)), null },
+                    { new TimeInterval (new DateTime(year, month, 8), new DateTime(year, month, 9)), null },
+                    { new TimeInterval (new DateTime(year, month, 11), new DateTime(year, month, 17)), null }
                 };
                 // Add a custom scale using the special time intervals.
                 GanttChartView.Scales.Add(new Scale

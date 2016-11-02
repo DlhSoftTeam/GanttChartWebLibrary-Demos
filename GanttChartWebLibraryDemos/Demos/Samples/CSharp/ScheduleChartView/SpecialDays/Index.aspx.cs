@@ -68,9 +68,9 @@ namespace Demos.Samples.CSharp.ScheduleChartView.SpecialDays
                 // Set up special time intervals with Header text values set to null as they will not be displayed.
                 SortedDictionary<TimeInterval, string> specialDayIntervals = new SortedDictionary<TimeInterval, string>
                 {
-                    { new TimeInterval { Start = new Date(year, month, 4), Finish = new Date(year, month, 6) }, null },
-                    { new TimeInterval { Start = new Date(year, month, 8), Finish = new Date(year, month, 9) }, null },
-                    { new TimeInterval { Start = new Date(year, month, 11), Finish = new Date(year, month, 17) }, null }
+                    { new TimeInterval { Start = new DateTime(year, month, 4), Finish = new DateTime(year, month, 6) }, null },
+                    { new TimeInterval { Start = new DateTime(year, month, 8), Finish = new DateTime(year, month, 9) }, null },
+                    { new TimeInterval { Start = new DateTime(year, month, 11), Finish = new DateTime(year, month, 17) }, null }
                 };
                 // Add a custom scale using the special time intervals.
                 ScheduleChartView.Scales.Add( new Scale

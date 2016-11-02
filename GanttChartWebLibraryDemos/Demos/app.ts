@@ -250,6 +250,12 @@ angular.module('Demos', [])
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
                 }
+            },
+            {
+                component: 'ScheduleChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes occur on the data presented by the component',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
             }
         ];
         var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];

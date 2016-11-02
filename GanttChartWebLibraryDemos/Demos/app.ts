@@ -188,7 +188,7 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'ProjectXml', title: 'Importing and exporting Microsoft® Project XML', description: 'Shows how you can import and export Microsoft® Project XML schema based content, providing maximum compatibility with other applications',
                 sourceCodeFiles: {
-                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'Download.aspx.cs']
                 }
             },
             {
@@ -200,7 +200,7 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'ExportPngImage-PMF', title: 'Export image (using Project Management Framework)', description: 'Shows how to generate PNG images for the current Gantt Chart – using TaskManager component from DlhSoft Project Management Framework, available separately for free to Gantt Chart Hyper Library licensees',
                 sourceCodeFiles: {
-                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'GetPng.aspx.cs']
                 }
             },
             {

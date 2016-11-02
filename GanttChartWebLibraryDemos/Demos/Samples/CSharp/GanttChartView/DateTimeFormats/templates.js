@@ -634,6 +634,53 @@ function initializeGanttChartTemplates(settings, theme) {
     if (!settings.predecessorItemTemplate)
         settings.predecessorItemTemplate = settings.predecessorItemTemplateForTheme;
 }
+function initializeScheduleChartTemplates(settings, theme) {
+    initializeGanttChartTemplates(settings, theme);
+    if (theme == 'Default' || theme == 'Aero')
+        return;
+    // Common helpers.
+    var undefinedType = 'undefined', svgns = 'http://www.w3.org/2000/svg';
+    // Template definitions.
+    settings.assignmentThumbTemplateForTheme = function (item) {
+        var scheduleChartView = item.scheduleChartView;
+        var document = scheduleChartView.ownerDocument;
+        var group = document.createElementNS(svgns, "g");
+        if (!settings.isReadOnly && !settings.isChartReadOnly && (typeof item.isReadOnly === undefinedType || !item.isReadOnly) && !settings.areAssignmentsReadOnly) {
+            var itemLeft = scheduleChartView.getChartPosition(item.start, settings);
+            var itemRight = Math.max(scheduleChartView.getChartPosition(item.finish, settings), itemLeft + 4);
+            var line = document.createElementNS(svgns, "line");
+            line.setAttribute("x1", itemLeft);
+            line.setAttribute("y1", settings.barMargin * 1.38 + settings.barHeight * 1.38 + 2);
+            line.setAttribute("x2", itemRight - 1);
+            line.setAttribute("y2", settings.barMargin * 1.38 + settings.barHeight * 1.38 + 2);
+            var assignmentThumbClass = settings.assignmentThumbClass;
+            if (typeof assignmentThumbClass !== undefinedType)
+                line.setAttribute("class", assignmentThumbClass);
+            var assignmentThumbStyle = settings.assignmentThumbStyle;
+            line.setAttribute("style", assignmentThumbStyle);
+            line.style.visibility = "hidden";
+            group.appendChild(line);
+            var thumb = document.createElementNS(svgns, "rect");
+            thumb.setAttribute("x", itemLeft);
+            thumb.setAttribute("y", settings.barMargin * 1.38 + settings.barHeight * 1.38 - 2);
+            thumb.setAttribute("width", Math.max(0, itemRight - itemLeft - 1));
+            thumb.setAttribute("height", 7);
+            thumb.setAttribute("style", "fill: White; fill-opacity: 0; cursor: move");
+            thumb.addEventListener("mouseover", function (e) {
+                if (typeof scheduleChartView.draggingItem === undefinedType)
+                    line.style.visibility = "visible";
+            }, true);
+            thumb.addEventListener("mouseout", function (e) {
+                line.style.visibility = "hidden";
+            }, true);
+            group.appendChild(thumb);
+            scheduleChartView.initializeAssignmentDraggingThumb(thumb, group, item, itemLeft, itemRight);
+        }
+        return group;
+    };
+    if (!settings.assignmentThumbTemplate)
+        settings.assignmentThumbTemplate = settings.assignmentThumbTemplateForTheme;
+}
 function initializePertChartTemplates(settings, theme) {
     if (theme == 'Default')
         return;

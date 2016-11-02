@@ -214,6 +214,9 @@ function initializeGanttChartTheme(settings, theme) {
     if (settings.alternativeChartBackground)
         settings.alternativeChartItemStyle = 'fill: ' + settings.alternativeChartBackground;
 }
+function initializeScheduleChartTheme(settings, theme) {
+    initializeGanttChartTheme(settings, theme);
+}
 function initializeLoadChartTheme(settings, theme) {
     initializeGanttChartTheme(settings, theme);
     if (theme == 'Default')

@@ -18,7 +18,7 @@ namespace Demos.Samples.CSharp.GanttChartView.ProjectXml
             {
                 try
                 {
-                    Response.ContentType = Request.QueryString["Filename"];
+                    Response.ContentType = "text/xml";
                     Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", Request.QueryString["Filename"]));
                     Response.Write(Session["DownloadContent"]);
                     Response.End();

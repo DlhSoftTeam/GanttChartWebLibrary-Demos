@@ -222,6 +222,21 @@
     <Content Include="Samples\CSharp\LoadChartView\SingleItem\app.css" />
     <Content Include="Samples\CSharp\LoadChartView\SingleItem\Index.aspx" />
     <Content Include="Samples\CSharp\LoadChartView\SingleItem\themes.js" />
+    <Content Include="Samples\CSharp\NetworkDiagramView\MainFeatures\app.css" />
+    <Content Include="Samples\CSharp\NetworkDiagramView\MainFeatures\Images\CriticalPath.png" />
+    <Content Include="Samples\CSharp\NetworkDiagramView\MainFeatures\Images\Print.png" />
+    <Content Include="Samples\CSharp\NetworkDiagramView\MainFeatures\Images\SetColor.png" />
+    <Content Include="Samples\CSharp\NetworkDiagramView\MainFeatures\Index.aspx" />
+    <Content Include="Samples\CSharp\NetworkDiagramView\MainFeatures\templates.js" />
+    <Content Include="Samples\CSharp\NetworkDiagramView\MainFeatures\themes.js" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\app.css" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\Images\CriticalPath.png" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\Images\Print.png" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\Images\SetColor.png" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\Images\SetDependencyColor.png" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\Index.aspx" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\templates.js" />
+    <Content Include="Samples\CSharp\PertChartView\MainFeatures\themes.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\app.css" />
     <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\templates.js" />
@@ -413,9 +428,9 @@
     <Folder Include="Samples\CSharp\LoadChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\CSharp\LoadChartView\SingleItem\Scripts\" />
     <Folder Include="Samples\CSharp\NetworkDiagramView\GanttChartIntegration\" />
-    <Folder Include="Samples\CSharp\NetworkDiagramView\MainFeatures\" />
+    <Folder Include="Samples\CSharp\NetworkDiagramView\MainFeatures\Scripts\" />
     <Folder Include="Samples\CSharp\PertChartView\GanttChartIntegration\" />
-    <Folder Include="Samples\CSharp\PertChartView\MainFeatures\" />
+    <Folder Include="Samples\CSharp\PertChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\ChangeNotifications\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\Columns\Scripts\" />
@@ -750,6 +765,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\LoadChartView\SingleItem\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\NetworkDiagramView\MainFeatures\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\NetworkDiagramView\MainFeatures\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\PertChartView\MainFeatures\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\PertChartView\MainFeatures\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Index.aspx.cs">

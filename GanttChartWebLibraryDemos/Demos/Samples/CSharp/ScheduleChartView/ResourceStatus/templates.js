@@ -701,6 +701,20 @@ function initializePertChartTemplates(settings, theme) {
     // Template definitions.
     settings.styleDefinitionTemplateForTheme = function () {
         var defs = document.createElementNS(svgns, 'defs');
+        var defaultArrowMarker = document.createElementNS(svgns, "marker");
+        defaultArrowMarker.setAttribute("id", "ArrowMarker");
+        defaultArrowMarker.setAttribute("viewBox", "0 0 10 10");
+        defaultArrowMarker.setAttribute("refX", "0");
+        defaultArrowMarker.setAttribute("refY", "5");
+        defaultArrowMarker.setAttribute("markerUnits", "strokeWidth");
+        defaultArrowMarker.setAttribute("markerWidth", "5");
+        defaultArrowMarker.setAttribute("markerHeight", "4");
+        defaultArrowMarker.setAttribute("orient", "auto");
+        var defaultArrowPath = document.createElementNS(svgns, "path");
+        defaultArrowPath.setAttribute("fill", "#8080ff");
+        defaultArrowPath.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+        defaultArrowMarker.appendChild(defaultArrowPath);
+        defs.appendChild(defaultArrowMarker);
         var arrowMarker = document.createElementNS(svgns, 'marker');
         arrowMarker.setAttribute('id', 'PertArrowMarker');
         arrowMarker.setAttribute("viewBox", "0 0 10 10");

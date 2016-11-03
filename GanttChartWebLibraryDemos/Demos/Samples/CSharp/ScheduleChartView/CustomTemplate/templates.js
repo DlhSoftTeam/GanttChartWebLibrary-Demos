@@ -686,7 +686,7 @@ function initializeScheduleChartTemplates(settings, theme) {
         rectangle.setAttribute("x", x);
         rectangle.setAttribute("y", y);
         rectangle.setAttribute("width", width);
-        rectangle.setAttribute("height", height * 1.38);
+        rectangle.setAttribute("height", height * 1.65);
         if (typeof settings.temporaryAssignmentThumbClass !== undefinedType)
             rectangle.setAttribute("class", settings.temporaryAssignmentThumbClass);
         rectangle.setAttribute("style", settings.temporaryAssignmentThumbStyle);

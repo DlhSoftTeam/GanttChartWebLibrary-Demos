@@ -59,7 +59,6 @@ namespace Demos.Samples.CSharp.ScheduleChartView.ShiftScheduling
                 Scale customScale = new Scale { ScaleType = ScaleType.Custom, HeaderTextFormat = ScaleHeaderTextFormat.Custom, Intervals = customIntervals, HeaderCssClass = "customScaleHeader", IsSeparatorVisible = true, SeparatorCssClass = "customScaleSeparator" };
                 ScheduleChartView.Scales = new List<Scale>
                 {
-                    new Scale { ScaleType = ScaleType.Weeks, HeaderHeight = 0 },
                     new Scale { ScaleType = ScaleType.Days, HeaderTextFormat = ScaleHeaderTextFormat.Date, HeaderCssClass = "daysDateScaleHeader" },
                     new Scale { ScaleType = ScaleType.Days, HeaderTextFormat = ScaleHeaderTextFormat.DayOfWeek, HeaderCssClass = "daysDayOfWeekScaleHeader" },
                     customScale

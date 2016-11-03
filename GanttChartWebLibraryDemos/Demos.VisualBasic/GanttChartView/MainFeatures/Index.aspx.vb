@@ -204,12 +204,6 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
                 ' GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');"
             End If
 
-            ' Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.
-            ' AddHandler GanttChartView.SelectionChanged, Sub() Console.WriteLine("Selected item index {0}.", GanttChartView.SelectedIndex)
-
-            ' Receive server side notifications for the item property changes that have occured on the client side by handling the ItemPropertyChanged event.
-            AddHandler GanttChartView.ItemPropertyChanged, AddressOf GanttChartView_ItemPropertyChanged
-
             ' Optionally, initialize custom theme And templates (themes.js, templates.js).
             Dim initializingClientCodeGetter As Func(Of String, String) =
                 Function(Type As String)
@@ -222,13 +216,18 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
             LoadChartView.InitializingClientCode = initializingClientCodeGetter("LoadChart")
             PertChartView.InitializingClientCode = initializingClientCodeGetter("PertChart")
             NetworkDiagramView.InitializingClientCode = initializingClientCodeGetter("PertChart")
+
+            ' Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.
+            ' AddHandler GanttChartView.SelectionChanged, Sub() Console.WriteLine("Selected item index {0}.", GanttChartView.SelectedIndex)
+
+            ' Receive server side notifications for the item property changes that have occured on the client side by handling the ItemPropertyChanged event.
+            AddHandler GanttChartView.ItemPropertyChanged, AddressOf GanttChartView_ItemPropertyChanged
         End Sub
 
-        Public Sub GanttChartView_ItemPropertyChanged(ByVal sender As Object, ByVal change As ItemPropertyChangedEventArgs)
-            ' Handle the individual item property change retreived as the change event argument.
-
+        ' Handle the individual item property change retreived as event argument.
+        Private Sub GanttChartView_ItemPropertyChanged(ByVal sender As Object, ByVal e As ItemPropertyChangedEventArgs)
             ' Optionally or alternatively, record the item property change in a temporary storage collection easily accessible in the application code later.
-            ' Changes.Add(change)
+            ' Changes.Add(e)
         End Sub
 
         ' ReadOnly Property Changes As List(Of ItemPropertyChangedEventArgs)

@@ -205,6 +205,17 @@
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\ZoomLevel\themes.js" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\app.css" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Images\CustomScales.png" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Images\DecreaseTimelinePage.png" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Images\IncreaseTimelinePage.png" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Images\MoveDown.png" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Images\MoveUp.png" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Images\Print.png" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Images\ZoomIn.png" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\Index.aspx" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\templates.js" />
+    <Content Include="Samples\CSharp\LoadChartView\MainFeatures\themes.js" />
     <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\app.css" />
     <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Index.aspx" />
     <Content Include="Samples\CSharp\ScheduleChartView\BuiltinScales\templates.js" />
@@ -392,6 +403,9 @@
     <Folder Include="Samples\CSharp\GanttChartView\WBS\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\WorkOptimizations\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\ZoomLevel\Scripts\" />
+    <Folder Include="Samples\CSharp\LoadChartView\MainFeatures\Scripts\" />
+    <Folder Include="Samples\CSharp\NetworkDiagramView\MainFeatures\" />
+    <Folder Include="Samples\CSharp\PertChartView\MainFeatures\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\ChangeNotifications\Scripts\" />
     <Folder Include="Samples\CSharp\ScheduleChartView\Columns\Scripts\" />
@@ -705,6 +719,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\ZoomLevel\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\LoadChartView\MainFeatures\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\LoadChartView\MainFeatures\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\ScheduleChartView\BuiltinScales\Index.aspx.cs">

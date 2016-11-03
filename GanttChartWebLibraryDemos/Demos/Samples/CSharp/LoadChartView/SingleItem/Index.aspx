@@ -19,7 +19,7 @@
     <asp:ScriptManager ID="ScriptManager" runat="server"/>
     <asp:UpdatePanel ID="MainPanel" runat="server">
         <ContentTemplate>
-            <pdgcc:LoadChartView ID="LoadChartView" runat="server" Height="388px" />
+            <pdgcc:LoadChartView ID="LoadChartView" runat="server" Height="188px" Width="300px" />
         </ContentTemplate>
     </asp:UpdatePanel>
     </form>

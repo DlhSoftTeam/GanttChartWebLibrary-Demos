@@ -76,7 +76,7 @@
         </div>
         <!-- Items and settings are set in code behind. -->
         <!-- Optionally, in order to improve performance by leveraging browser caching features on the client side, you may add DlhSoft.ProjectData.GanttChart.HTML.Controls.js file (from the DlhSoft product installation folder) as an item within your Web application, and set JavaScriptLibraryUrl property of the component to a value indicating its relative path. -->
-        <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
+        <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px" Width="780px"/>
     </ContentTemplate>
     <Triggers>
         <asp:PostBackTrigger ControlID="AddNewItemButton"/>

@@ -39,10 +39,10 @@ namespace Demos.Samples.CSharp.LoadChartView.SingleItem
                 LoadChartView.DisplayedTime = new DateTime(year, month, 1);
                 LoadChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // LoadChartView.IsGridVisible = false;
-                LoadChartView.ItemHeight = 312;
+                LoadChartView.IsGridVisible = false;
+                LoadChartView.ItemHeight = 64;
                 LoadChartView.BarMargin = 8;
-                LoadChartView.BarHeight = 210;
+                LoadChartView.BarHeight = 52;
 
                 // Optionally, initialize custom theme (themes.js).
                 LoadChartView.InitializingClientCode += @";

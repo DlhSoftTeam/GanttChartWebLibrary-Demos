@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <pdgcc:LoadChartView ID="LoadChartView" runat="server" Height="388px" />
+            <pdgcc:LoadChartView ID="LoadChartView" runat="server" Height="388px" Width="780px" />
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="MoveItemUpButton" />

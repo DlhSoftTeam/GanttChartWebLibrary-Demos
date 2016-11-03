@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" Height="388px" />
+            <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" Height="216px" Width="780px" />
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="AddNewItemButton" />

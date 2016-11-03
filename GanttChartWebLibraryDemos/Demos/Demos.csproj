@@ -103,6 +103,38 @@
     <Content Include="Samples\CSharp\GanttChartView\Filtering\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\templates.js" />
     <Content Include="Samples\CSharp\GanttChartView\Filtering\themes.js" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\app.css" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Download.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\AddNew.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\Baseline.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\Copy.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\CriticalPath.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\CustomScales.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\DecreaseIndentation.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\DecreaseTimelinePage.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\Delete.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\DependencyConstraints.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\IncreaseIndentation.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\IncreaseTimelinePage.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\InsertNew.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\LevelResources.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\LoadChart.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\LoadProjectXml.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\MoveDown.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\MoveUp.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\NetworkDiagram.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\Paste.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\PertChart.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\Print.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\ProjectStatistics.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\SaveProjectXml.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\ScheduleChart.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\SetColor.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\SplitRemainingWork.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Images\ZoomIn.png" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\Index.aspx" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\templates.js" />
+    <Content Include="Samples\CSharp\GanttChartView\MainFeatures-item\themes.js" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Download.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\Index.aspx" />
     <Content Include="Samples\CSharp\GanttChartView\MainFeatures\templates.js" />
@@ -415,6 +447,7 @@
     <Folder Include="Samples\CSharp\GanttChartView\DateTimeFormats\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\ExportPngImage-PMF\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\Filtering\Scripts\" />
+    <Folder Include="Samples\CSharp\GanttChartView\MainFeatures-item\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MainFeatures\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MaterialResources\Scripts\" />
     <Folder Include="Samples\CSharp\GanttChartView\MinuteScale\Scripts\" />
@@ -624,6 +657,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\Filtering\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MainFeatures-item\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MainFeatures-item\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MainFeatures-item\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\CSharp\GanttChartView\MainFeatures-item\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\CSharp\GanttChartView\MainFeatures\Download.aspx.cs">

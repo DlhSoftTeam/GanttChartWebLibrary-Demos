@@ -20,7 +20,7 @@
     <asp:ScriptManager ID="ScriptManager" runat="server"/>
     <asp:UpdatePanel ID="MainPanel" runat="server">
         <ContentTemplate>
-            <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
+            <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px" Width="780px"/>
         </ContentTemplate>
     </asp:UpdatePanel>
     </form>

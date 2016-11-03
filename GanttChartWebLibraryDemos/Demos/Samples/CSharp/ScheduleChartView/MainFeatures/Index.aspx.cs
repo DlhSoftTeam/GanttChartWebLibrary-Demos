@@ -100,7 +100,6 @@ namespace Demos.Samples.CSharp.ScheduleChartView.MainFeatures
                 // ScheduleChartView.StandardBarFill = Color.LightGreen;
                 // ScheduleChartView.StandardCompletedBarFill = Color.DarkGreen;
                 // ScheduleChartView.StandardCompletedBarStroke = Color.DarkGreen;
-                // ScheduleChartView.DependencyLineStroke = Color.Green;
 
                 // Optionally, display alternative row background.
                 // ScheduleChartView.AlternativeRowBackColor = Color.FromArgb(0xf9, 0xf9, 0xf9);
@@ -115,17 +114,50 @@ namespace Demos.Samples.CSharp.ScheduleChartView.MainFeatures
                 // Optionally, configure existing columns.
                 // ScheduleChartView.Columns[(int)ColumnType.Content].Header = "Workers";
                 // ScheduleChartView.Columns[(int)ColumnType.Content].Width = 240;
+                // ScheduleChartView.Columns[(int)ColumnType.RowHeader].IsVisible = false;
 
                 // Optionally, set custom item tag objects, properties, and/or append read only custom columns bound to their values.
                 // ScheduleChartView.Items[1].Tag = 70;
                 // ScheduleChartView.Items[1].CustomValues["Description"] = "Custom description";
                 // ScheduleChartView.Columns.Add(new Column { Header = "Description", Width = 200, PropertyName = "Description" });
+                // ScheduleChartView.Columns.Add(new Column { Header = "Status", Width = 40, CellTemplateClientCode = "return control.ownerDocument.createTextNode(item.content == 'Resource 2' ? '!' : '');" });
+
+                // Optionally, set up item template code statements, and standard, milestone, and/or extra task template code statements to be executed on the client side.
+                // ScheduleChartView.ItemTemplateClientCode = @"var toolTip = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+                //     var toolTipContent = item.content + ' • ' + 'Start: ' + item.start.toLocaleString();
+                //     if (!item.isMilestone)
+                //         toolTipContent += ' • ' + 'Finish: ' + item.finish.toLocaleString();
+                //     toolTip.appendChild(document.createTextNode(toolTipContent));
+                //     return toolTip;";
+                // ScheduleChartView.StandardTaskTemplateClientCode = @"var document = control.ownerDocument, svgns = 'http://www.w3.org/2000/svg';
+                //     var itemLeft = control.getChartPosition(item.start, control.settings), itemRight = control.getChartPosition(item.finish, control.settings);
+                //     var containerGroup = document.createElementNS(svgns, 'g'); 
+                //     var rect = document.createElementNS(svgns, 'rect'); 
+                //     rect.setAttribute('x', itemLeft); rect.setAttribute('width', Math.max(0, itemRight - itemLeft - 1));
+                //     rect.setAttribute('y', control.settings.barMargin); rect.setAttribute('height', control.settings.barHeight);
+                //     rect.setAttribute('style', 'stroke: Red; fill: LightYellow');
+                //     containerGroup.appendChild(rect);
+                //     var thumb = document.createElementNS(svgns, 'rect');
+                //     thumb.setAttribute('x', itemLeft); thumb.setAttribute('width', Math.max(0, itemRight - itemLeft - 1));
+                //     thumb.setAttribute('y', control.settings.barMargin); thumb.setAttribute('height', control.settings.barHeight);
+                //     thumb.setAttribute('style', 'fill: Transparent; cursor: move');
+                //     DlhSoft.Controls.ScheduleChartView.initializeTaskDraggingThumbs(thumb, null, null, null, item, itemLeft, itemRight, null);
+                //     containerGroup.appendChild(thumb);
+                //     return containerGroup;";
+                // ScheduleChartView.ExtraTaskTemplateClientCode = "var rect = control.ownerDocument.createElementNS('http://www.w3.org/2000/svg', 'rect'); var itemLeft = control.getChartPosition(item.start, control.settings); rect.setAttribute('x', itemLeft - 20 + (!item.isMilestone ? 5 : 0)); rect.setAttribute('y', control.settings.barMargin); rect.setAttribute('width', 12); rect.setAttribute('height', control.settings.barHeight); rect.setAttribute('style', 'stroke: Blue; fill: Blue; fill-opacity: 0.1'); return rect;";
+                // ScheduleChartView.Items[1].GanttChartItems[2].TaskTemplateClientCode = "var rect = control.ownerDocument.createElementNS('http://www.w3.org/2000/svg', 'rect'); var itemLeft = control.getChartPosition(item.start, control.settings); var itemRight = control.getChartPosition(item.finish, control.settings); rect.setAttribute('x', itemLeft); rect.setAttribute('y', control.settings.barMargin); rect.setAttribute('width', Math.max(0, itemRight - itemLeft - 1)); rect.setAttribute('height', control.settings.barHeight); rect.setAttribute('style', 'stroke: DarkGreen; fill: LightGreen'); return rect;";
 
                 // Optionally, specify the application target in order for the component to adapt to the screen size.
                 // ScheduleChartView.Target = DlhSoft.Web.UI.WebControls.PresentationTarget.Phone;
 
+                // Optionally, set up custom initialization, and item property and selection change handlers.
+                // ScheduleChartView.InitializingClientCode = "if (typeof console !== 'undefined') console.log('The component is about to be initialized.');";
+                // ScheduleChartView.InitializedClientCode = "if (typeof console !== 'undefined') console.log('The component has been successfully initialized.');";
+                // ScheduleChartView.ItemPropertyChangeHanderClientCode = "if (isDirect && isFinal && typeof console !== 'undefined') console.log(item.content + '.' + propertyName + ' has changed.');";
+                // ScheduleChartView.ItemSelectionChangeHanderClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');";
+
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                ScheduleChartView.InitializingClientCode = @"
+                ScheduleChartView.InitializingClientCode += @";
                     initializeScheduleChartTheme(control.settings, theme);
                     initializeScheduleChartTemplates(control.settings, theme);";
             }

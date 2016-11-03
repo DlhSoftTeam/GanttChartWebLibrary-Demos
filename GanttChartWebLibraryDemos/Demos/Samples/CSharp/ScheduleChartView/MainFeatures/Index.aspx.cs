@@ -161,7 +161,17 @@ namespace Demos.Samples.CSharp.ScheduleChartView.MainFeatures
                     initializeScheduleChartTheme(control.settings, theme);
                     initializeScheduleChartTemplates(control.settings, theme);";
             }
+
+            // Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.
+            // ScheduleChartView.SelectionChanged += delegate { Console.WriteLine("Selected item index: {0}.", ScheduleChartView.SelectedIndex); };
+
+            // Receive server side notifications for the item property changes that have occured on the client side by handling the ItemPropertyChanged event.
+            ScheduleChartView.ItemPropertyChanged += ScheduleChartView_ItemPropertyChanged;
         }
+
+        // Handle the individual item property change retreived as event argument.
+        private void ScheduleChartView_ItemPropertyChanged(object sender, ItemPropertyChangedEventArgs e)
+        { }
 
         public void AddNewItemButton_Click(object sender, EventArgs e)
         {

@@ -221,7 +221,7 @@ function initializeLoadChartTheme(settings, theme) {
     initializeGanttChartTheme(settings, theme);
     if (theme == 'Default')
         return;
-    settings.barHeight = 20;
+    settings.barHeight = settings.barHeight / 10.5 * 20;
     settings.allocationFill = settings.mainFill ? (settings.mainFill != 'white' ? settings.mainFill : settings.mainStroke) : '#8abbed';
     settings.normalAllocationBarStyle = settings.underAllocationBarStyle = 'stroke: ' + settings.allocationFill + '; fill: ' + settings.allocationFill;
     settings.overAllocationBarStyle = 'stroke: #e31d3b; fill: #e31d3b';

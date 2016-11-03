@@ -25,12 +25,26 @@ namespace Demos.Samples.CSharp.LoadChartView.MainFeatures
                 // Prepare data items.
                 var items = new List<LoadChartItem>
                 {
-                    new LoadChartItem { Content = "Resource 1", GanttChartItems = new List<AllocationItem> { new AllocationItem { Content = "Task 1 (Resource 1)", Start = new DateTime(year, month, 2, 8, 0, 0), Finish = new DateTime(year, month, 2, 16, 0, 0) },
-                                                                                                             new AllocationItem { Content = "Task 1, Task 2 [50%] (Resource 1): 150%", Start = new DateTime(year, month, 3, 8, 0, 0), Finish = new DateTime(year, month, 3, 12, 0, 0), Units = 1.5 },
-                                                                                                             new AllocationItem { Content = "Task 2 [50%] (Resource 1)", Start = new DateTime(year, month, 3, 12, 0, 0), Finish = new DateTime(year, month, 4, 16, 0, 0), Units = 0.5 } } },
-                    new LoadChartItem { Content = "Resource 2", GanttChartItems = new List<AllocationItem> { new AllocationItem { Content = "Task 2 (Resource 2)", Start = new DateTime(year, month, 3, 8, 0, 0), Finish = new DateTime(year, month, 4, 16, 0, 0)} } }
+                    new LoadChartItem
+                    {
+                        Content = "Resource 1",
+                        GanttChartItems = new List<AllocationItem>
+                        {
+                            new AllocationItem { Content = "Task 1 (Resource 1)", Start = new DateTime(year, month, 2, 8, 0, 0), Finish = new DateTime(year, month, 2, 16, 0, 0) },
+                            new AllocationItem { Content = "Task 1, Task 2 [50%] (Resource 1): 150%", Start = new DateTime(year, month, 3, 8, 0, 0), Finish = new DateTime(year, month, 3, 12, 0, 0), Units = 1.5 },
+                            new AllocationItem { Content = "Task 2 [50%] (Resource 1)", Start = new DateTime(year, month, 3, 12, 0, 0), Finish = new DateTime(year, month, 4, 16, 0, 0), Units = 0.5 }
+                        }
+                    },
+                    new LoadChartItem
+                    {
+                        Content = "Resource 2",
+                        GanttChartItems = new List<AllocationItem>
+                        {
+                            new AllocationItem { Content = "Task 2 (Resource 2)", Start = new DateTime(year, month, 3, 8, 0, 0), Finish = new DateTime(year, month, 4, 16, 0, 0)}
+                        }
+                    }
                 };
-                for (int i = 3; i <= 32; i++)
+                for (int i = 3; i <= 16; i++)
                 {
                     items.Add(new LoadChartItem
                     {

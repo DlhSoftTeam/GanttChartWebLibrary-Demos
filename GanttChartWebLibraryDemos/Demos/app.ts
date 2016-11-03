@@ -14,7 +14,7 @@ interface Sample {
 
 angular.module('Demos', [])
     .controller('MainController', ($scope, $http, $timeout) => {
-        var components = ['GanttChartView'];
+        var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
         var samples = <Sample[]>[
             {
                 component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
@@ -307,6 +307,48 @@ angular.module('Demos', [])
             },
             {
                 component: 'ScheduleChartView', feature: 'Printing', title: 'Printing (virtual printers, e.g. Print to PDF, supported)', description: 'Includes code that initiates a print operation; end user can select the printer to use (virtual printers such as Print to PDF are supported as well)',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'LoadChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'themes.js']
+                }
+            },
+            {
+                component: 'LoadChartView', feature: 'SingleItem', title: 'Single item', description: 'Sample application showing how to display a single item with multiple allocations',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'LoadChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Load Chart view from Gantt Chart data',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js']
+                }
+            },
+            {
+                component: 'PertChartView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a PERT Chart view from Gantt Chart data',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
+                component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js']
+                }
+            },
+            {
+                component: 'NetworkDiagramView', feature: 'GanttChartIntegration', title: 'Gantt Chart integration', description: 'Sample application showing how to generate a Network Diagram view from Gantt Chart data',
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
                 }

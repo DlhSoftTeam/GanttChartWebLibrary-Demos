@@ -173,6 +173,7 @@ namespace Demos.Samples.CSharp.ScheduleChartView.MainFeatures
         private void ScheduleChartView_ItemPropertyChanged(object sender, ItemPropertyChangedEventArgs e)
         { }
 
+        // Define user command methods.
         public void AddNewItemButton_Click(object sender, EventArgs e)
         {
             var item = new ScheduleChartItem

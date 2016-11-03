@@ -23,22 +23,22 @@
             <div class="ribbonContainer">
                 <div class="ribbonPanel">
                     <div class="ribbonHeader">Items</div>
-                        <div class="ribbonCommandsArea">
-                            <div class="ribbonCommand"><asp:ImageButton ID="AddNewItemButton" runat="server" ImageUrl="Images/AddNew.png" ToolTip="Add new item" AlternateText="Add new" OnClick="AddNewItemButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="InsertNewItemButton" runat="server" ImageUrl="Images/InsertNew.png" ToolTip="Insert new item before selection" AlternateText="Insert new" OnClick="InsertNewItemButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="DeleteItemButton" runat="server" ImageUrl="Images/Delete.png" ToolTip="Delete selected item" AlternateText="Delete" OnClick="DeleteItemButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="SetCustomBarColorToItemButton" runat="server" ImageUrl="Images/SetColor.png" ToolTip="Set custom bar color to selected item" AlternateText="Set color" OnClick="SetCustomBarColorToItemButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="MoveItemUpButton" runat="server" ImageUrl="Images/MoveUp.png" ToolTip="Move selected item up" AlternateText="Move up" OnClick="MoveItemUpButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="MoveItemDownButton" runat="server" ImageUrl="Images/MoveDown.png" ToolTip="Move selected item down" AlternateText="Move down" OnClick="MoveItemDownButton_Click"/></div>
+                    <div class="ribbonCommandsArea">
+                        <div class="ribbonCommand"><asp:ImageButton ID="AddNewItemButton" runat="server" ImageUrl="Images/AddNew.png" ToolTip="Add new item" AlternateText="Add new" OnClick="AddNewItemButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="InsertNewItemButton" runat="server" ImageUrl="Images/InsertNew.png" ToolTip="Insert new item before selection" AlternateText="Insert new" OnClick="InsertNewItemButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="DeleteItemButton" runat="server" ImageUrl="Images/Delete.png" ToolTip="Delete selected item" AlternateText="Delete" OnClick="DeleteItemButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="SetCustomBarColorToItemButton" runat="server" ImageUrl="Images/SetColor.png" ToolTip="Set custom bar color to selected item" AlternateText="Set color" OnClick="SetCustomBarColorToItemButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="MoveItemUpButton" runat="server" ImageUrl="Images/MoveUp.png" ToolTip="Move selected item up" AlternateText="Move up" OnClick="MoveItemUpButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="MoveItemDownButton" runat="server" ImageUrl="Images/MoveDown.png" ToolTip="Move selected item down" AlternateText="Move down" OnClick="MoveItemDownButton_Click"/></div>
                     </div>
                 </div>
                 <div class="ribbonPanel">
                     <div class="ribbonHeader">Timeline/Schedule</div>
                     <div class="ribbonCommandsArea">
                         <div class="ribbonCommand"><asp:ImageButton ID="SetCustomScalesButton" runat="server" ImageUrl="Images/CustomScales.png" ToolTip="Set custom scales" AlternateText="Custom scales" OnClick="SetCustomScalesButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="ZoomInButton" runat="server" ImageUrl="Images/ZoomIn.png" ToolTip="Zoom in" AlternateText="Zoom in" OnClick="ZoomInButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="DecreaseTimelinePageButton" runat="server" ImageUrl="Images/DecreaseTimelinePage.png" ToolTip="Move towards past" AlternateText="Decrease timeline page" OnClick="DecreaseTimelinePageButton_Click"/></div>
-                            <div class="ribbonCommand"><asp:ImageButton ID="IncreaseTimelinePageButton" runat="server" ImageUrl="Images/IncreaseTimelinePage.png" ToolTip="Move towards future" AlternateText="Increase timeline page" OnClick="IncreaseTimelinePageButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="ZoomInButton" runat="server" ImageUrl="Images/ZoomIn.png" ToolTip="Zoom in" AlternateText="Zoom in" OnClick="ZoomInButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="DecreaseTimelinePageButton" runat="server" ImageUrl="Images/DecreaseTimelinePage.png" ToolTip="Move towards past" AlternateText="Decrease timeline page" OnClick="DecreaseTimelinePageButton_Click"/></div>
+                        <div class="ribbonCommand"><asp:ImageButton ID="IncreaseTimelinePageButton" runat="server" ImageUrl="Images/IncreaseTimelinePage.png" ToolTip="Move towards future" AlternateText="Increase timeline page" OnClick="IncreaseTimelinePageButton_Click"/></div>
                     </div>
                 </div>
                 <div class="ribbonPanel">

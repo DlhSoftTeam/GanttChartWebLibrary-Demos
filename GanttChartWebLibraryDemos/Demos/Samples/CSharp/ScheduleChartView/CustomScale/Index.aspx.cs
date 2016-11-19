@@ -77,7 +77,7 @@ namespace Demos.Samples.CSharp.ScheduleChartView.CustomScale
                     customScale
                 };
                 var daysOfWeek = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
-                for (var d = date.AddDays(-14); d < date.AddYears(1).AddDays(7); d = d.AddDays(1))
+                for (var d = ScheduleChartView.DisplayedTime.AddDays(-14); d < ScheduleChartView.DisplayedTime.AddYears(1).AddDays(7); d = d.AddDays(1))
                     customScale.Intervals.Add(new TimeInterval(d, d.AddDays(1)), daysOfWeek[(int)d.DayOfWeek]);
                 // Optionally, initialize the way updates occur as well, such as allowing dragging and dropping task bars on entire hours.
                 ScheduleChartView.UpdateScaleInterval = TimeSpan.FromHours(1);

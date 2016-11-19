@@ -340,6 +340,12 @@ angular.module('Demos', [])
             sourceCodeFiles: {
                 'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
             }
+        },
+        {
+            component: 'GanttChartView', feature: 'Database', title: 'SQL Server®', description: 'App accessing data from a SQL Server® database',
+            sourceCodeUrls: {
+                'CSharp': 'http://DlhSoft.com/GanttChartWebLibrary/Documentation/Samples/ASP .NET/GanttChartViewDatabaseSample.zip'
+            }
         }
     ];
     var themes = ['Default', 'Generic-bright', 'Generic-blue', 'DlhSoft-gray', 'Purple-green', 'Steel-blue', 'Dark-black', 'Cyan-green', 'Blue-navy', 'Orange-brown', 'Teal-green', 'Purple-beige', 'Gray-blue', 'Aero'];

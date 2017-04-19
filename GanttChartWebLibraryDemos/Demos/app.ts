@@ -1,4 +1,4 @@
-﻿declare var angular;
+﻿declare var $, angular;
 
 var queryString = window.location.search;
 var initialSelection = queryString ? queryString.substr(1).replace('-', ' ') : null;
@@ -374,7 +374,7 @@ angular.module('Demos', [])
                 $scope.run();
             });
         };
-        var technologies = [{ name: 'CSharp', title: 'C#' }, { name: 'VisualBasic', title: 'Visual Basic®' }];
+        var technologies = [{ name: 'CSharp', title: 'C# + WebForms' }, { title: 'C# + MVC', url: 'http://GitHub.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos' }, { name: 'VisualBasic', title: 'Visual Basic®' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
         var getSamples = (component, selectedTechnology) => {
@@ -422,6 +422,10 @@ angular.module('Demos', [])
         $scope.selectTechnology = (technology) => {
             if (technology == $scope.selectedTechnology)
                 return;
+            if (technology.url) {
+                window.open(technology.url, '_blank');
+                return;
+            }
             $scope.selectedTechnology = technology;
             var selectedSample = $scope.selectedSample;
             var selectedComponent = selectedSample.component;

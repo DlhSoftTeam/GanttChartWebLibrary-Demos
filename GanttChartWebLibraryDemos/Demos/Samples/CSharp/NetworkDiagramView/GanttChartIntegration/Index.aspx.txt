@@ -32,11 +32,6 @@
                 <asp:Button ID="HideNetworkDiagramButton" runat="server" Text="Back to Gantt Chart source" OnClick="HideNetworkDiagramButton_Click"></asp:Button>
             </asp:Panel>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="AddNewGanttChartItemButton" />
-            <asp:PostBackTrigger ControlID="ShowNetworkDiagramButton" />
-            <asp:PostBackTrigger ControlID="HideNetworkDiagramButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

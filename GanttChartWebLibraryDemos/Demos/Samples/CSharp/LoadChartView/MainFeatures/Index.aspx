@@ -45,15 +45,6 @@
             </div>
             <pdgcc:LoadChartView ID="LoadChartView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="MoveItemUpButton" />
-            <asp:PostBackTrigger ControlID="MoveItemDownButton" />
-            <asp:PostBackTrigger ControlID="SetCustomScalesButton" />
-            <asp:PostBackTrigger ControlID="ZoomInButton" />
-            <asp:PostBackTrigger ControlID="DecreaseTimelinePageButton" />
-            <asp:PostBackTrigger ControlID="IncreaseTimelinePageButton" />
-            <asp:PostBackTrigger ControlID="PrintButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

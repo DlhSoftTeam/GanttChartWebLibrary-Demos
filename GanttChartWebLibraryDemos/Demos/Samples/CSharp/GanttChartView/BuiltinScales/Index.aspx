@@ -103,17 +103,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="MajorScaleTypeDropDownList" />
-            <asp:PostBackTrigger ControlID="MajorScaleHeaderFormatDropDownList" />
-            <asp:PostBackTrigger ControlID="NonworkingDaysCheckBox" />
-            <asp:PostBackTrigger ControlID="CurrentTimeCheckBox" />
-            <asp:PostBackTrigger ControlID="ZoomLevelTextBox" />
-            <asp:PostBackTrigger ControlID="UpdateScaleDropDownList" />
-            <asp:PostBackTrigger ControlID="MinorScaleTypeDropDownList" />
-            <asp:PostBackTrigger ControlID="MinorScaleHeaderFormatDropDownList" />
-            <asp:PostBackTrigger ControlID="MinorScaleSeparatorCheckBox" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

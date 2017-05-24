@@ -31,10 +31,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="LoadProjectXmlButton"/>
-            <asp:PostBackTrigger ControlID="SaveProjectXmlButton"/>
-        </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="LoadProjectXmlUpdatePanel" runat="server" RenderMode="Inline">
         <ContentTemplate>
@@ -47,11 +43,6 @@
                 </div>
             </asp:Panel>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="LoadProjectXmlButton"/>
-            <asp:PostBackTrigger ControlID="LoadProjectXmlSubmitButton"/>
-            <asp:PostBackTrigger ControlID="CloseLoadProjectXmlButton"/>
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

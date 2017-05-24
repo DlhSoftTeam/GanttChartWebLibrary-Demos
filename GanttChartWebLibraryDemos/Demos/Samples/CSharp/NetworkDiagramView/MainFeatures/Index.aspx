@@ -41,11 +41,6 @@
             </div>
             <pdpcc:NetworkDiagramView ID="NetworkDiagramView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="SetCustomShapeColorToItem2Button" />
-            <asp:PostBackTrigger ControlID="PrintButton" />
-            <asp:PostBackTrigger ControlID="HighlightCriticalPathButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

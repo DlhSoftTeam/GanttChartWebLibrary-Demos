@@ -32,11 +32,6 @@
                 <asp:Button ID="HideScheduleChartButton" runat="server" Text="Back to Gantt Chart source" OnClick="HideScheduleChartButton_Click"></asp:Button>
             </asp:Panel>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="AddNewGanttChartItemButton" />
-            <asp:PostBackTrigger ControlID="ShowScheduleChartButton" />
-            <asp:PostBackTrigger ControlID="HideScheduleChartButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

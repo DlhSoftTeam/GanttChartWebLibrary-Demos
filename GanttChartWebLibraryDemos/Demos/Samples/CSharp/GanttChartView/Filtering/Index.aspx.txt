@@ -26,10 +26,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="SetSelectedItemAsHiddenButton" />
-            <asp:PostBackTrigger ControlID="DisplayOnlyResource2Button" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

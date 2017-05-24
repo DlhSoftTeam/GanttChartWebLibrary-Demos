@@ -57,26 +57,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="IsReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="IsGridReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="IsChartReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="HideGridCheckBox" />
-            <asp:PostBackTrigger ControlID="IsContentReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="AreSchedulingColumnsReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="AreAssignmentsReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="IsEffortPreservedWhenStartChangesInGridCheckBox" />
-            <asp:PostBackTrigger ControlID="IsStartReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="IsCompletionReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="IsEffortReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="DisableStartEndDraggingCheckBox" />
-            <asp:PostBackTrigger ControlID="HideDependenciesCheckBox" />
-            <asp:PostBackTrigger ControlID="DisableCreatingStartDependenciesCheckBox" />
-            <asp:PostBackTrigger ControlID="AreDependenciesReadOnlyCheckBox" />
-            <asp:PostBackTrigger ControlID="DisableScrollingOnTaskClickCheckBox" />
-            <asp:PostBackTrigger ControlID="SelectedItemAsReadOnlyButton" />
-            <asp:PostBackTrigger ControlID="SelectedItemBarAsReadOnlyButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

@@ -34,9 +34,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers> 
-            <asp:PostBackTrigger ControlID="SelectionModeDropDownList" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

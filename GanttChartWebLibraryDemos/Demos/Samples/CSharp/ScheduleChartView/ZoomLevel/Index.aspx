@@ -34,10 +34,6 @@
             </div>
             <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="ZoomLevelTextBox" />
-            <asp:PostBackTrigger ControlID="DisableMouseWheelZoomCheckBox" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

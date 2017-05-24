@@ -42,12 +42,6 @@
             </div>
             <pdpcc:PertChartView ID="PertChartView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="SetCustomShapeColorToItemButton" />
-            <asp:PostBackTrigger ControlID="SetCustomDependencyLineColorToPredecessorItemButton" />
-            <asp:PostBackTrigger ControlID="PrintButton" />
-            <asp:PostBackTrigger ControlID="HighlightCriticalPathButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

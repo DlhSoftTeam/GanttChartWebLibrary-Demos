@@ -40,12 +40,6 @@
         </div>
         <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="AddNewItemButton"/>
-        <asp:PostBackTrigger ControlID="InsertNewItemButton"/>
-        <asp:PostBackTrigger ControlID="DeleteItemButton"/>
-        <asp:PostBackTrigger ControlID="LoadChartButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="LoadChartUpdatePanel" runat="server" RenderMode="Inline">
     <ContentTemplate>
@@ -65,10 +59,6 @@
             <pdgcc:LoadChartView ID="LoadChartView" runat="server" SelectionMode="None" IsMouseWheelZoomEnabled="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="LoadChartButton"/>
-        <asp:PostBackTrigger ControlID="CloseLoadChartViewButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

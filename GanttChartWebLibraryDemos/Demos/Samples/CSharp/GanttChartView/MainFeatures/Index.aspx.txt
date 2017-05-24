@@ -78,31 +78,6 @@
         <!-- Optionally, in order to improve performance by leveraging browser caching features on the client side, you may add DlhSoft.ProjectData.GanttChart.HTML.Controls.js file (from the DlhSoft product installation folder) as an item within your Web application, and set JavaScriptLibraryUrl property of the component to a value indicating its relative path. -->
         <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="AddNewItemButton"/>
-        <asp:PostBackTrigger ControlID="InsertNewItemButton"/>
-        <asp:PostBackTrigger ControlID="DecreaseTimelinePageButton"/>
-        <asp:PostBackTrigger ControlID="IncreaseTimelinePageButton"/>
-        <asp:PostBackTrigger ControlID="DeleteItemButton"/>
-        <asp:PostBackTrigger ControlID="SetCustomBarColorToItemButton"/>
-        <asp:PostBackTrigger ControlID="SetCustomScalesButton"/>
-        <asp:PostBackTrigger ControlID="ZoomInButton"/>
-        <asp:PostBackTrigger ControlID="DecreaseTimelinePageButton"/>
-        <asp:PostBackTrigger ControlID="IncreaseTimelinePageButton"/>
-        <asp:PostBackTrigger ControlID="ToggleBaselineButton"/>
-        <asp:PostBackTrigger ControlID="HighlightCriticalPathButton"/>
-        <asp:PostBackTrigger ControlID="SplitRemainingWorkButton"/>
-        <asp:PostBackTrigger ControlID="ToggleDependencyConstraintsButton"/>
-        <asp:PostBackTrigger ControlID="LevelResourcesButton"/>
-        <asp:PostBackTrigger ControlID="ScheduleChartButton"/>
-        <asp:PostBackTrigger ControlID="LoadChartButton"/>
-        <asp:PostBackTrigger ControlID="PertChartButton"/>
-        <asp:PostBackTrigger ControlID="NetworkDiagramButton"/>
-        <asp:PostBackTrigger ControlID="LoadProjectXmlButton"/>
-        <asp:PostBackTrigger ControlID="SaveProjectXmlButton"/>
-        <asp:PostBackTrigger ControlID="PrintButton"/>
-        <asp:PostBackTrigger ControlID="LoadProjectXmlSubmitButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="LoadProjectXmlUpdatePanel" runat="server" RenderMode="Inline">
     <ContentTemplate>
@@ -115,11 +90,6 @@
             </div>
         </asp:Panel>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="LoadProjectXmlButton"/>
-        <asp:PostBackTrigger ControlID="LoadProjectXmlSubmitButton"/>
-        <asp:PostBackTrigger ControlID="CloseLoadProjectXmlButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="ScheduleChartUpdatePanel" runat="server" RenderMode="Inline">
     <ContentTemplate>
@@ -133,10 +103,6 @@
             <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" IsReadOnly="true" SelectionMode="None" IsMouseWheelZoomEnabled="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="ScheduleChartButton"/>
-        <asp:PostBackTrigger ControlID="CloseScheduleChartViewButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="LoadChartUpdatePanel" runat="server" RenderMode="Inline">
     <ContentTemplate>
@@ -156,10 +122,6 @@
             <pdgcc:LoadChartView ID="LoadChartView" runat="server" SelectionMode="None" IsMouseWheelZoomEnabled="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="LoadChartButton"/>
-        <asp:PostBackTrigger ControlID="CloseLoadChartViewButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="PertChartUpdatePanel" runat="server" RenderMode="Inline">
     <ContentTemplate>
@@ -173,10 +135,6 @@
             <pdpcc:PertChartView ID="PertChartView" runat="server" ChartMargin="2" SnapRearrangedItemsToGuidelines="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="PertChartButton"/>
-        <asp:PostBackTrigger ControlID="ClosePertChartViewButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="NetworkDiagramUpdatePanel" runat="server" RenderMode="Inline">
     <ContentTemplate>
@@ -190,10 +148,6 @@
             <pdpcc:NetworkDiagramView ID="NetworkDiagramView" runat="server" DiagramMargin="2" SnapRearrangedItemsToGuidelines="false" Height="190px"/>
         </asp:Panel>
     </ContentTemplate>
-    <Triggers>
-        <asp:PostBackTrigger ControlID="NetworkDiagramButton"/>
-        <asp:PostBackTrigger ControlID="CloseNetworkDiagramViewButton"/>
-    </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

@@ -34,13 +34,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="AddNewItemButton"/>
-            <asp:PostBackTrigger ControlID="InsertNewItemButton"/>
-            <asp:PostBackTrigger ControlID="DecreaseItemIndentationButton"/>
-            <asp:PostBackTrigger ControlID="IncreaseItemIndentationButton"/>
-            <asp:PostBackTrigger ControlID="DeleteItemButton"/>
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

@@ -32,9 +32,6 @@
             </div>
             <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="PrintImageButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

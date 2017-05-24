@@ -53,11 +53,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="DateFormatDropDownList"/>
-            <asp:PostBackTrigger ControlID="HideTimeOfDayCheckBox"/>
-            <asp:PostBackTrigger ControlID="DurationFormatDropDownList"/>
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

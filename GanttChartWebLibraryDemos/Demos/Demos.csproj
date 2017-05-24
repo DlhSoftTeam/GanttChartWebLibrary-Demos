@@ -379,7 +379,9 @@
     <Content Include="Templates\Sample.html" />
     <None Include="Tools\ArchiveBuilder.exe" />
     <None Include="Tools\Interop.Shell32.dll" />
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
@@ -477,8 +479,8 @@
       <Private>True</Private>
       <Aliases>pd</Aliases>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.GanttChart.ASP.Controls, Version=5.2.8.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.8.3\lib\net40\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.ASP.Controls, Version=5.2.8.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.9.2\lib\net452\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.37.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
@@ -486,8 +488,8 @@
       <Private>True</Private>
       <Aliases>pdl</Aliases>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.PertChart.ASP.Controls, Version=5.2.7.2, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.8.3\lib\net40\DlhSoft.ProjectData.PertChart.ASP.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.PertChart.ASP.Controls, Version=5.2.8.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.9.2\lib\net452\DlhSoft.ProjectData.PertChart.ASP.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.PertChart.LightWPF.Controls, Version=4.3.36.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">

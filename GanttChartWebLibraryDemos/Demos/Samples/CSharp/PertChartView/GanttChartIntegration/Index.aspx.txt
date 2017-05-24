@@ -32,11 +32,6 @@
                 <asp:Button ID="HidePertChartButton" runat="server" Text="Back to Gantt Chart source" OnClick="HidePertChartButton_Click"></asp:Button>
             </asp:Panel>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="AddNewGanttChartItemButton" />
-            <asp:PostBackTrigger ControlID="ShowPertChartButton" />
-            <asp:PostBackTrigger ControlID="HidePertChartButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

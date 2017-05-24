@@ -25,9 +25,6 @@
             </div>
             <pdgcc:GanttChartView ID="GanttChartView" runat="server" Height="388px"/>
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="InitializeCriticalPathButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

@@ -105,19 +105,6 @@
             </div>
             <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="MajorScaleTypeDropDownList" />
-            <asp:PostBackTrigger ControlID="MajorScaleHeaderFormatDropDownList" />
-            <asp:PostBackTrigger ControlID="MajorScaleSeparatorCheckBox" />
-            <asp:PostBackTrigger ControlID="MondayBasedCheckBox" />
-            <asp:PostBackTrigger ControlID="NonworkingDaysCheckBox" />
-            <asp:PostBackTrigger ControlID="CurrentTimeCheckBox" />
-            <asp:PostBackTrigger ControlID="ZoomLevelTextBox" />
-            <asp:PostBackTrigger ControlID="UpdateScaleDropdownList" />
-            <asp:PostBackTrigger ControlID="MinorScaleTypeDropdownList" />
-            <asp:PostBackTrigger ControlID="MinorScaleHeaderFormatDropdownList" />
-            <asp:PostBackTrigger ControlID="MinorScaleSeparatorCheckBox" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

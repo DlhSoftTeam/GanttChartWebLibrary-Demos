@@ -50,19 +50,6 @@
             </div>
             <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="AddNewItemButton" />
-            <asp:PostBackTrigger ControlID="InsertNewItemButton" />
-            <asp:PostBackTrigger ControlID="DeleteItemButton" />
-            <asp:PostBackTrigger ControlID="SetCustomBarColorToItemButton" />
-            <asp:PostBackTrigger ControlID="MoveItemUpButton" />
-            <asp:PostBackTrigger ControlID="MoveItemDownButton" />
-            <asp:PostBackTrigger ControlID="SetCustomScalesButton" />
-            <asp:PostBackTrigger ControlID="ZoomInButton" />
-            <asp:PostBackTrigger ControlID="DecreaseTimelinePageButton" />
-            <asp:PostBackTrigger ControlID="IncreaseTimelinePageButton" />
-            <asp:PostBackTrigger ControlID="PrintButton" />
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

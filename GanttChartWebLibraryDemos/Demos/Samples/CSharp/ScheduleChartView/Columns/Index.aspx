@@ -34,13 +34,6 @@
             </div>
             <pdgcc:ScheduleChartView ID="ScheduleChartView" runat="server" Height="388px" />
         </ContentTemplate>
-        <Triggers>
-            <asp:PostBackTrigger ControlID="AddNewItemButton"/>
-            <asp:PostBackTrigger ControlID="InsertNewItemButton"/>
-            <asp:PostBackTrigger ControlID="DeleteItemButton"/>
-            <asp:PostBackTrigger ControlID="MoveItemUpButton"/>
-            <asp:PostBackTrigger ControlID="MoveItemDownButton"/>
-        </Triggers>
     </asp:UpdatePanel>
     </form>
 </body>

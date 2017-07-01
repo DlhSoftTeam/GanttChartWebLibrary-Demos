@@ -16,7 +16,7 @@
     </script>
 </head>
 <body>
-    <form id="form" runat="server">
+    <form id="form" runat="server" enctype="multipart/form-data">
     <asp:ScriptManager ID="ScriptManager" runat="server"/>
     <asp:UpdatePanel ID="MainPanel" runat="server">
     <ContentTemplate>
@@ -90,6 +90,9 @@
             </div>
         </asp:Panel>
     </ContentTemplate>
+    <Triggers>
+        <asp:PostBackTrigger ControlID="LoadProjectXmlSubmitButton"/>
+    </Triggers>
     </asp:UpdatePanel>
     <asp:UpdatePanel ID="ScheduleChartUpdatePanel" runat="server" RenderMode="Inline">
     <ContentTemplate>

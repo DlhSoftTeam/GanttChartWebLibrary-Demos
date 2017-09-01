@@ -44,6 +44,9 @@ namespace Demos.Samples.CSharp.GanttChartView.Styling
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
+                // Set up some any overall appearance settings, if needed.
+                GanttChartView.GridLinesColor = Color.FromArgb(0xff, 0xea, 0xea, 0xea);
+
                 // Initialize CSS classes to be used for rendering specific elements in the view.
                 GanttChartView.ContainerCssClass = "container";
                 GanttChartView.SelectedItemCssClass = "selectedItem";

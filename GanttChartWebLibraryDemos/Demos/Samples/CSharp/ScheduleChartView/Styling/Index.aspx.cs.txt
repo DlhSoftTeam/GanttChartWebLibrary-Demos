@@ -65,6 +65,9 @@ namespace Demos.Samples.CSharp.ScheduleChartView.Styling
                 ScheduleChartView.DisplayedTime = new DateTime(year, month, 1);
                 ScheduleChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
+                // Set up some any overall appearance settings, if needed.
+                ScheduleChartView.GridLinesColor = Color.FromArgb(0xff, 0xea, 0xea, 0xea);
+
                 // Initialize CSS classes to be used for rendering specific elements in the view.
                 ScheduleChartView.ContainerCssClass = "container";
                 ScheduleChartView.SelectedItemCssClass = "selectedItem";

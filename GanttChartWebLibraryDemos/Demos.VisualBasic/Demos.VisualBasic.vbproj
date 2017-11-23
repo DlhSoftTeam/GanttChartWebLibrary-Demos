@@ -43,12 +43,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DlhSoft.ProjectData.GanttChart.ASP.Controls, Version=5.2.8.4, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.9.5\lib\net452\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.ASP.Controls, Version=5.2.8.6, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.9.8\lib\net452\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.PertChart.ASP.Controls, Version=5.2.8.3, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.9.5\lib\net452\DlhSoft.ProjectData.PertChart.ASP.Controls.dll</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.9.8\lib\net452\DlhSoft.ProjectData.PertChart.ASP.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

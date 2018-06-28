@@ -44,11 +44,14 @@ namespace Demos.Samples.CSharp.GanttChartView.CustomTemplate
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Initialize custom field values (HasMilestoneAtFinish, NumberOfLinesToDisplayInsteadOfRectangle) for specific items.
+                // Initialize custom field values (HasMilestoneAtFinish, NumberOfLinesToDisplayInsteadOfRectangle, Label) for specific items.
                 items[4].CustomValues["HasMilestoneAtFinish"] = true;
                 items[6].CustomValues["HasMilestoneAtFinish"] = true;
+                items[6].CustomValues["Label"] = "X";
                 items[6].CustomValues["NumberOfLinesToDisplayInsteadOfRectangle"] = 50;
                 items[7].CustomValues["NumberOfLinesToDisplayInsteadOfRectangle"] = 16;
+                items[10].CustomValues["Label"] = "Task 5";
+                items[11].CustomValues["Label"] = "6";
 
                 // Set standard task template as JavaScript function statements using custom fields prepared for items and 
                 // returning SVG content (and optionally similar settings for summary and milestone tasks).
@@ -58,8 +61,13 @@ namespace Demos.Samples.CSharp.GanttChartView.CustomTemplate
                     var group = item.customNumberOfLinesToDisplayInsteadOfRectangleValue ? linesTemplate(item) : originalStandardTaskTemplate(item);
                     if (item.customHasMilestoneAtFinishValue) {
                         var finishDiamond = getFinishDiamond(item);
-                        var lastChildIndex = group.childNodes.length - 1; // Dependency creation thumb.
-                        group.insertBefore(finishDiamond, group.childNodes[lastChildIndex]); 
+                        var index = group.childNodes.length - 1; // Dependency creation thumb.
+                        group.insertBefore(finishDiamond, group.childNodes[index]); 
+                    }
+                    if (item.customLabelValue) {
+                        var label = getLabel(item);
+                        var index = group.childNodes.length - 6; // Drag thumb.
+                        group.insertBefore(label, group.childNodes[index]);
                     }
                     return group;
                     // Custom template helpers.
@@ -206,6 +214,22 @@ namespace Demos.Samples.CSharp.GanttChartView.CustomTemplate
                         }
                         group.appendChild(startDiamond);
                         return group;
+                    }
+                    function getLabel(item) {
+                        var ganttChartView = item.ganttChartView;
+                        var settings = ganttChartView.settings;
+                        var document = ganttChartView.ownerDocument;
+                        var svgns = 'http://www.w3.org/2000/svg';
+                        var barMargin = 4;
+                        var barHeight = settings.itemHeight - 2 * barMargin;
+                        var itemLeft = ganttChartView.getChartPosition(item.start);
+                        var content = document.createTextNode(item.customLabelValue);
+                        var text = document.createElementNS(svgns, 'text');
+                        text.setAttribute('x', itemLeft + 4);
+                        text.setAttribute('y', barMargin + barHeight - barHeight / 4 - 1);
+                        text.setAttribute('style', 'font-size: ' + (barHeight / 2 + 1) + 'px');
+                        text.appendChild(content);
+                        return text;
                     }";
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).

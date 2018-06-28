@@ -392,7 +392,9 @@
     <TypeScriptCompile Include="Scripts\DlhSoft.ProjectData.PertChart.HTML.Controls.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -469,13 +471,13 @@
       <HintPath>..\packages\DlhSoft.HierarchicalDataLightLibrary.4.0.9.1\lib\net45\DlhSoft.OrganizationalChartLibrary.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.Core, Version=5.0.5.6, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.5.12\lib\net40-client\DlhSoft.ProjectData.Core.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.Core, Version=5.0.6.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.6\lib\net40-client\DlhSoft.ProjectData.Core.dll</HintPath>
       <Private>True</Private>
       <Aliases>pd</Aliases>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.Core.Imaging, Version=5.0.5.5, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.5.12\lib\net40-client\DlhSoft.ProjectData.Core.Imaging.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.Core.Imaging, Version=5.0.6.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.ProjectManagementFramework.5.0.6\lib\net40-client\DlhSoft.ProjectData.Core.Imaging.dll</HintPath>
       <Private>True</Private>
       <Aliases>pd</Aliases>
     </Reference>
@@ -483,8 +485,8 @@
       <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.2.9.8\lib\net452\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.38.4, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.38.4\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.39.3, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.39.3\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
       <Private>True</Private>
       <Aliases>pdl</Aliases>
     </Reference>
@@ -493,7 +495,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.PertChart.LightWPF.Controls, Version=4.3.38.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.38.4\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.39.3\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>
       <Private>True</Private>
       <Aliases>pdl</Aliases>
     </Reference>

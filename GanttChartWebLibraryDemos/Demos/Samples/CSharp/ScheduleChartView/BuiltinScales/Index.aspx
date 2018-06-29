@@ -59,8 +59,7 @@
                                 <asp:ListItem Value="Localized" Text="Localized" />
                             </asp:DropDownList>
                         </td>
-                        <td><asp:CheckBox ID="MajorScaleSeparatorCheckBox" runat="server" AutoPostBack="true" OnCheckedChanged="MajorScaleSeparatorCheckBox_CheckedChanged" /></td>
-                        <td><asp:CheckBox ID="MondayBasedCheckBox" runat="server" AutoPostBack="true" checked="true" OnCheckedChanged="MondayBasedCheckBox_CheckedChanged" /></td>
+                        <td><asp:CheckBox ID="MajorScaleSeparatorCheckBox" runat="server" Checked="true" Enabled="false" /></td>
                         <td><asp:CheckBox ID="NonworkingDaysCheckBox" runat="server" AutoPostBack="true" checked="true" OnCheckedChanged="NonworkingDaysCheckBox_CheckedChanged" /></td>
                         <td><asp:CheckBox ID="CurrentTimeCheckBox" runat="server" AutoPostBack="true" checked="true" OnCheckedChanged="CurrentTimeCheckBox_CheckedChanged" /></td>
                         <td><asp:TextBox ID="ZoomLevelTextBox" runat="server" AutoPostBack="true" TextMode="Number" Text="5" OnTextChanged="ZoomLevelTextBox_TextChanged" /></td>

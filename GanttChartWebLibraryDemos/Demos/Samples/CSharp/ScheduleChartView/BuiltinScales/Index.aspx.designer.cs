@@ -67,15 +67,6 @@ namespace Demos.Samples.CSharp.ScheduleChartView.BuiltinScales {
         protected global::System.Web.UI.WebControls.CheckBox MajorScaleSeparatorCheckBox;
         
         /// <summary>
-        /// MondayBasedCheckBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox MondayBasedCheckBox;
-        
-        /// <summary>
         /// NonworkingDaysCheckBox control.
         /// </summary>
         /// <remarks>

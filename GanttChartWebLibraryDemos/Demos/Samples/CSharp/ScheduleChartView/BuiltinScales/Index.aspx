@@ -27,7 +27,6 @@
                         <td>Type</td>
                         <td>Header format</td>
                         <td>Separator</td>
-                        <td>Monday-based</td>
                         <td>Nonworking days</td>
                         <td>Current time</td>
                         <td>Zoom level</td>

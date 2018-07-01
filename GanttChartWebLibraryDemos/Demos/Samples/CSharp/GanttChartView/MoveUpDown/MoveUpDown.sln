@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveUpDown", "MoveUpDown.csproj", "{CBB11EB3-6135-4AB4-AA42-8DCCBA5F4294}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBB11EB3-6135-4AB4-AA42-8DCCBA5F4294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB11EB3-6135-4AB4-AA42-8DCCBA5F4294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB11EB3-6135-4AB4-AA42-8DCCBA5F4294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB11EB3-6135-4AB4-AA42-8DCCBA5F4294}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

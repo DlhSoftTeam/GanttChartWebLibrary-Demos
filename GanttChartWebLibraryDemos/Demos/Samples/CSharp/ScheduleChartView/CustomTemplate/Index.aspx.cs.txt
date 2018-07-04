@@ -65,11 +65,14 @@ namespace Demos.Samples.CSharp.ScheduleChartView.CustomTemplate
                 ScheduleChartView.DisplayedTime = new DateTime(year, month, 1);
                 ScheduleChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Initialize custom field values (HasMilestoneAtFinish, NumberOfLinesToDisplayInsteadOfRectangle) for specific items.
+                // Initialize custom field values (HasMilestoneAtFinish, NumberOfLinesToDisplayInsteadOfRectangle, Label) for specific items.
                 items[1].GanttChartItems[0].CustomValues["HasMilestoneAtFinish"] = true;
                 items[1].GanttChartItems[1].CustomValues["HasMilestoneAtFinish"] = true;
                 items[1].GanttChartItems[1].CustomValues["NumberOfLinesToDisplayInsteadOfRectangle"] = 50;
                 items[2].GanttChartItems[0].CustomValues["NumberOfLinesToDisplayInsteadOfRectangle"] = 16;
+                items[2].GanttChartItems[0].CustomValues["Label"] = "X";
+                items[4].GanttChartItems[0].CustomValues["Label"] = "Task X (Resource 5)";
+                items[5].GanttChartItems[0].CustomValues["Label"] = "X (6)";
 
                 // Set standard task template as JavaScript function statements using custom fields prepared for items and 
                 // returning SVG content (and optionally similar settings for milestone tasks).
@@ -82,6 +85,11 @@ namespace Demos.Samples.CSharp.ScheduleChartView.CustomTemplate
                         var finishDiamond = getFinishDiamond(item);
                         var lastChildIndex = group.childNodes.length - 1; // Dependency creation thumb.
                         group.insertBefore(finishDiamond, group.childNodes[lastChildIndex]);
+                    }
+                    if (item.customLabelValue) {
+                        var label = getLabel(item);
+                        var index = group.childNodes.length - 4; // Drag thumb.
+                        group.insertBefore(label, group.childNodes[index]);
                     }
                     return group;
                     // Custom template helpers.
@@ -235,7 +243,23 @@ namespace Demos.Samples.CSharp.ScheduleChartView.CustomTemplate
                         }
                         group.appendChild(startDiamond);
                         return group;
-                    } ";
+                    }
+                    function getLabel(item) {
+                        var ganttChartView = item.ganttChartView;
+                        var settings = ganttChartView.settings;
+                        var document = ganttChartView.ownerDocument;
+                        var svgns = 'http://www.w3.org/2000/svg';
+                        var barMargin = 4;
+                        var barHeight = settings.itemHeight - 2 * barMargin;
+                        var itemLeft = ganttChartView.getChartPosition(item.start);
+                        var content = document.createTextNode(item.customLabelValue);
+                        var text = document.createElementNS(svgns, 'text');
+                        text.setAttribute('x', itemLeft + 4);
+                        text.setAttribute('y', barMargin + barHeight - barHeight / 4 - 1);
+                        text.setAttribute('style', 'font-size: ' + (barHeight / 2 + 1) + 'px');
+                        text.appendChild(content);
+                        return text;
+                    }";
 
                 // Optionally, initialize custom theme and templates (themes.js, templates.js).
                 ScheduleChartView.InitializingClientCode = @"

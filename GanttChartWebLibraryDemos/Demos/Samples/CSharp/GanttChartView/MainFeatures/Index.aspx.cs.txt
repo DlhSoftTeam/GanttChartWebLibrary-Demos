@@ -192,8 +192,14 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
                 // Optionally, apply visibility filter to display only specific items in the view.
                 // GanttChartView.VisibilityFilterClientCode = "return item.content.indexOf('Task 2') >= 0;";
 
+                // Optionally, set HasFixedEffort to true to automatically update item assignment allocation units rather than effort upon duration changes.
+                // GanttChartView.Items[4].HasFixedEffort = true;
+
                 // Optionally, set up auto-scheduling behavior for dependent tasks based on predecessor information, supplementary disallowing circular dependencies.
                 GanttChartView.AreTaskDependencyConstraintsEnabled = true;
+
+                // Optionally, disable auto-scheduling for specific items (turning on manual scheduling back for them.)
+                // GanttChartView.Items[7].AreDependencyConstraintsEnabled = false;
 
                 // Optionally, specify the application target in order for the component to adapt to the screen size.
                 // GanttChartView.Target = DlhSoft.Web.UI.WebControls.PresentationTarget.Phone;

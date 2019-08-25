@@ -54,6 +54,12 @@ angular.module('Demos', [])
                 }
             },
             {
+                component: 'GanttChartView', feature: 'Interruptions', title: 'Interruptions', description: 'Shows how you can set up task template extensions to draw interruptions',
+                sourceCodeFiles: {
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']
+                }
+            },
+            {
                 component: 'GanttChartView', feature: 'ChangeNotifications', title: 'Change notifications (item value update handling)', description: 'Shows how custom code can be executed when changes are post back on the data presented by the component',
                 sourceCodeFiles: {
                     'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css']

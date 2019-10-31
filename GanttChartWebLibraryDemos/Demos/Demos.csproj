@@ -485,15 +485,15 @@
       <Private>True</Private>
       <Aliases>pd</Aliases>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.GanttChart.ASP.Controls, Version=5.2.11.4, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.3.2.2\lib\net452\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.ASP.Controls, Version=5.2.11.5, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.3.2.4\lib\net452\DlhSoft.ProjectData.GanttChart.ASP.Controls.dll</HintPath>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.GanttChart.LightWPF.Controls, Version=4.3.43.4, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
       <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.43.4\lib\net45\DlhSoft.ProjectData.GanttChart.LightWPF.Controls.dll</HintPath>
       <Aliases>pdl</Aliases>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.PertChart.ASP.Controls, Version=5.2.9.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
-      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.3.2.2\lib\net452\DlhSoft.ProjectData.PertChart.ASP.Controls.dll</HintPath>
+      <HintPath>..\packages\DlhSoft.GanttChartWebLibrary.5.3.2.4\lib\net452\DlhSoft.ProjectData.PertChart.ASP.Controls.dll</HintPath>
     </Reference>
     <Reference Include="DlhSoft.ProjectData.PertChart.LightWPF.Controls, Version=4.3.42.1, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
       <HintPath>..\packages\DlhSoft.GanttChartLightLibrary.4.3.43.4\lib\net45\DlhSoft.ProjectData.PertChart.LightWPF.Controls.dll</HintPath>

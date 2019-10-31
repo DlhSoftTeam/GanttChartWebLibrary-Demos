@@ -165,9 +165,9 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
 
                 ' Optionally, set up item template code statements, and standard, summary, milestone, and/or extra task template code statements to be executed on the client side.
                 ' GanttChartView.ItemTemplateClientCode = "var toolTip = document.createElementNS('http://www.w3.org/2000/svg', 'title');" + _
-                '     "var toolTipContent = item.content + ' • ' + 'Start: ' + item.start.toLocaleString();" + _
+                '     "var toolTipContent = item.content + '\n' + 'Start: ' + item.start.toLocaleString();" + _
                 '     "if (!item.isMilestone)" + _
-                '     "toolTipContent += ' • ' + 'Finish: ' + item.finish.toLocaleString();" + _
+                '     "toolTipContent += '\n' + 'Finish: ' + item.finish.toLocaleString();" + _
                 '     "toolTip.appendChild(document.createTextNode(toolTipContent));" + _
                 '     "return toolTip;"
                 'GanttChartView.StandardTaskTemplateClientCode = "var document = control.ownerDocument, svgns = 'http://www.w3.org/2000/svg';" + _

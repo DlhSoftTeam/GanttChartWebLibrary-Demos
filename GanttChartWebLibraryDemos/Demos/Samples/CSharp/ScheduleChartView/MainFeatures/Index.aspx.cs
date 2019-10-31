@@ -124,9 +124,9 @@ namespace Demos.Samples.CSharp.ScheduleChartView.MainFeatures
 
                 // Optionally, set up item template code statements, and standard, milestone, and/or extra task template code statements to be executed on the client side.
                 // ScheduleChartView.ItemTemplateClientCode = @"var toolTip = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-                //     var toolTipContent = item.content + ' • ' + 'Start: ' + item.start.toLocaleString();
+                //     var toolTipContent = item.content + '\n' + 'Start: ' + item.start.toLocaleString();
                 //     if (!item.isMilestone)
-                //         toolTipContent += ' • ' + 'Finish: ' + item.finish.toLocaleString();
+                //         toolTipContent += '\n' + 'Finish: ' + item.finish.toLocaleString();
                 //     toolTip.appendChild(document.createTextNode(toolTipContent));
                 //     return toolTip;";
                 // ScheduleChartView.StandardTaskTemplateClientCode = @"var document = control.ownerDocument, svgns = 'http://www.w3.org/2000/svg';

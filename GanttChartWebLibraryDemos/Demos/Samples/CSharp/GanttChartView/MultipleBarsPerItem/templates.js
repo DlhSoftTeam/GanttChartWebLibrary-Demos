@@ -391,7 +391,7 @@ function initializeGanttChartTemplates(settings, theme) {
                 if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'StartStart' || predecessorItem.dependencyType == 'SS' || predecessorItem.dependencyType == 'StartFinish' || predecessorItem.dependencyType == 'SF')) {
                     x = ganttChartView.getChartPosition(predecessorItem.item.start);
                     if ((predecessorItem.item.hasChildren && (typeof predecessorItem.item.isSummaryEnabled === undefinedType || predecessorItem.item.isSummaryEnabled)))
-                        x -= h / 5 + 0.25;
+                        x -= settings.barMargin * 5 / 8 + 0.25;
                     else if (predecessorItem.item.isMilestone)
                         x -= h / 4;
                     x1 = x - extraLineLength;
@@ -399,7 +399,7 @@ function initializeGanttChartTemplates(settings, theme) {
                 else {
                     x = ganttChartView.getChartPosition(predecessorItem.item.finish) - 1;
                     if (predecessorItem.item.hasChildren && (typeof predecessorItem.item.isSummaryEnabled === undefinedType || predecessorItem.item.isSummaryEnabled))
-                        x += h / 5 + 0.25;
+                        x += settings.barMargin * 5 / 8 + 0.25;
                     else if (predecessorItem.item.isMilestone)
                         x += h / 4;
                     else {
@@ -416,7 +416,7 @@ function initializeGanttChartTemplates(settings, theme) {
                     if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'FinishFinish' || predecessorItem.dependencyType == 'FF')) {
                         horizontal = true;
                         if (item.hasChildren && (typeof item.isSummaryEnabled === undefinedType || item.isSummaryEnabled))
-                            x += h / 5 + 1;
+                            x += settings.barMargin * 5 / 8 + 1;
                         else if (item.isMilestone)
                             x += h / 4 + 1;
                         else {
@@ -442,7 +442,7 @@ function initializeGanttChartTemplates(settings, theme) {
                     if (typeof predecessorItem.dependencyType !== undefinedType && (predecessorItem.dependencyType == 'StartStart' || predecessorItem.dependencyType == 'SS')) {
                         horizontal = true;
                         if (item.hasChildren && (typeof item.isSummaryEnabled === undefinedType || item.isSummaryEnabled))
-                            x -= h / 5 + 1;
+                            x -= settings.barMargin * 5 / 8 + 1;
                         else if (item.isMilestone)
                             x -= h / 4 + 1;
                         x2 = x - extraLineLength;
@@ -483,9 +483,9 @@ function initializeGanttChartTemplates(settings, theme) {
                 if (horizontal)
                     y = h2 + 0.5;
                 else if (y <= 0)
-                    y = h / 4 - (!item.isMilestone && !item.hasChildren ? barMargin : 1) - arrowSpace;
+                    y = settings.barMargin - (!item.isMilestone && !item.hasChildren ? barMargin : 1) - arrowSpace;
                 else
-                    y = h - h / 4 + (!item.isMilestone && !item.hasChildren ? barMargin : 1) + arrowSpace;
+                    y = h - settings.barMargin + (!item.isMilestone && !item.hasChildren ? barMargin : 1) + arrowSpace;
                 if (horizontal) {
                     if (x2 > x - arrowSpace)
                         arrowSpace = -arrowSpace;

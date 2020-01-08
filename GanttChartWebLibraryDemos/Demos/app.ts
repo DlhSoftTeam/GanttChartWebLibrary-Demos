@@ -13,7 +13,7 @@ interface Sample {
 }
 
 angular.module('Demos', [])
-    .controller('MainController', ($scope, $http, $timeout) => {
+    .controller('MainController', ($scope, $http, $timeout, $window) => {
         var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
         var samples = <Sample[]>[
             {
@@ -380,7 +380,7 @@ angular.module('Demos', [])
                 $scope.run();
             });
         };
-        var technologies = [{ name: 'CSharp', title: 'C# + WebForms' }, { title: 'C# + MVC', url: 'http://GitHub.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos' }, { name: 'VisualBasic', title: 'Visual Basic®' }];
+        var technologies = [{ name: 'CSharp', title: 'C# + WebForms' }, { name: 'VisualBasic', title: 'Visual Basic®' }, { title: 'MVC + Razor', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos/tree/master/GanttChartWebLibraryMvcDemos/Demos' }, { title: '.NET Core', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos/tree/master/GanttChartWebLibraryMvcDemos/Demos.Core' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
         var getSamples = (component, selectedTechnology) => {
@@ -429,7 +429,7 @@ angular.module('Demos', [])
             if (technology == $scope.selectedTechnology)
                 return;
             if (technology.url) {
-                window.open(technology.url, '_blank');
+                $window.open(technology.url, technology.name);
                 return;
             }
             $scope.selectedTechnology = technology;

@@ -1,7 +1,7 @@
 var queryString = window.location.search;
 var initialSelection = queryString ? queryString.substr(1).replace('-', ' ') : null;
 angular.module('Demos', [])
-    .controller('MainController', function ($scope, $http, $timeout) {
+    .controller('MainController', function ($scope, $http, $timeout, $window) {
     var components = ['GanttChartView', 'ScheduleChartView', 'LoadChartView', 'PertChartView', 'NetworkDiagramView'];
     var samples = [
         {
@@ -368,7 +368,7 @@ angular.module('Demos', [])
             $scope.run();
         });
     };
-    var technologies = [{ name: 'CSharp', title: 'C# + WebForms' }, { title: 'C# + MVC', url: 'http://GitHub.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos' }, { name: 'VisualBasic', title: 'Visual Basic®' }];
+    var technologies = [{ name: 'CSharp', title: 'C# + WebForms' }, { name: 'VisualBasic', title: 'Visual Basic®' }, { title: 'MVC + Razor', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos/tree/master/GanttChartWebLibraryMvcDemos/Demos' }, { title: '.NET Core', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos/tree/master/GanttChartWebLibraryMvcDemos/Demos.Core' }];
     $scope.technologies = technologies;
     $scope.selectedTechnology = technologies[0];
     var getSamples = function (component, selectedTechnology) {
@@ -417,7 +417,7 @@ angular.module('Demos', [])
         if (technology == $scope.selectedTechnology)
             return;
         if (technology.url) {
-            window.open(technology.url, '_blank');
+            $window.open(technology.url, technology.name);
             return;
         }
         $scope.selectedTechnology = technology;

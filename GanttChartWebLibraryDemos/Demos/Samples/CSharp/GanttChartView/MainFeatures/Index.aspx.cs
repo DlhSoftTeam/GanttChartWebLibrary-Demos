@@ -443,7 +443,7 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
             var effortOutput = GanttChartView.GetProjectTotalEffort().TotalHours.ToString("0.##");
             var completionOutput = GanttChartView.GetProjectCompletion().ToString("0.##%");
             var costOutput = GanttChartView.GetProjectCost().ToString("$0.##");
-            string output = "Project statistics:\\nStart:\\t" + startOutput + "\\nFinish:\\t" + finishOutput + "\\nEffort:\\t" + effortOutput + "h\\nCompl.:\\t" + completionOutput + "\\nCost:\\t" + costOutput;
+            string output = "Project statistics:\\nStart: " + startOutput + "\\nFinish: " + finishOutput + "\\nEffort: " + effortOutput + "h\\nCompl.: " + completionOutput + "\\nCost: " + costOutput;
             ScriptManager.RegisterStartupScript(this, typeof(Index), "ProjectStatistics", "setTimeout(function() { alert('" + output + "'); }, 1000);", true);
         }
         public void SaveProjectXmlButton_Click(object sender, EventArgs e)
@@ -555,7 +555,6 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
                         var loadChartResourceFilter = document.querySelector('#loadChartResourceFilter'), i;
                         if (loadChartResourceFilter == null)
                             return;
-                        var previouslySelectedResource = loadChartResourceFilter.value;
                         for (i = loadChartResourceFilter.childNodes.length; i-- > 2; )
                             loadChartResourceFilter.removeChild(loadChartResourceFilter.childNodes[i]);
                         var resources = ganttChartView.getAssignedResources();
@@ -563,8 +562,6 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
                             var resource = resources[i];
                             var option = document.createElement('option');
                             option.appendChild(document.createTextNode(resource));
-                            if (resource == previouslySelectedResource)
-                                option.setAttribute('selected', 'true');
                             loadChartResourceFilter.appendChild(option);
                         }}
                     }}

@@ -155,7 +155,6 @@ namespace Demos.Samples.CSharp.GanttChartView.AssigningResources
                         var loadChartResourceFilter = document.querySelector('#loadChartResourceFilter'), i;
                         if (loadChartResourceFilter == null)
                             return;
-                        var previouslySelectedResource = loadChartResourceFilter.value;
                         for (i = loadChartResourceFilter.childNodes.length; i-- > 2; )
                             loadChartResourceFilter.removeChild(loadChartResourceFilter.childNodes[i]);
                         var resources = ganttChartView.getAssignedResources();
@@ -163,8 +162,6 @@ namespace Demos.Samples.CSharp.GanttChartView.AssigningResources
                             var resource = resources[i];
                             var option = document.createElement('option');
                             option.appendChild(document.createTextNode(resource));
-                            if (resource == previouslySelectedResource)
-                                option.setAttribute('selected', 'true');
                             loadChartResourceFilter.appendChild(option);
                         }}
                     }}

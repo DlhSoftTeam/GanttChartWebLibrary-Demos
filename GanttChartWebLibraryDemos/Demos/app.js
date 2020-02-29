@@ -475,7 +475,18 @@ angular.module('Demos', [])
     $scope.getSampleUrl = function (selectedSample, selectedTechnology, selectedTheme) {
         return 'Samples/' + (selectedTechnology ? selectedTechnology.name : '') + '/' + selectedSample.component + '/' + selectedSample.feature + '/index.aspx?' + (selectedTheme ? selectedTheme : $scope.applyingTheme);
     };
-    if (initialSelection)
+    var pathIndex = initialSelection ? initialSelection.indexOf('/') : -1;
+    if (pathIndex >= 0) {
+        var selection1 = initialSelection.substr(0, pathIndex), selection2 = initialSelection.substr(pathIndex + 1);
+        for (var i = 0; i < samples.length; i++) {
+            var sample = samples[i];
+            if (sample.component == selection1 && sample.feature == selection2) {
+                selectSample(sample);
+                break;
+            }
+        }
+    }
+    else if (initialSelection)
         selectComponent(initialSelection);
 })
     .directive('dsSample', function ($timeout) {

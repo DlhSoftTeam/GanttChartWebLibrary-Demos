@@ -380,7 +380,7 @@ angular.module('Demos', [])
                 $scope.run();
             });
         };
-        var technologies = [{ name: 'CSharp', title: 'C# + WebForms' }, { name: 'VisualBasic', title: 'Visual Basic®' }, { title: 'Classic MVC', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos/tree/master/GanttChartWebLibraryMvcDemos/Demos' }, { title: 'MVC + .NET Core', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos/tree/master/GanttChartWebLibraryMvcDemos/Demos.Core' }];
+        var technologies = [{ name: 'CSharp', title: 'C# + WebForms' }, { name: 'VisualBasic', title: 'Visual Basic®' }, { title: 'Classic MVC', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-Mvc-Demos/tree/master/GanttChartWebLibraryMvcDemos/Demos' }, { title: 'MVC + .NET Core', url: 'https://github.com/DlhSoftTeam/GanttChartWebLibrary-NetCore-Demos/tree/master/GanttChartWebLibrary-NetCore-Demos' }];
         $scope.technologies = technologies;
         $scope.selectedTechnology = technologies[0];
         var getSamples = (component, selectedTechnology) => {

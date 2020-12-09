@@ -150,7 +150,7 @@ function initializeGanttChartTemplates(settings, theme) {
             thumb.setAttribute('y', barMargin);
             thumb.setAttribute('width', Math.max(0, itemRight - itemLeft - 1));
             thumb.setAttribute('height', barHeight);
-            thumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: move');
+            thumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: pointer');
             if (!settings.isTaskStartReadOnly)
                 group.appendChild(thumb);
             var startThumb = document.createElementNS(svgns, 'rect');
@@ -158,7 +158,7 @@ function initializeGanttChartTemplates(settings, theme) {
             startThumb.setAttribute('y', barMargin);
             startThumb.setAttribute('width', 4);
             startThumb.setAttribute('height', barHeight);
-            startThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: e-resize');
+            startThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: w-resize');
             if (settings.isDraggingTaskStartEndsEnabled && !settings.isTaskStartReadOnly && settings.interaction != 'TouchEnabled')
                 group.appendChild(startThumb);
             var finishThumb = document.createElementNS(svgns, 'rect');
@@ -349,7 +349,7 @@ function initializeGanttChartTemplates(settings, theme) {
             thumb.setAttribute('y', settings.barMargin);
             thumb.setAttribute('width', h);
             thumb.setAttribute('height', h);
-            thumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: move');
+            thumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: pointer');
             group.appendChild(thumb);
             ganttChartView.initializeTaskDraggingThumbs(thumb, null, null, null, item, x, x, x);
             if (settings.areTaskDependenciesVisible && !settings.areTaskPredecessorsReadOnly && !item.isPart) {

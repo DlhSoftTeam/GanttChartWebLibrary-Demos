@@ -174,7 +174,7 @@ function initializeGanttChartTemplates(settings, theme) {
             completedFinishThumb.setAttribute('y', barMargin);
             completedFinishThumb.setAttribute('width', 6);
             completedFinishThumb.setAttribute('height', barHeight);
-            completedFinishThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: e-resize');
+            completedFinishThumb.setAttribute('style', 'fill: White; fill-opacity: 0; cursor: ew-resize');
             if (!settings.isTaskCompletionReadOnly && settings.isTaskCompletedEffortVisible && settings.interaction != 'TouchEnabled') {
                 group.appendChild(completedFinishThumb);
                 var completedFinishToolTip = document.createElementNS(svgns, 'title');
@@ -663,7 +663,7 @@ function initializeScheduleChartTemplates(settings, theme) {
             thumb.setAttribute("y", settings.barMargin * 1.38 + settings.barHeight * 1.38 - 2);
             thumb.setAttribute("width", Math.max(0, itemRight - itemLeft - 1));
             thumb.setAttribute("height", 7);
-            thumb.setAttribute("style", "fill: White; fill-opacity: 0; cursor: move");
+            thumb.setAttribute("style", "fill: White; fill-opacity: 0; cursor: pointer");
             thumb.addEventListener("mouseover", function (e) {
                 if (typeof scheduleChartView.draggingItem === undefinedType)
                     line.style.visibility = "visible";

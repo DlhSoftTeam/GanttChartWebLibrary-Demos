@@ -211,11 +211,9 @@ namespace Demos.Samples.CSharp.GanttChartView.MainFeatures
                 // GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');";
             }
 
-            // Optionally, initialize custom theme and templates (themes.js, templates.js).
+            // Optionally, initialize custom themes (themes.js).
             Func<string, string> initializingClientCodeGetter = (string type) => @";
-                initialize" + type + @"Theme(control.settings, theme);" + 
-                (type == "GanttChart" || type == "ScheduleChart" || type == "PertChart" ? @"
-                initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
+                initialize" + type + @"Theme(control.settings, theme);";
             if (!IsPostBack)
                 GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
             ScheduleChartView.InitializingClientCode = initializingClientCodeGetter("ScheduleChart");

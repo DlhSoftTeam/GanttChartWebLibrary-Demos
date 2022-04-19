@@ -8,6 +8,10 @@ function initializeGanttChartTheme(settings, theme) {
     }
     settings.headerHeight = settings.headerHeight ? settings.headerHeight / 21 * 31 : 31 * 2; // 2 scale rows
     settings.itemHeight = settings.itemHeight ? settings.itemHeight / 21 * 28 : 28;
+    settings.barMargin = 4;
+    settings.barHeight = settings.itemHeight - 2 * settings.barMargin;
+    settings.completedBarMargin = 1;
+    settings.completedBarHeight = settings.barHeight - 2 * settings.completedBarMargin;
     settings.barCornerRadius = 1;
     settings.completedBarCornerRadius = 1;
     settings.arrowSize = 2;

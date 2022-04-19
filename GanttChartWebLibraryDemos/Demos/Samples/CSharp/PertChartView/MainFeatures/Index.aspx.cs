@@ -60,10 +60,8 @@ namespace Demos.Samples.CSharp.PertChartView.MainFeatures
                 // PertChartView.InitializingClientCode = "if (typeof console !== 'undefined') console.log('The component is about to be initialized.')";
                 // PertChartView.InitializedClientCode = "if (typeof console !== 'undefined') console.log('The component has been successfully initialized.');";
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                PertChartView.InitializingClientCode += @";
-                    initializePertChartTheme(control.settings, theme);
-                    initializePertChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                PertChartView.InitializingClientCode += @";initializePertChartTheme(control.settings, theme);";
             }
         }
 

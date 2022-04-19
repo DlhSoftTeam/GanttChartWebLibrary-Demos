@@ -48,10 +48,8 @@ namespace Demos.Samples.CSharp.GanttChartView.ChangeNotifications
                 GanttChartView.ItemPropertyChangeHandlerClientCode = "if (isDirect && isFinal && typeof console !== 'undefined') console.log(item.content + '.' + propertyName + ' has changed.');";
                 GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');";
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
 
             // Setup handling item property changes on the server side.

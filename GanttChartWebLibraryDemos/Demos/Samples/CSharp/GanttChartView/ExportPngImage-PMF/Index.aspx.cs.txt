@@ -44,10 +44,8 @@ namespace Demos.Samples.CSharp.GanttChartView.ExportPngImage_PMF
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
 

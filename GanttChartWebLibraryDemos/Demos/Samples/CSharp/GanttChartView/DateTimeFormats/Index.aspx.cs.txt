@@ -49,10 +49,8 @@ namespace Demos.Samples.CSharp.GanttChartView.DateTimeFormats
                 // Set up duration column displaying values computed on the client side, assuming an 8h/day schedule.
                 GanttChartView.Columns.Insert(4, new Column { Header = "Duration (d)", Width = 80, CellTemplateClientCode = "return DlhSoft.Controls.GanttChartView.getDurationColumnTemplate(64, 8)(item);" });
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
 
             // Initialize culture based on current selection.

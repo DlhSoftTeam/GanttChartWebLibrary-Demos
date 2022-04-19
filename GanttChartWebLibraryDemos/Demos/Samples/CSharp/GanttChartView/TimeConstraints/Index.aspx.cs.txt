@@ -63,10 +63,8 @@ namespace Demos.Samples.CSharp.GanttChartView.TimeConstraints
                 specialItem.CompletedBarFill = Color.FromArgb(16, 128, 16);
                 specialItem.CompletedBarStroke = Color.Transparent;
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
     }

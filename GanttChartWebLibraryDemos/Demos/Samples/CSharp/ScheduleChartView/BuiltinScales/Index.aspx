@@ -6,7 +6,6 @@
 <head runat="server">
     <title>ScheduleChartView Built-in Scales Sample</title>
     <link rel="Stylesheet" href="app.css" type="text/css" />
-    <script src="templates.js" type="text/javascript"></script>
     <script src="themes.js" type="text/javascript"></script>
     <script type="text/javascript">
         // Query string syntax: ?theme

@@ -75,10 +75,8 @@ namespace Demos.Samples.CSharp.GanttChartView.CustomSchedules
                 // Enable displaying nonworking time overrides for specific items based on their custom schedule definitions.
                 GanttChartView.IsIndividualItemNonworkingTimeHighlighted = true;
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
     }

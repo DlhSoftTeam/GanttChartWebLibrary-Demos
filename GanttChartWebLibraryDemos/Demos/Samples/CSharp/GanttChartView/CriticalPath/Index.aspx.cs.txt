@@ -45,10 +45,8 @@ namespace Demos.Samples.CSharp.GanttChartView.CriticalPath
                 // When computing critical path dependency constraints should be enabled in order to ensure dependency chain respect start and finish time values.
                 GanttChartView.AreTaskDependencyConstraintsEnabled = true;
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
 

@@ -59,10 +59,8 @@ namespace Demos.Samples.CSharp.GanttChartView.SpecialDays
                     IsHighlightingVisible = true, HighlightingColor = Color.LightGreen
                 });
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
     }

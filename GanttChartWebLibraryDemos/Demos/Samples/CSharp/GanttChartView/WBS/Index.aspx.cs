@@ -47,10 +47,8 @@ namespace Demos.Samples.CSharp.GanttChartView.WBS
                 // Add WBS column with index paths computed on the client side.
                 GanttChartView.Columns.Insert(0, new Column { Header = "WBS", Width = 50, CellTemplateClientCode = "return DlhSoft.Controls.GanttChartView.getWbsColumnTemplate()(item);" });
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
     }

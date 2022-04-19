@@ -6,7 +6,6 @@
 <head runat="server">
     <title>GanttChartView Export PNG Image Sample</title>
     <link rel="Stylesheet" href="app.css" type="text/css" />
-    <script src="templates.js" type="text/javascript"></script>
     <script src="themes.js" type="text/javascript"></script>
     <script src="Scripts/DlhSoft.ProjectData.GanttChart.HTML.Controls.Extras.js" type="text/javascript" defer="defer"></script>
     <script src="app.js" type="text/javascript"></script>

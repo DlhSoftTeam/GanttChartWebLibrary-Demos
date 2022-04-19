@@ -48,10 +48,8 @@ namespace Demos.Samples.CSharp.GanttChartView.BuiltinScales
                 // Always display separators between intervals defined at the major scale level.
                 GanttChartView.Scales[0].IsSeparatorVisible = true;
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
 

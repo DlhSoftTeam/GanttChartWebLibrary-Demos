@@ -36,9 +36,7 @@ namespace Demos.Samples.CSharp.LoadChartView.GanttChartIntegration
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
 

@@ -156,10 +156,8 @@ namespace Demos.Samples.CSharp.ScheduleChartView.MainFeatures
                 // ScheduleChartView.ItemPropertyChangeHanderClientCode = "if (isDirect && isFinal && typeof console !== 'undefined') console.log(item.content + '.' + propertyName + ' has changed.');";
                 // ScheduleChartView.ItemSelectionChangeHanderClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');";
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                ScheduleChartView.InitializingClientCode += @";
-                    initializeScheduleChartTheme(control.settings, theme);
-                    initializeScheduleChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                ScheduleChartView.InitializingClientCode += @";initializeScheduleChartTheme(control.settings, theme);";
             }
 
             // Optionally, receive server side notifications when selection changes have occured on the client side by handling the SelectionChanged event.

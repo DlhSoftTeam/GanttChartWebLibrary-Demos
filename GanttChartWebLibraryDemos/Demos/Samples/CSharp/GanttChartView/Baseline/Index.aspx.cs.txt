@@ -56,10 +56,8 @@ namespace Demos.Samples.CSharp.GanttChartView.Baseline
                 GanttChartView.Columns.Insert(5, new Column { Header = "Est. start", Width = 140, CellTemplateClientCode = "return DlhSoft.Controls.GanttChartView.getBaselineStartColumnTemplate(124, true, true, 8 * 60 * 60 * 1000)(item);" });
                 GanttChartView.Columns.Insert(6, new Column { Header = "Est. finish", Width = 140, CellTemplateClientCode = "return DlhSoft.Controls.GanttChartView.getBaselineFinishColumnTemplate(124, true, true, 16 * 60 * 60 * 1000)(item);" });
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
     }

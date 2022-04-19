@@ -261,10 +261,8 @@ namespace Demos.Samples.CSharp.ScheduleChartView.CustomTemplate
                         return text;
                     }";
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                ScheduleChartView.InitializingClientCode = @"
-                    initializeScheduleChartTheme(control.settings, theme);
-                    initializeScheduleChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                ScheduleChartView.InitializingClientCode = @"initializeScheduleChartTheme(control.settings, theme);";
             }
         }
     }

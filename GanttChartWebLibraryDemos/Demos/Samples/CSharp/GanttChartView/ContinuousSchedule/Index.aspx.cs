@@ -53,10 +53,8 @@ namespace Demos.Samples.CSharp.GanttChartView.ContinuousSchedule
                     WorkingDayFinish = TimeOfDay.Parse("24:00:00")
                 };
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
     }

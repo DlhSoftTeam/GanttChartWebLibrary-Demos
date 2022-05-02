@@ -65,10 +65,8 @@ namespace Demos.Samples.CSharp.ScheduleChartView.Filtering
                 ScheduleChartView.DisplayedTime = new DateTime(year, month, 1);
                 ScheduleChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                ScheduleChartView.InitializingClientCode = @"
-                    initializeScheduleChartTheme(control.settings, theme);
-                    initializeScheduleChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                ScheduleChartView.InitializingClientCode = @"initializeScheduleChartTheme(control.settings, theme);";
             }
         }
 

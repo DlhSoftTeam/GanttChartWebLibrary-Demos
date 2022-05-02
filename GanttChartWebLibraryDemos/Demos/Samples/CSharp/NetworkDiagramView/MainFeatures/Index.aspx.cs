@@ -70,10 +70,8 @@ namespace Demos.Samples.CSharp.NetworkDiagramView.MainFeatures
                 // NetworkDiagramView.InitializingClientCode = "if (typeof console !== 'undefined') console.log('The component is about to be initialized.')";
                 // NetworkDiagramView.InitializedClientCode = "if (typeof console !== 'undefined') console.log('The component has been successfully initialized.');";
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                NetworkDiagramView.InitializingClientCode += @";
-                    initializePertChartTheme(control.settings, theme);
-                    initializePertChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                NetworkDiagramView.InitializingClientCode += @";initializePertChartTheme(control.settings, theme);";
             }
         }
 

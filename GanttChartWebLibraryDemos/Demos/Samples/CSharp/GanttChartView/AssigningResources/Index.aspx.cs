@@ -77,11 +77,9 @@ namespace Demos.Samples.CSharp.GanttChartView.AssigningResources
                 GanttChartView.AreTaskDependencyConstraintsEnabled = true;
             }
 
-            // Optionally, initialize custom theme and templates (themes.js, templates.js).
+            // Optionally, initialize custom themes (themes.js).
             Func<string, string> initializingClientCodeGetter = (string type) => @";
-                initialize" + type + @"Theme(control.settings, theme);" +
-                (type == "GanttChart" ? @"
-                initialize" + type + @"Templates(control.settings, theme);" : string.Empty);
+                initialize" + type + @"Theme(control.settings, theme);";
             if (!IsPostBack)
                 GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart");
             LoadChartView.InitializingClientCode = initializingClientCodeGetter("LoadChart");

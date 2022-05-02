@@ -90,10 +90,8 @@ namespace Demos.Samples.CSharp.ScheduleChartView.Columns
                         return input;"
                 });
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                ScheduleChartView.InitializingClientCode = @"
-                    initializeScheduleChartTheme(control.settings, theme);
-                    initializeScheduleChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                ScheduleChartView.InitializingClientCode = @"initializeScheduleChartTheme(control.settings, theme);";
             }
             else
             {

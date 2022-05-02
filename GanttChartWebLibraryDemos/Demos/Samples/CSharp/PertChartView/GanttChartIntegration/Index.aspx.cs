@@ -37,9 +37,7 @@ namespace Demos.Samples.CSharp.PertChartView.GanttChartIntegration
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
 
@@ -61,9 +59,7 @@ namespace Demos.Samples.CSharp.PertChartView.GanttChartIntegration
             // Initialize PERT Chart.
             var items = GanttChartView.GetPertChartItems();
             PertChartView.Items = items;
-            PertChartView.InitializingClientCode = @"
-                initializePertChartTheme(control.settings, theme);
-                initializePertChartTemplates(control.settings, theme)";
+            PertChartView.InitializingClientCode = @"initializePertChartTheme(control.settings, theme);";
         }
         public void HidePertChartButton_Click(object sender, EventArgs e)
         {

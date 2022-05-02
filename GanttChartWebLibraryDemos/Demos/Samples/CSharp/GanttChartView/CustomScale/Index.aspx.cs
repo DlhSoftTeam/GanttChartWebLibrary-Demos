@@ -61,10 +61,8 @@ namespace Demos.Samples.CSharp.GanttChartView.CustomScale
                 // Optionally, initialize the way updates occur as well, such as allowing dragging and dropping task bars on entire hours.
                 GanttChartView.UpdateScaleInterval = TimeSpan.FromHours(1);
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
     }

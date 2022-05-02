@@ -77,9 +77,7 @@ namespace Demos.Samples.CSharp.GanttChartView.MaterialResources
                     items[i].AssignmentsContent = "Printer, Paper " + requiredSheetsOfPaper + "], Supervisor [50%]";
                     items[i].Finish = new DateTime(year, month, day, 8, (int)Math.Ceiling(requiredSheetsOfPaper / (double)15), 0);
 
-                    GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                    GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
                 }
             }
         }

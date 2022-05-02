@@ -210,12 +210,10 @@ Namespace Demos.Samples.VisualBasic.GanttChartView.MainFeatures
                 ' GanttChartView.ItemSelectionChangeHandlerClientCode = "if (isSelected && isDirect && typeof console !== 'undefined') console.log(item.content + ' has been selected.');"
             End If
 
-            ' Optionally, initialize custom theme And templates (themes.js, templates.js).
+            ' Optionally, initialize custom themes (themes.js).
             Dim initializingClientCodeGetter As Func(Of String, String) =
                 Function(Type As String)
-                    Return "initialize" + Type + "Theme(control.settings, theme);" +
-                            IIf(Type = "GanttChart" Or Type = "ScheduleChart" Or Type = "PertChart", "
-                            initialize" + Type + "Templates(control.settings, theme);", String.Empty)
+                    Return "initialize" + Type + "Theme(control.settings, theme);"
                 End Function
             If Not IsPostBack Then GanttChartView.InitializingClientCode += initializingClientCodeGetter("GanttChart")
             ScheduleChartView.InitializingClientCode = initializingClientCodeGetter("ScheduleChart")

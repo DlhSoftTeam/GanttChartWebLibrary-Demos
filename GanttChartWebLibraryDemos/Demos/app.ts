@@ -19,8 +19,8 @@ angular.module('Demos', [])
             {
                 component: 'GanttChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js'],
-                    'VisualBasic': ['Index.aspx', 'Index.aspx.vb', 'app.css', 'templates.js', 'themes.js']
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'themes.js'],
+                    'VisualBasic': ['Index.aspx', 'Index.aspx.vb', 'app.css', 'themes.js']
                 }
             },
             {
@@ -218,7 +218,7 @@ angular.module('Demos', [])
             {
                 component: 'ScheduleChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js']
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'themes.js']
                 }
             },
             {
@@ -338,7 +338,7 @@ angular.module('Demos', [])
             {
                 component: 'PertChartView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js']
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'themes.js']
                 }
             },
             {
@@ -350,7 +350,7 @@ angular.module('Demos', [])
             {
                 component: 'NetworkDiagramView', feature: 'MainFeatures', title: 'Main features', description: 'Complex sample application showing how to use the most important features of the component',
                 sourceCodeFiles: {
-                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'templates.js', 'themes.js']
+                    'CSharp': ['Index.aspx', 'Index.aspx.cs', 'app.css', 'themes.js']
                 }
             },
             {

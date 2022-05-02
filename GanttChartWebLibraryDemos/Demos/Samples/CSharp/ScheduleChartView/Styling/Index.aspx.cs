@@ -86,10 +86,8 @@ namespace Demos.Samples.CSharp.ScheduleChartView.Styling
                     control.settings.alternativeItemClass = theme == 'Dark-black' ? 'alternativeGridItem-dark' : (theme == 'Steel-blue' ? 'alternativeGridItem-steel' : 'alternativeGridItem');
                     control.settings.alternativeChartItemClass = theme == 'Dark-black' ? 'alternativeChartItem-dark' : 'alternativeChartItem';";
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                ScheduleChartView.InitializingClientCode += @";
-                    initializeScheduleChartTheme(control.settings, theme);
-                    initializeScheduleChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                ScheduleChartView.InitializingClientCode += @";initializeScheduleChartTheme(control.settings, theme);";
             }
         }
     }

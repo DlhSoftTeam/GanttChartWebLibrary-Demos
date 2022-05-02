@@ -37,9 +37,7 @@ namespace Demos.Samples.CSharp.NetworkDiagramView.GanttChartIntegration
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
 
@@ -61,9 +59,7 @@ namespace Demos.Samples.CSharp.NetworkDiagramView.GanttChartIntegration
             // Initialize Network Diagram.
             var items = GanttChartView.GetNetworkDiagramItems();
             NetworkDiagramView.Items = items;
-            NetworkDiagramView.InitializingClientCode = @"
-                initializePertChartTheme(control.settings, theme);
-                initializePertChartTemplates(control.settings, theme)";
+            NetworkDiagramView.InitializingClientCode = @"initializePertChartTheme(control.settings, theme);";
         }
         public void HideNetworkDiagramButton_Click(object sender, EventArgs e)
         {

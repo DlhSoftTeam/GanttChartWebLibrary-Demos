@@ -36,9 +36,7 @@ namespace Demos.Samples.CSharp.ScheduleChartView.GanttChartIntegration
                 GanttChartView.DisplayedTime = new DateTime(year, month, 1);
                 GanttChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
 
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
             }
         }
 
@@ -61,9 +59,7 @@ namespace Demos.Samples.CSharp.ScheduleChartView.GanttChartIntegration
             var items = GanttChartView.GetScheduleChartItems();
             ScheduleChartView.Items = items;
             ScheduleChartView.CurrentTime = new DateTime(year, month, 2, 12, 0, 0);
-            ScheduleChartView.InitializingClientCode = @"
-                initializeScheduleChartTheme(control.settings, theme);
-                initializeScheduleChartTemplates(control.settings, theme);";
+            ScheduleChartView.InitializingClientCode = @"initializeScheduleChartTheme(control.settings, theme);";
         }
         public void HideScheduleChartButton_Click(object sender, EventArgs e)
         {

@@ -49,10 +49,8 @@ namespace Demos.Samples.CSharp.GanttChartView.Interruptions
                 GanttChartView.Items[4].CustomValues["Interruptions"] = GetDateValue(new DateTime(year, month, 3, 8, 0, 0)) + "-" + GetDateValue(new DateTime(year, month, 3, 12, 0, 0)) + ";" + GetDateValue(new DateTime(year, month, 7, 8, 0, 0)) + "-" + GetDateValue(new DateTime(year, month, 8, 12, 0, 0));
                 GanttChartView.Items[7].CustomValues["Interruptions"] = GetDateValue(new DateTime(year, month, 13, 8, 0, 0)) + "-" + GetDateValue(new DateTime(year, month, 13, 16, 0, 0));
 
-                // Optionally, initialize custom theme and templates (themes.js, templates.js).
-                GanttChartView.InitializingClientCode = @"
-                    initializeGanttChartTheme(control.settings, theme);
-                    initializeGanttChartTemplates(control.settings, theme);";
+                // Optionally, initialize custom themes (themes.js).
+                GanttChartView.InitializingClientCode = @"initializeGanttChartTheme(control.settings, theme);";
 
                 GanttChartView.IsTaskCompletedEffortVisible = false;
 

@@ -515,7 +515,6 @@ angular.module('Demos', [])
         templateUrl: 'Templates/SourceCode.html'
     };
 });
-// Support for Safari.
 $(document).ready(function () {
     var body = $(document).find('body');
     var shouldSyncSize = false;
@@ -531,4 +530,3 @@ $(document).ready(function () {
             clearInterval(syncSizeTimer);
     }, 500);
 });
-//# sourceMappingURL=app.js.map

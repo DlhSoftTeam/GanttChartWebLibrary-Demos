@@ -6,8 +6,8 @@ function initializeGanttChartTheme(settings, theme) {
         settings.theme = 'Aero';
         return;
     }
-    settings.headerHeight = settings.headerHeight ? settings.headerHeight / 21 * 31 : 31 * 2; // 2 scale rows
-    settings.itemHeight = settings.itemHeight ? settings.itemHeight / 21 * 28 : 28;
+    settings.headerHeight = 31 * 2; // 2 scale rows
+    settings.itemHeight = 28;
     settings.barMargin = 4;
     settings.barHeight = settings.itemHeight - 2 * settings.barMargin;
     settings.completedBarMargin = 1;
@@ -15,7 +15,7 @@ function initializeGanttChartTheme(settings, theme) {
     settings.barCornerRadius = 1;
     settings.completedBarCornerRadius = 1;
     settings.arrowSize = 2;
-    settings.hourWidth = settings.hourWidth ? settings.hourWidth / 2.5 * 5 : 5;
+    settings.hourWidth = 5;
     switch (theme) {
         case 'Generic-bright':
             settings.headerBackground = 'white';
@@ -186,6 +186,7 @@ function initializeGanttChartTheme(settings, theme) {
                         scale.isSeparatorVisible = true;
                         separatorInitialized = true;
                     }
+                    scale.headerHeight = '31px';
                     break;
             }
         }
